@@ -34,9 +34,9 @@ export class ThemeService {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
     if (isDark) {
-      document.documentElement.classList.add('dark-theme');
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark-theme');
+      document.documentElement.removeAttribute('data-theme');
     }
   }
 

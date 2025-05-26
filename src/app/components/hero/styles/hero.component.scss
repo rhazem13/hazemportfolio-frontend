@@ -1,5 +1,5 @@
 .hero {
-  height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,29 +8,73 @@
     var(--background-color) 0%,
     var(--light-gray) 100%
   );
-}
-
-.hero-content {
-  text-align: center;
   padding: 2rem;
 }
 
-.hero-content h1 {
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   color: var(--text-color);
 }
 
-.hero-content h2 {
+.hero-text h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: var(--text-secondary);
 }
 
-.hero-content p {
+.hero-text p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: var(--text-secondary);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shape-bg {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, var(--primary-color), #00a8ff);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  z-index: 1;
+  animation: morphing 8s ease-in-out infinite;
 }
 
 .cta-button {
@@ -47,4 +91,60 @@
 .cta-button:hover {
   transform: translateY(-2px);
   background: #0056b3;
+}
+
+@keyframes morphing {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  50% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .image-container {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 1rem;
+  }
+
+  .image-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
 }
