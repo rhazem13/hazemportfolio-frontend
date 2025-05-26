@@ -1,0 +1,55 @@
+// Theme Variables
+:root {
+  // Light Theme Colors
+  --background-color: #ffffff;
+  --surface-color: #f8f9fa;
+  --text-color: #212529;
+  --text-secondary: #6c757d;
+  --primary-color: #007bff;
+  --border-color: #dee2e6;
+  --card-background: #ffffff;
+  --hover-color: #e9ecef;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --light-gray: #f1f3f5;
+  --dark-gray: #343a40;
+  --nav-background: rgba(255, 255, 255, 0.9);
+}
+
+// Dark Theme Colors
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+  --text-color: #e9ecef;
+  --text-secondary: #adb5bd;
+  --primary-color: #4dabf7;
+  --border-color: #444444;
+  --card-background: #2d2d2d;
+  --hover-color: #3d3d3d;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --light-gray: #3d3d3d;
+  --dark-gray: #ced4da;
+  --nav-background: rgba(26, 26, 26, 0.9);
+}
+
+// Common Styles
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--dark-gray);
+}
+
+// Transitions
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

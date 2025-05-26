@@ -1,0 +1,73 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-hero',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm Hazem</h1>
+        <h2>Software Engineer</h2>
+        <p>Building innovative solutions with modern technologies</p>
+        <button class="cta-button">View My Work</button>
+      </div>
+    </section>
+  `,
+  styles: [
+    `
+      .hero {
+        height: calc(100vh - 4rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          var(--background-color) 0%,
+          var(--light-gray) 100%
+        );
+      }
+
+      .hero-content {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-secondary);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: var(--text-secondary);
+      }
+
+      .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        background: #0056b3;
+      }
+    `,
+  ],
+})
+export class HeroComponent {}
