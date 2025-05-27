@@ -46,11 +46,11 @@ BeFriends - .NET CORE, Angular [Independent Project]
 •	Integrated SignalR to enable real-time chat functionality, supporting live messaging and presence updates across users.
 
 Skills
-•	Programming Languages: C#, Python, JavaScript, SQL
-•	Backend: .NET CORE, Node.js, Express.js, Flask, Laravel
-•	Frontend: Angular, React.js, Next.js
-•	Databases: PostgreSQL, Microsoft SQL Server
-•	DevOps & Deployment: Docker, Nginx, GitHub Actions
+•	Programming Languages: C#, Python, Typescript, SQL
+•	Backend: .NET CORE, Flask
+•	Frontend: Angular
+•	Databases: Microsoft SQL Server, PostgreSQL, 
+•	DevOps & Deployment: GitHub Actions, Git
 •	Other: Problem Solving, Redis, RTC, OOP, Clean Code
 Certifications
 •	Algorithmic Toolbox - Coursera
