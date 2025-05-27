@@ -7,40 +7,79 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class ThemeService {
   private readonly platformId = inject(PLATFORM_ID);
-  private isDarkTheme = new BehaviorSubject<boolean>(this.getInitialTheme());
+  private isDarkTheme = new BehaviorSubject<boolean>(false);
   isDarkTheme$ = this.isDarkTheme.asObservable();
+
+  constructor() {
+    if (isPlatformBrowser(this.platformId)) {
+      // Wait for the document to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () =>
+          this.initializeTheme()
+        );
+      } else {
+        this.initializeTheme();
+      }
+    }
+  }
+
+  private initializeTheme(): void {
+    const initialTheme = this.getInitialTheme();
+    this.setDarkTheme(initialTheme);
+
+    // Listen for system theme changes
+    if (window.matchMedia) {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            this.setDarkTheme(e.matches);
+          }
+        });
+    }
+  }
 
   private getInitialTheme(): boolean {
     if (isPlatformBrowser(this.platformId)) {
+      // First check localStorage
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         return savedTheme === 'dark';
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      // Then check system preference
+      if (window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
     }
     return false;
-  }
-
-  constructor() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.setDarkTheme(this.isDarkTheme.value);
-    }
   }
 
   setDarkTheme(isDark: boolean): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
+    // Update state
     this.isDarkTheme.next(isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-    if (isDark) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
+    // Save to localStorage
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch (e) {
+      console.warn('Failed to save theme preference:', e);
     }
+
+    // Update DOM
+    requestAnimationFrame(() => {
+      if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    });
   }
 
   toggleTheme(): void {
-    this.setDarkTheme(!this.isDarkTheme.value);
+    const currentTheme = this.isDarkTheme.value;
+    this.setDarkTheme(!currentTheme);
   }
 }
