@@ -7,6 +7,7 @@ import { AboutComponent } from './components/about/about.component';
 import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     EducationComponent,
     SkillsComponent,
     ProjectsComponent,
+    ContactComponent,
     FooterComponent,
   ],
   template: `
@@ -32,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
         <app-education></app-education>
         <app-skills></app-skills>
         <app-projects></app-projects>
+        <app-contact></app-contact>
         <app-footer></app-footer>
       </main>
     </div>
