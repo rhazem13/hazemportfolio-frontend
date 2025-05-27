@@ -1,0 +1,135 @@
+.education-section {
+  padding: 5rem 0;
+  background-color: var(--surface-color);
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .education-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background-color: var(--primary-color);
+      opacity: 0.3;
+    }
+  }
+
+  .education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 2rem;
+      position: relative;
+      z-index: 1;
+
+      i {
+        color: var(--background-color);
+        font-size: 1.5rem;
+      }
+    }
+
+    .education-content {
+      background-color: var(--card-background);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+      flex-grow: 1;
+
+      .degree {
+        color: var(--text-color);
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .institution-year {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+
+        .institution {
+          font-weight: 500;
+        }
+
+        .year {
+          background-color: var(--primary-color);
+          color: var(--background-color);
+          padding: 0.25rem 0.75rem;
+          border-radius: 15px;
+          font-size: 0.8rem;
+        }
+      }
+
+      .details {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .education-section {
+    .education-timeline {
+      &::before {
+        left: 30px;
+      }
+    }
+
+    .education-item {
+      .icon-container {
+        width: 50px;
+        height: 50px;
+        margin-right: 1.5rem;
+
+        i {
+          font-size: 1.25rem;
+        }
+      }
+
+      .education-content {
+        padding: 1.25rem;
+
+        .institution-year {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+}
