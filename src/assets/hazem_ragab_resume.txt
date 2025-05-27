@@ -1,0 +1,65 @@
+Hazem Ragab Mohammed
+Full-Stack Software Engineer
+Email: rhazem13@yahoo.com | Phone: +201060404916 
+Address: Al Arbeen, Suez | Github: github.com/rhazem13 
+LeetCode: leetcode.com/u/rhazem13 
+LinkedIn: linkedin.com/in/rhazem13
+Objective
+Software Engineer with a strong foundation in full-stack development and a deep passion for problem solving and algorithms, specializing in efficient APIs and responsive frontends. Eager to leverage modern technologies to build robust, scalable applications.
+Education
+B.Sc. in Computer Science - Suez University (2023)
+Graduated first in class with a 3.91/4.0 GPA.
+Web Development Using .Net – ITI (2021)
+Professional Experience
+AskCity – Flutter, Back4App (Parse), PHP, Firebase, Agora [Freelance]
+•	Developed a cross-platform mobile app using Flutter with a custom PHP admin dashboard. Integrated Back4App Parse API for backend management and user data handling.
+•	Implemented real-time features, including video calls and live streams with Agora, chat with Back4App Realtime Database, and phone number authentication with Firebase OTP.
+•	Built core social app logic, including post creation, reels, feeds, user interactions and Google Maps integration for location-based features.
+
+Charity-Donations – React, Flask, YOLO [Freelance]
+•	Built a full-stack web app using React, Flask, implementing a secure role-based system with distinct access levels for users, charities, admins, and super-admins.
+•	Collected and labeled custom dataset, trained a YOLO object detection model, and integrated it into the app to enable automated validation of donation documents via image uploads.
+•	Enabled secure online payments using PayPal integration, streamlining the donation process for both donors and recipient organizations.
+
+W DE MODA - Laravel, Nuxt [Freelance]
+•	Contributed to both frontend (Nuxt.js) and backend (Laravel) development, implementing key features across the main app and admin dashboard.
+•	Integrated social authentication (Google, Facebook) and implemented OTP verification for orders using MSG91 to improve security and user experience.
+•	Integrated J&T Express API into the application to enable seamless e-commerce logistics and delivery tracking
+
+NAQAA - React, Refine, Flutter [Freelance]
+•	Developed the mobile app using Flutter, the web client with React, and the admin dashboard using Refine, ensuring consistent and responsive user experience across platforms.
+•	Implemented authentication features and essential e-commerce logic including product browsing, cart management, and order flow.
+
+Quantum - React, Flask [Freelance]
+•	Built a custom admin dashboard using React and Flask to allow admins to easily modify and manage website content dynamically.
+•	Developed the public-facing website to display the company’s services and information with a clean, responsive user interface.
+•	Ensured smooth API integration between the frontend and backend for real-time content updates and admin control.
+
+Memory Mate – Flask, PostgreSQL, Redis, GIS [Academic]
+•	Designed and implemented the app’s core backend logic and RESTful APIs using Flask, ensuring scalability and clean integration with the frontend.
+•	Used PostgreSQL with the PostGIS extension to enable geo-tagging and location-based queries, enabling features such as finding nearby friends.
+•	Integrated Redis for caching and performance optimization, reducing response time for frequent queries and enhancing overall app speed.
+
+BeFriends - .NET CORE, Angular [Independent Project]
+•	Developed a complete social app backend using .NET CORE, implementing core features like user profiles, posts, comments, likes, and friend management.
+•	Developed a responsive Angular frontend, ensuring seamless user interactions and dynamic content updates.
+•	Integrated SignalR to enable real-time chat functionality, supporting live messaging and presence updates across users.
+
+Skills
+•	Programming Languages: C#, Python, JavaScript, SQL
+•	Backend: .NET CORE, Node.js, Express.js, Flask, Laravel
+•	Frontend: Angular, React.js, Next.js
+•	Databases: PostgreSQL, Microsoft SQL Server
+•	DevOps & Deployment: Docker, Nginx, GitHub Actions
+•	Other: Problem Solving, Redis, RTC, OOP, Clean Code
+Certifications
+•	Algorithmic Toolbox - Coursera
+•	Introduction to Relational Databases in SQL – DataCamp
+•	Web Development Using  .NET - ITI 
+•	Version Control with Git - Coursera
+•	Object-Oriented Design – Coursera
+•	Responsive Web Design – Coursera
+•	Software Architecture – Coursera
+•	Intermediate Python - DataCamp
+•	Image Processing with Python Track – DataCamp
+•	Introduction to Data Science in Python - DataCamp
