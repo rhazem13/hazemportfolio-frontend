@@ -1,52 +1,37 @@
-<section id="projects" class="section projects">
+<section id="projects" class="projects-section">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-image">
-          <i class="fas fa-code project-placeholder"></i>
-        </div>
-        <div class="project-content">
-          <h3>Project One</h3>
-          <p>A full-stack web application built with Angular and Node.js</p>
-          <div class="project-tags">
-            <span>Angular</span>
-            <span>Node.js</span>
-            <span>MongoDB</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-link">
-              <i class="fab fa-github"></i> View Code
-            </a>
-            <a href="#" class="project-link">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          </div>
-        </div>
-      </div>
+    <h2 class="section-title">{{ sectionTitle }}</h2>
+    <p class="section-subtitle">{{ sectionSubtitle }}</p>
 
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
       <div class="project-card">
         <div class="project-image">
-          <i class="fas fa-mobile-alt project-placeholder"></i>
-        </div>
-        <div class="project-content">
-          <h3>Project Two</h3>
-          <p>A responsive web application with modern UI/UX design</p>
-          <div class="project-tags">
-            <span>React</span>
-            <span>TypeScript</span>
-            <span>Firebase</span>
+          <img [src]="project.image" [alt]="project.title" />
+          <div class="project-overlay">
+            <a [href]="project.githubUrl" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+              View on GitHub
+            </a>
+            @if (project.liveUrl) {
+            <a [href]="project.liveUrl" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+              Live Preview
+            </a>
+            }
           </div>
-          <div class="project-links">
-            <a href="#" class="project-link">
-              <i class="fab fa-github"></i> View Code
-            </a>
-            <a href="#" class="project-link">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-tech">
+            @for (tech of project.technologies; track tech) {
+            <span class="tech-tag">{{ tech }}</span>
+            }
           </div>
         </div>
       </div>
+      }
     </div>
   </div>
 </section>
