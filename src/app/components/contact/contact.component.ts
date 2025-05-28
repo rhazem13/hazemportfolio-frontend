@@ -54,10 +54,18 @@ export class ContactComponent {
     this.submitted = true;
 
     if (this.contactForm.valid) {
-      // Here you would typically send the form data to a backend service
-      console.log('Form submitted:', this.contactForm.value);
+      const formData = this.contactForm.value;
+      const mailtoLink = `mailto:${
+        this.contactInfo.email
+      }?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
 
-      // For now, we'll just simulate a successful submission
+      window.location.href = mailtoLink;
+
+      // Reset form and show success message
       this.submitSuccess = true;
       this.contactForm.reset();
       this.submitted = false;
