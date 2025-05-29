@@ -61,5 +61,14 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/rhazem13/PromptShare',
       technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
     },
+    {
+      title: 'Coligo',
+      description:
+        'A student quizz application built with React for the frontend and Express.js with MongoDB for the backend.',
+      image: 'assets/coligo.png',
+      githubUrl: 'https://github.com/rhazem13/anyway-student-quizz-frontend',
+      liveUrl: 'https://www.youtube.com/watch?v=pz84OtMB9ZU',
+      technologies: ['React', 'Express.js', 'MongoDB'],
+    },
   ];
 }
