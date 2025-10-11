@@ -41,10 +41,31 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0, 160, 160, 0.12), transparent 55%),
+    radial-gradient(circle at 90% 10%, rgba(0, 160, 160, 0.08), transparent 60%),
+    radial-gradient(circle at 78% 80%, rgba(0, 160, 160, 0.1), transparent 55%),
+    var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.12), transparent 55%),
+    radial-gradient(circle at 88% 15%, rgba(0, 255, 255, 0.08), transparent 60%),
+    radial-gradient(circle at 65% 85%, rgba(0, 255, 255, 0.12), transparent 55%),
+    var(--background-color);
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 .container {

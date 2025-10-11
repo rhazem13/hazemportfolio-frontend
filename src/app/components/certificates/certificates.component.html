@@ -1,0 +1,58 @@
+<section id="certificates" class="certificates-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">credentials</span>
+      <h2 class="section-title">{{ sectionTitle }}</h2>
+      <p class="section-subtitle">{{ sectionSubtitle }}</p>
+    </div>
+
+    <div class="certificates-grid" role="list">
+      @for (certificate of certificates(); track certificate.id) {
+      <article class="certificate-card" role="listitem">
+        <a
+          class="certificate-download"
+          [href]="certificate.certificateAsset"
+          download
+          title="Download certificate"
+        >
+          <i class="fas fa-download" aria-hidden="true"></i>
+          <span class="visually-hidden">Download {{ certificate.title }} certificate</span>
+        </a>
+        <div class="certificate-media">
+          <img
+            class="issuer-icon"
+            [src]="certificate.icon"
+            [alt]="certificate.issuer + ' logo'"
+            loading="lazy"
+          />
+        </div>
+        <div class="certificate-body">
+          <div class="certificate-meta">
+            <h3 class="certificate-title">{{ certificate.title }}</h3>
+            <p class="certificate-issuer">{{ certificate.issuer }}</p>
+          </div>
+          <ul class="focus-areas" aria-label="Focus areas covered">
+            @for (area of certificate.focusAreas; track area) {
+            <li>
+              <i class="fas fa-circle-notch" aria-hidden="true"></i>
+              <span>{{ area }}</span>
+            </li>
+            }
+          </ul>
+          @if (certificate.credentialUrl) {
+          <a
+            class="credential-link"
+            [href]="certificate.credentialUrl"
+            target="_blank"
+            rel="noopener"
+          >
+            View credential
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          }
+        </div>
+      </article>
+      }
+    </div>
+  </div>
+</section>

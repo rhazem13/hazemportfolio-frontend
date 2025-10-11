@@ -9,6 +9,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { CertificatesComponent } from './components/certificates/certificates.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { SkillsComponent } from './components/skills/skills.component';
     AboutComponent,
     EducationComponent,
     ExperienceComponent,
+    CertificatesComponent,
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
@@ -32,7 +34,8 @@ import { SkillsComponent } from './components/skills/skills.component';
         <app-hero></app-hero>
         <app-about></app-about>
         <app-education></app-education>
-        <app-experience></app-experience>
+    <app-experience></app-experience>
+    <app-certificates></app-certificates>
         <app-skills></app-skills>
         <app-projects></app-projects>
         <app-contact></app-contact>
