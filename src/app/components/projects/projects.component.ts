@@ -70,5 +70,14 @@ export class ProjectsComponent {
       liveUrl: 'https://www.youtube.com/watch?v=pz84OtMB9ZU',
       technologies: ['React', 'Express.js', 'MongoDB'],
     },
+    {
+      title: 'Employee Manager',
+      description:
+        'A simple employee manager application built with Angular for the frontend and .NET Core with Sql Server for the backend.',
+      image: 'assets/employeemanager.png',
+      githubUrl: 'https://github.com/rhazem13/employeemanager_frontend',
+      liveUrl: 'https://www.youtube.com/watch?v=VSpK8Iqligk&t',
+      technologies: ['Angular', '.NET Core', 'SQL Server', 'Entity Framework'],
+    },
   ];
 }

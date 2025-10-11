@@ -1,0 +1,62 @@
+<section id="experience" class="experience-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Experience</span>
+      <h2 class="section-title">{{ sectionTitle }}</h2>
+      <p class="section-subtitle">
+        {{ sectionSubtitle }}
+      </p>
+    </div>
+
+    <div class="experience-timeline" role="list">
+      @for (experience of experiences; track experience.id) {
+      <article class="experience-card" role="listitem">
+        <div class="timeline-marker" aria-hidden="true">
+          <span class="marker-dot"></span>
+          <span class="marker-line"></span>
+        </div>
+        <div class="experience-content">
+          <header class="experience-header">
+            <div class="title-block">
+              <h3 class="role">{{ experience.role }}</h3>
+              <p class="company">{{ experience.company }}</p>
+            </div>
+            <div class="meta-block">
+              <span class="period">
+                {{ experience.startDate | date : "MMM yyyy" }} —
+                {{
+                  experience.endDate
+                    ? (experience.endDate | date : "MMM yyyy")
+                    : "Present"
+                }}
+              </span>
+              <span class="duration">{{
+                getExperienceDuration(experience)
+              }}</span>
+            </div>
+          </header>
+
+          <p class="summary">{{ experience.summary }}</p>
+
+          @if (experience.achievements.length) {
+          <ul class="achievements">
+            @for (achievement of experience.achievements; track achievement) {
+            <li>
+              <i class="fas fa-check" aria-hidden="true"></i>
+              <span>{{ achievement }}</span>
+            </li>
+            }
+          </ul>
+          }
+
+          <div class="tech-stack" aria-label="Technologies used">
+            @for (tech of experience.technologies; track tech) {
+            <span class="tech-pill">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+  </div>
+</section>
