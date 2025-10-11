@@ -30,7 +30,11 @@ export class CertificatesComponent {
       issuer: 'Suez University',
       icon: 'assets/icons/suezuniversity.jpg',
       certificateAsset: 'assets/certificates/ComputerScienceBsc.pdf',
-      focusAreas: ['Systems Fundamentals', 'Algorithms', 'Software Engineering'],
+      focusAreas: [
+        'Systems Fundamentals',
+        'Algorithms',
+        'Software Engineering',
+      ],
     },
     {
       id: 'web-dev-dotnet-iti',
@@ -46,7 +50,11 @@ export class CertificatesComponent {
       issuer: 'University of California, San Diego',
       icon: 'assets/icons/us-san-diego.png',
       certificateAsset: 'assets/certificates/algorithmic-toolbox.pdf',
-      focusAreas: ['Greedy Strategies', 'Divide and Conquer', 'Dynamic Programming'],
+      focusAreas: [
+        'Greedy Strategies',
+        'Divide and Conquer',
+        'Dynamic Programming',
+      ],
     },
     {
       id: 'design-patterns-ualberta',
@@ -70,7 +78,11 @@ export class CertificatesComponent {
       issuer: 'University of Alberta',
       icon: 'assets/icons/university-of-alberta.jpg',
       certificateAsset: 'assets/certificates/software-architecture.pdf',
-      focusAreas: ['Architecture Styles', 'Quality Attributes', 'Trade-off Analysis'],
+      focusAreas: [
+        'Architecture Styles',
+        'Quality Attributes',
+        'Trade-off Analysis',
+      ],
     },
     {
       id: 'solid-principles-udemy',
@@ -101,7 +113,8 @@ export class CertificatesComponent {
       title: 'Python Classes and Inheritance',
       issuer: 'University of Michigan',
       icon: 'assets/icons/university-of-mchigan.png',
-      certificateAsset: 'assets/certificates/python-classes-and-inheritance.pdf',
+      certificateAsset:
+        'assets/certificates/python-classes-and-inheritance.pdf',
       focusAreas: ['Object-Oriented Python', 'Design Patterns', 'Inheritance'],
     },
     {
