@@ -56,9 +56,21 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
     // Set initial hidden state with GPU acceleration hints for mobile
     this.renderer.setStyle(this.el.nativeElement, 'opacity', '0');
     this.renderer.setStyle(this.el.nativeElement, 'transition', 'none');
-    this.renderer.setStyle(this.el.nativeElement, 'will-change', 'transform, opacity');
-    this.renderer.setStyle(this.el.nativeElement, 'backface-visibility', 'hidden');
-    this.renderer.setStyle(this.el.nativeElement, '-webkit-backface-visibility', 'hidden');
+    this.renderer.setStyle(
+      this.el.nativeElement,
+      'will-change',
+      'transform, opacity',
+    );
+    this.renderer.setStyle(
+      this.el.nativeElement,
+      'backface-visibility',
+      'hidden',
+    );
+    this.renderer.setStyle(
+      this.el.nativeElement,
+      '-webkit-backface-visibility',
+      'hidden',
+    );
     this.setInitialTransform();
 
     this.observer = new IntersectionObserver(
@@ -119,21 +131,21 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   private animateIn(): void {
     setTimeout(() => {
       const durations: Record<ScrollAnimation, string> = {
-        fadeInUp: '0.25s',
-        fadeInDown: '0.25s',
-        fadeInLeft: '0.25s',
-        fadeInRight: '0.25s',
-        scaleIn: '0.2s',
+        fadeInUp: '0.1s',
+        fadeInDown: '0.1s',
+        fadeInLeft: '0.1s',
+        fadeInRight: '0.1s',
+        scaleIn: '0.1s',
         rotateIn: '0.25s',
         flipIn: '0.25s',
-        bounceIn: '0.3s',
-        slideInSpiral: '0.3s',
-        glitchIn: '0.2s',
-        typewriter: '0.6s',
+        bounceIn: '0.1s',
+        slideInSpiral: '0.15s',
+        glitchIn: '0.1s',
+        typewriter: '0.15s',
         parallax: '0.25s',
-        tilt3d: '0.3s',
-        rainbow: '0.25s',
-        shake: '0.25s',
+        tilt3d: '0.15s',
+        rainbow: '0.15s',
+        shake: '0.15s',
         jello: '0.3s',
       };
 
@@ -181,7 +193,11 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
           `transform ${duration} ${easing}, opacity ${duration} ${easing}`,
         );
         this.renderer.setStyle(this.el.nativeElement, 'opacity', '1');
-        this.renderer.setStyle(this.el.nativeElement, 'transform', 'translate3d(0, 0, 0)');
+        this.renderer.setStyle(
+          this.el.nativeElement,
+          'transform',
+          'translate3d(0, 0, 0)',
+        );
       }
     }, this.delay);
   }
