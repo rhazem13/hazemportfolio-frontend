@@ -157,13 +157,7 @@ import {
 
       @media (max-width: 768px) {
         .section-indicators {
-          right: 10px;
-          gap: 8px;
-        }
-
-        .indicator-dot {
-          width: 8px;
-          height: 8px;
+          display: none;
         }
 
         .scroll-progress-bar {

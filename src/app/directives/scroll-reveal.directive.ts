@@ -53,9 +53,12 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (!this.isBrowser) return;
 
-    // Set initial hidden state
+    // Set initial hidden state with GPU acceleration hints for mobile
     this.renderer.setStyle(this.el.nativeElement, 'opacity', '0');
     this.renderer.setStyle(this.el.nativeElement, 'transition', 'none');
+    this.renderer.setStyle(this.el.nativeElement, 'will-change', 'transform, opacity');
+    this.renderer.setStyle(this.el.nativeElement, 'backface-visibility', 'hidden');
+    this.renderer.setStyle(this.el.nativeElement, '-webkit-backface-visibility', 'hidden');
     this.setInitialTransform();
 
     this.observer = new IntersectionObserver(
@@ -83,21 +86,21 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
 
   private setInitialTransform(): void {
     const transforms: Record<ScrollAnimation, string> = {
-      fadeInUp: 'translateY(30px)',
-      fadeInDown: 'translateY(-30px)',
-      fadeInLeft: 'translateX(-40px)',
-      fadeInRight: 'translateX(40px)',
-      scaleIn: 'scale(0.85)',
-      rotateIn: 'rotate(-10deg) scale(0.9)',
-      flipIn: 'perspective(600px) rotateX(-60deg)',
-      bounceIn: 'scale(0.5)',
-      slideInSpiral: 'rotate(90deg) scale(0.5) translateY(50px)',
-      glitchIn: 'skewX(20deg) scale(1.1)',
+      fadeInUp: 'translate3d(0, 20px, 0)',
+      fadeInDown: 'translate3d(0, -20px, 0)',
+      fadeInLeft: 'translate3d(-25px, 0, 0)',
+      fadeInRight: 'translate3d(25px, 0, 0)',
+      scaleIn: 'scale3d(0.9, 0.9, 1)',
+      rotateIn: 'rotate(-8deg) scale(0.95)',
+      flipIn: 'perspective(600px) rotateX(-45deg)',
+      bounceIn: 'scale3d(0.7, 0.7, 1)',
+      slideInSpiral: 'rotate(60deg) scale(0.7) translate3d(0, 30px, 0)',
+      glitchIn: 'skewX(15deg) scale(1.05)',
       typewriter: 'translateX(0)',
       parallax: 'translateY(0)',
-      tilt3d: 'perspective(1000px) rotateY(20deg) rotateX(15deg)',
-      rainbow: 'translateY(20px)',
-      shake: 'translateY(20px)',
+      tilt3d: 'perspective(1000px) rotateY(15deg) rotateX(10deg)',
+      rainbow: 'translate3d(0, 15px, 0)',
+      shake: 'translate3d(0, 15px, 0)',
       jello: 'skewX(0deg) skewY(0deg)',
     };
 
@@ -116,22 +119,22 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   private animateIn(): void {
     setTimeout(() => {
       const durations: Record<ScrollAnimation, string> = {
-        fadeInUp: '0.4s',
-        fadeInDown: '0.4s',
-        fadeInLeft: '0.4s',
-        fadeInRight: '0.4s',
-        scaleIn: '0.35s',
-        rotateIn: '0.4s',
-        flipIn: '0.4s',
-        bounceIn: '0.45s',
-        slideInSpiral: '0.5s',
-        glitchIn: '0.3s',
-        typewriter: '1s',
-        parallax: '0.4s',
-        tilt3d: '0.5s',
-        rainbow: '0.4s',
-        shake: '0.4s',
-        jello: '0.5s',
+        fadeInUp: '0.25s',
+        fadeInDown: '0.25s',
+        fadeInLeft: '0.25s',
+        fadeInRight: '0.25s',
+        scaleIn: '0.2s',
+        rotateIn: '0.25s',
+        flipIn: '0.25s',
+        bounceIn: '0.3s',
+        slideInSpiral: '0.3s',
+        glitchIn: '0.2s',
+        typewriter: '0.6s',
+        parallax: '0.25s',
+        tilt3d: '0.3s',
+        rainbow: '0.25s',
+        shake: '0.25s',
+        jello: '0.3s',
       };
 
       const easings: Record<ScrollAnimation, string> = {
@@ -175,10 +178,10 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
         this.renderer.setStyle(
           this.el.nativeElement,
           'transition',
-          `all ${duration} ${easing}`,
+          `transform ${duration} ${easing}, opacity ${duration} ${easing}`,
         );
         this.renderer.setStyle(this.el.nativeElement, 'opacity', '1');
-        this.renderer.setStyle(this.el.nativeElement, 'transform', 'none');
+        this.renderer.setStyle(this.el.nativeElement, 'transform', 'translate3d(0, 0, 0)');
       }
     }, this.delay);
   }

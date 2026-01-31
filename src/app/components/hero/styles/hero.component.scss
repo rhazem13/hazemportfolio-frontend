@@ -1357,3 +1357,21 @@
     }
   }
 }
+
+/* Mobile RTL override - force centering on mobile regardless of RTL */
+@media (max-width: 576px) {
+  :host-context(html[dir="rtl"]) {
+    .hero-text {
+      text-align: center !important;
+    }
+
+    .social-links {
+      justify-content: center !important;
+    }
+
+    .cta-buttons {
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  }
+}
