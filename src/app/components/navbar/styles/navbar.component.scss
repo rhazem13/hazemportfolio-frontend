@@ -137,6 +137,68 @@
   }
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 160, 160, 0.1),
+    rgba(0, 212, 255, 0.1)
+  );
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary-color), #00d4ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .lang-text {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 160, 160, 0.3);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .lang-text {
+      color: #052023;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+  }
+}
+
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -198,5 +260,24 @@
 
   .nav-right {
     gap: 1rem;
+  }
+}
+
+/* RTL Support - Keep actions on the right */
+:host-context(html[dir="rtl"]) {
+  .nav-content {
+    flex-direction: row-reverse;
+  }
+
+  .nav-right {
+    flex-direction: row-reverse;
+  }
+
+  .nav-actions {
+    flex-direction: row-reverse;
+  }
+
+  .nav-links {
+    flex-direction: row-reverse;
   }
 }

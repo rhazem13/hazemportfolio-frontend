@@ -349,3 +349,37 @@
     margin: 0 auto;
   }
 }
+
+/* RTL Support */
+:host-context(html[dir="rtl"]) {
+  .project-info {
+    text-align: right;
+  }
+
+  .project-tech {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .project-description-wrapper {
+    text-align: right;
+  }
+
+  .read-more-btn {
+    &::after {
+      content: "←";
+    }
+  }
+
+  .project-description-wrapper.expanded .read-more-btn::after {
+    content: "→";
+  }
+
+  .read-more-btn:hover::after {
+    transform: translateX(-3px);
+  }
+
+  .project-description-wrapper.expanded .read-more-btn:hover::after {
+    transform: translateX(3px);
+  }
+}

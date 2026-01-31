@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-contact',
@@ -23,6 +24,7 @@ export class ContactComponent {
   contactInfo = {
     email: 'rhazem13@yahoo.com',
     location: 'Al Arbeen, Suez',
+    locationAr: 'الأربعين، السويس',
     social: [
       {
         name: 'GitHub',
@@ -42,13 +44,26 @@ export class ContactComponent {
     ],
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    public translationService: TranslationService,
+  ) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', Validators.required],
       message: ['', [Validators.required, Validators.minLength(10)]],
     });
+  }
+
+  t(key: string): string {
+    return this.translationService.t(key);
+  }
+
+  getLocation(): string {
+    return this.translationService.currentLang() === 'ar'
+      ? this.contactInfo.locationAr
+      : this.contactInfo.location;
   }
 
   onSubmit() {

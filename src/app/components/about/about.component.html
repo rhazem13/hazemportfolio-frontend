@@ -1,31 +1,24 @@
 <section id="about" class="section about">
   <div class="container">
-    <h2 class="section-title" appScrollReveal="fadeInUp">About Me</h2>
+    <h2 class="section-title" appScrollReveal="fadeInUp">
+      {{ t("about.title") }}
+    </h2>
     <div class="about-content">
       <div class="about-text" appScrollReveal="fadeInLeft" [delay]="200">
-        <p class="lead">
-          A detail-oriented Software Engineer passionate about crafting
-          efficient solutions and turning complex problems into elegant code.
-        </p>
-        <p>
-          I specialize in building robust, scalable applications with a focus on
-          clean architecture and optimal performance. As a recent Computer
-          Science graduate and the top of my class, I combine strong theoretical
-          foundations with practical development experience through various
-          successful freelance projects.
-        </p>
+        <p class="lead">{{ t("about.lead") }}</p>
+        <p>{{ t("about.description") }}</p>
         <div class="quick-info">
           <div class="info-item" appScrollReveal="scaleIn" [delay]="400">
             <i class="fas fa-lightbulb"></i>
-            <span>Problem Solver</span>
+            <span>{{ t("about.problemSolver") }}</span>
           </div>
           <div class="info-item" appScrollReveal="scaleIn" [delay]="500">
             <i class="fas fa-code"></i>
-            <span>Clean Code Advocate</span>
+            <span>{{ t("about.cleanCode") }}</span>
           </div>
           <div class="info-item" appScrollReveal="scaleIn" [delay]="600">
             <i class="fas fa-layer-group"></i>
-            <span>Full Stack Developer</span>
+            <span>{{ t("about.fullStack") }}</span>
           </div>
         </div>
       </div>

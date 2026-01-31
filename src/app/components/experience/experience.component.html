@@ -1,10 +1,10 @@
 <section id="experience" class="experience-section">
   <div class="container">
     <div class="section-heading" appScrollReveal="fadeInDown">
-      <span class="section-kicker">Experience</span>
-      <h2 class="section-title">{{ sectionTitle }}</h2>
+      <span class="section-kicker">{{ t("experience.kicker") }}</span>
+      <h2 class="section-title">{{ t("experience.title") }}</h2>
       <p class="section-subtitle">
-        {{ sectionSubtitle }}
+        {{ t("experience.subtitle") }}
       </p>
     </div>
 
@@ -23,7 +23,7 @@
           <div class="experience-content">
             <header class="experience-header">
               <div class="title-block">
-                <h3 class="role">{{ experience.role }}</h3>
+                <h3 class="role">{{ getRole(experience) }}</h3>
                 <p class="company">{{ experience.company }}</p>
               </div>
               <div class="meta-block">
@@ -32,7 +32,7 @@
                   {{
                     experience.endDate
                       ? (experience.endDate | date: "MMM yyyy")
-                      : "Present"
+                      : t("experience.present")
                   }}
                 </span>
                 <span class="duration">{{
@@ -41,7 +41,7 @@
               </div>
             </header>
 
-            <p class="summary">{{ experience.summary }}</p>
+            <p class="summary">{{ getSummary(experience) }}</p>
 
             @if (experience.achievements.length) {
               <ul class="achievements">

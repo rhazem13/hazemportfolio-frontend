@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { TranslationService } from '../../services/translation.service';
 
 interface Project {
   title: string;
   description: string;
+  descriptionAr: string;
   image: string;
   githubUrl: string;
   liveUrl?: string;
@@ -19,15 +21,22 @@ interface Project {
   styleUrls: ['./styles/projects.component.scss'],
 })
 export class ProjectsComponent {
-  sectionTitle = 'Personal Projects';
-  sectionSubtitle =
-    'A collection of projects I built to learn and experiment with different technologies';
+  constructor(public translationService: TranslationService) {
+    // Initialize all descriptions as collapsed
+    this.expandedProjects = this.projects.map(() => false);
+  }
+
+  t(key: string): string {
+    return this.translationService.t(key);
+  }
 
   projects: Project[] = [
     {
       title: 'BeFriends',
       description:
         'A social networking platform that helps connect people with similar interests and hobbies.',
+      descriptionAr:
+        'منصة تواصل اجتماعي تساعد في ربط الأشخاص ذوي الاهتمامات والهوايات المتشابهة.',
       image: 'assets/befriends.png',
       githubUrl: 'https://github.com/rhazem13/BeFriends',
       technologies: ['Angular', '.NET Core', 'SQL Server', 'Entity Framework'],
@@ -36,6 +45,7 @@ export class ProjectsComponent {
       title: 'ESCANOR',
       description:
         'An e-commerce clothing store platform with modern design and seamless shopping experience.',
+      descriptionAr: 'منصة متجر ملابس إلكتروني بتصميم عصري وتجربة تسوق سلسة.',
       image: 'assets/escanor.png',
       githubUrl: 'https://github.com/rhazem13/ClothingStoreV2',
       technologies: [
@@ -50,6 +60,8 @@ export class ProjectsComponent {
       title: 'Charity',
       description:
         'A platform connecting donors with charitable organizations and tracking donations, featuring AI-powered image recognition using YOLOv5.',
+      descriptionAr:
+        'منصة تربط المتبرعين بالمنظمات الخيرية وتتبع التبرعات، مع ميزة التعرف على الصور بالذكاء الاصطناعي باستخدام YOLOv5.',
       image: 'assets/charity.png',
       githubUrl: 'https://github.com/rhazem13/Charity',
       technologies: ['React', 'Flask', 'PostgreSQL', 'YOLOv5', 'Python'],
@@ -58,6 +70,7 @@ export class ProjectsComponent {
       title: 'PromptShare',
       description:
         'A community-driven platform for sharing and discovering AI prompts.',
+      descriptionAr: 'منصة مجتمعية لمشاركة واكتشاف مطالبات الذكاء الاصطناعي.',
       image: 'assets/promptshare.png',
       githubUrl: 'https://github.com/rhazem13/PromptShare',
       technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
@@ -66,6 +79,8 @@ export class ProjectsComponent {
       title: 'Coligo',
       description:
         'A student quizz application built with React for the frontend and Express.js with MongoDB for the backend.',
+      descriptionAr:
+        'تطبيق اختبارات للطلاب مبني باستخدام React للواجهة و Express.js مع MongoDB للخادم.',
       image: 'assets/coligo.png',
       githubUrl: 'https://github.com/rhazem13/anyway-student-quizz-frontend',
       liveUrl: 'https://www.youtube.com/watch?v=pz84OtMB9ZU',
@@ -75,6 +90,8 @@ export class ProjectsComponent {
       title: 'Employee Manager',
       description:
         'A simple employee manager application built with Angular for the frontend and .NET Core with Sql Server for the backend.',
+      descriptionAr:
+        'تطبيق بسيط لإدارة الموظفين مبني باستخدام Angular للواجهة و .NET Core مع SQL Server للخادم.',
       image: 'assets/employeemanager.png',
       githubUrl: 'https://github.com/rhazem13/employeemanager_frontend',
       liveUrl: 'https://www.youtube.com/watch?v=VSpK8Iqligk&t',
@@ -85,9 +102,10 @@ export class ProjectsComponent {
   // Track expanded state for each project description
   expandedProjects: boolean[] = [];
 
-  constructor() {
-    // Initialize all descriptions as collapsed
-    this.expandedProjects = this.projects.map(() => false);
+  getDescription(project: Project): string {
+    return this.translationService.currentLang() === 'ar'
+      ? project.descriptionAr
+      : project.description;
   }
 
   toggleDescription(index: number): void {

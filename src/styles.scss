@@ -16,6 +16,11 @@
   --dark-gray: #343a40;
   --hover-color: #f5f5f5;
   --nav-background: rgba(255, 255, 255, 0.9);
+
+  /* Font families */
+  --font-primary:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-arabic: "Cairo", "Tajawal", "Noto Sans Arabic", sans-serif;
 }
 
 [data-theme="dark"] {
@@ -39,8 +44,21 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: var(--font-primary);
+}
+
+/* RTL Support */
+html[dir="rtl"] {
+  font-family: var(--font-arabic);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-primary);
   background:
     radial-gradient(
       circle at 10% 20%,
@@ -935,4 +953,139 @@ html {
 
 .neon-flicker {
   animation: neonFlicker 2s linear infinite;
+}
+
+/* ========================================
+   RTL (Right-to-Left) Support
+   ======================================== */
+
+/* Flip horizontal transforms in RTL */
+html[dir="rtl"] {
+  /* Reverse flex directions where needed */
+  .nav-content {
+    flex-direction: row-reverse;
+  }
+
+  /* Hero section - text stays on right side */
+  .hero-content {
+    flex-direction: row-reverse;
+  }
+
+  /* Fix text alignment */
+  .hero-text,
+  .about-text,
+  .contact-info {
+    text-align: right;
+  }
+
+  /* Hero social links and CTA buttons - align to right using flex-end */
+  .hero .social-links {
+    justify-content: flex-end !important;
+  }
+
+  .hero .cta-buttons {
+    justify-content: flex-end !important;
+  }
+
+  /* Reverse social links */
+  .social-links {
+    flex-direction: row-reverse;
+  }
+
+  /* Fix CTA buttons */
+  .cta-buttons {
+    flex-direction: row-reverse;
+  }
+
+  /* Timeline adjustments */
+  .experience-timeline,
+  .education-timeline {
+    .timeline-marker {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  /* Fix icon margins */
+  .info-item i,
+  .skill-item i,
+  .achievements li i {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+
+  /* Fix quick info items */
+  .quick-info {
+    .info-item i {
+      margin-right: 0;
+      margin-left: 0.75rem;
+    }
+  }
+
+  /* Reverse tech stack direction */
+  .tech-stack,
+  .project-tech {
+    flex-direction: row-reverse;
+  }
+
+  /* Fix form labels */
+  .form-group label {
+    text-align: right;
+  }
+
+  /* Fix error messages */
+  .error-message {
+    text-align: right;
+  }
+
+  /* Fix card layouts */
+  .certificate-card {
+    text-align: right;
+  }
+
+  /* Fix credential link icon */
+  .credential-link i {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  /* Fix download button position */
+  .certificate-download {
+    left: auto;
+    right: 1rem;
+  }
+
+  /* Section title alignment */
+  .section-title {
+    text-align: center;
+  }
+}
+
+/* Mobile RTL adjustments */
+@media (max-width: 992px) {
+  html[dir="rtl"] {
+    .hero-content,
+    .about-content,
+    .contact-content {
+      flex-direction: column-reverse;
+    }
+
+    .hero-text,
+    .about-text {
+      text-align: center;
+    }
+
+    .social-links,
+    .cta-buttons {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  html[dir="rtl"] {
+    .cta-buttons {
+      flex-direction: column;
+    }
+  }
 }

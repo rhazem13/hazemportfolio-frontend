@@ -1,9 +1,9 @@
 <section id="certificates" class="certificates-section">
   <div class="container">
     <div class="section-heading" appScrollReveal="fadeInUp">
-      <span class="section-kicker">credentials</span>
-      <h2 class="section-title">{{ sectionTitle }}</h2>
-      <p class="section-subtitle">{{ sectionSubtitle }}</p>
+      <span class="section-kicker">{{ t("certificates.kicker") }}</span>
+      <h2 class="section-title">{{ t("certificates.title") }}</h2>
+      <p class="section-subtitle">{{ t("certificates.subtitle") }}</p>
     </div>
 
     <div class="certificates-grid" role="list">
@@ -22,28 +22,29 @@
             class="certificate-download"
             [href]="certificate.certificateAsset"
             download
-            title="Download certificate"
+            [title]="t('certificates.download')"
           >
             <i class="fas fa-download" aria-hidden="true"></i>
             <span class="visually-hidden"
-              >Download {{ certificate.title }} certificate</span
+              >{{ t("certificates.download") }}
+              {{ getTitle(certificate) }}</span
             >
           </a>
           <div class="certificate-media">
             <img
               class="issuer-icon"
               [src]="certificate.icon"
-              [alt]="certificate.issuer + ' logo'"
+              [alt]="getIssuer(certificate) + ' logo'"
               loading="lazy"
             />
           </div>
           <div class="certificate-body">
             <div class="certificate-meta">
-              <h3 class="certificate-title">{{ certificate.title }}</h3>
-              <p class="certificate-issuer">{{ certificate.issuer }}</p>
+              <h3 class="certificate-title">{{ getTitle(certificate) }}</h3>
+              <p class="certificate-issuer">{{ getIssuer(certificate) }}</p>
             </div>
             <ul class="focus-areas" aria-label="Focus areas covered">
-              @for (area of certificate.focusAreas; track area) {
+              @for (area of getFocusAreas(certificate); track area) {
                 <li>
                   <i class="fas fa-circle-notch" aria-hidden="true"></i>
                   <span>{{ area }}</span>
@@ -57,7 +58,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                View credential
+                {{ t("certificates.viewCredential") }}
                 <i
                   class="fas fa-arrow-up-right-from-square"
                   aria-hidden="true"

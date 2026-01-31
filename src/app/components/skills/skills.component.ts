@@ -1,6 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { TranslationService } from '../../services/translation.service';
+
+interface Skill {
+  name: string;
+  nameAr?: string;
+  icon: string;
+}
+
+interface SkillCategory {
+  titleKey: string;
+  titleEn: string;
+  titleAr: string;
+  icon: string;
+  skills: Skill[];
+}
 
 @Component({
   selector: 'app-skills',
@@ -10,9 +25,17 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
   styleUrls: ['./styles/skills.component.scss'],
 })
 export class SkillsComponent {
-  skillCategories = [
+  constructor(public translationService: TranslationService) {}
+
+  t(key: string): string {
+    return this.translationService.t(key);
+  }
+
+  skillCategories: SkillCategory[] = [
     {
-      title: 'Programming Languages',
+      titleKey: 'programming',
+      titleEn: 'Programming Languages',
+      titleAr: 'لغات البرمجة',
       icon: 'fas fa-code',
       skills: [
         { name: 'C#', icon: 'fab fa-microsoft' },
@@ -22,7 +45,9 @@ export class SkillsComponent {
       ],
     },
     {
-      title: 'Backend Development',
+      titleKey: 'backend',
+      titleEn: 'Backend Development',
+      titleAr: 'تطوير الـ Backend',
       icon: 'fas fa-server',
       skills: [
         { name: '.NET CORE', icon: 'fab fa-windows' },
@@ -30,7 +55,9 @@ export class SkillsComponent {
       ],
     },
     {
-      title: 'Frontend Development',
+      titleKey: 'frontend',
+      titleEn: 'Frontend Development',
+      titleAr: 'تطوير الـ Frontend',
       icon: 'fas fa-laptop-code',
       skills: [
         { name: 'Angular', icon: 'fab fa-angular' },
@@ -40,7 +67,9 @@ export class SkillsComponent {
       ],
     },
     {
-      title: 'Databases',
+      titleKey: 'databases',
+      titleEn: 'Databases',
+      titleAr: 'قواعد البيانات',
       icon: 'fas fa-database',
       skills: [
         { name: 'MS SQL Server', icon: 'fas fa-database' },
@@ -48,7 +77,9 @@ export class SkillsComponent {
       ],
     },
     {
-      title: 'DevOps & Tools',
+      titleKey: 'devops',
+      titleEn: 'DevOps & Tools',
+      titleAr: 'DevOps والأدوات',
       icon: 'fas fa-tools',
       skills: [
         { name: 'GitHub Actions', icon: 'fab fa-github' },
@@ -56,15 +87,33 @@ export class SkillsComponent {
       ],
     },
     {
-      title: 'Other Skills',
+      titleKey: 'other',
+      titleEn: 'Other Skills',
+      titleAr: 'مهارات أخرى',
       icon: 'fas fa-brain',
       skills: [
-        { name: 'Problem Solving', icon: 'fas fa-puzzle-piece' },
+        {
+          name: 'Problem Solving',
+          nameAr: 'حل المشكلات',
+          icon: 'fas fa-puzzle-piece',
+        },
         { name: 'Redis', icon: 'fas fa-database' },
         { name: 'RTC', icon: 'fas fa-comments' },
         { name: 'OOP', icon: 'fas fa-cubes' },
-        { name: 'Clean Code', icon: 'fas fa-code' },
+        { name: 'Clean Code', nameAr: 'Clean Code', icon: 'fas fa-code' },
       ],
     },
   ];
+
+  getCategoryTitle(category: SkillCategory): string {
+    return this.translationService.currentLang() === 'ar'
+      ? category.titleAr
+      : category.titleEn;
+  }
+
+  getSkillName(skill: Skill): string {
+    return this.translationService.currentLang() === 'ar' && skill.nameAr
+      ? skill.nameAr
+      : skill.name;
+  }
 }

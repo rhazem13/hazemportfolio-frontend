@@ -1,20 +1,21 @@
 <section id="contact" class="contact-section">
   <div class="container">
-    <h2 class="section-title" appScrollReveal="jello">Get In Touch</h2>
+    <h2 class="section-title" appScrollReveal="jello">
+      {{ t("contact.title") }}
+    </h2>
     <div class="contact-content">
       <!-- Contact Information -->
       <div class="contact-info" appScrollReveal="fadeInLeft" [delay]="200">
-        <h3>Let's Connect</h3>
+        <h3>{{ t("contact.subtitle") }}</h3>
         <p>
-          Feel free to reach out for opportunities, collaborations, or just to
-          say hello!
+          {{ t("contact.description") }}
         </p>
 
         <div class="info-items">
           <div class="info-item">
             <i class="fas fa-envelope"></i>
             <div class="info-text">
-              <h4>Email</h4>
+              <h4>{{ t("contact.email") }}</h4>
               <a href="mailto:{{ contactInfo.email }}">{{
                 contactInfo.email
               }}</a>
@@ -24,15 +25,15 @@
           <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
             <div class="info-text">
-              <h4>Location</h4>
-              <p>{{ contactInfo.location }}</p>
+              <h4>{{ t("contact.location") }}</h4>
+              <p>{{ getLocation() }}</p>
             </div>
           </div>
 
           <div class="info-item">
             <i class="fas fa-share-alt"></i>
             <div class="info-text">
-              <h4>Social</h4>
+              <h4>{{ t("contact.social") }}</h4>
               <div class="social-links">
                 @for (social of contactInfo.social; track social) {
                   <a
@@ -54,76 +55,76 @@
       <div class="contact-form" appScrollReveal="fadeInRight" [delay]="300">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">{{ t("contact.form.name") }}</label>
             <input
               type="text"
               id="name"
               formControlName="name"
               [class.invalid]="submitted && f['name'].errors"
-              placeholder="Your name"
+              [placeholder]="t('contact.form.namePlaceholder')"
             />
             @if (submitted && f["name"].errors) {
               <div class="error-message">
                 @if (f["name"].errors["required"]) {
-                  <span>Name is required</span>
+                  <span>{{ t("contact.errors.nameRequired") }}</span>
                 } @else if (f["name"].errors["minlength"]) {
-                  <span>Name must be at least 2 characters</span>
+                  <span>{{ t("contact.errors.nameMinLength") }}</span>
                 }
               </div>
             }
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">{{ t("contact.form.email") }}</label>
             <input
               type="email"
               id="email"
               formControlName="email"
               [class.invalid]="submitted && f['email'].errors"
-              placeholder="Your email"
+              [placeholder]="t('contact.form.emailPlaceholder')"
             />
             @if (submitted && f["email"].errors) {
               <div class="error-message">
                 @if (f["email"].errors["required"]) {
-                  <span>Email is required</span>
+                  <span>{{ t("contact.errors.emailRequired") }}</span>
                 } @else if (f["email"].errors["email"]) {
-                  <span>Please enter a valid email</span>
+                  <span>{{ t("contact.errors.emailInvalid") }}</span>
                 }
               </div>
             }
           </div>
 
           <div class="form-group">
-            <label for="subject">Subject</label>
+            <label for="subject">{{ t("contact.form.subject") }}</label>
             <input
               type="text"
               id="subject"
               formControlName="subject"
               [class.invalid]="submitted && f['subject'].errors"
-              placeholder="Subject"
+              [placeholder]="t('contact.form.subjectPlaceholder')"
             />
             @if (submitted && f["subject"].errors?.["required"]) {
               <div class="error-message">
-                <span>Subject is required</span>
+                <span>{{ t("contact.errors.subjectRequired") }}</span>
               </div>
             }
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="message">{{ t("contact.form.message") }}</label>
             <textarea
               id="message"
               formControlName="message"
               [class.invalid]="submitted && f['message'].errors"
-              placeholder="Your message"
+              [placeholder]="t('contact.form.messagePlaceholder')"
               rows="5"
             ></textarea>
             @if (submitted && f["message"].errors) {
               <div class="error-message">
                 @if (f["message"].errors["required"]) {
-                  <span>Message is required</span>
+                  <span>{{ t("contact.errors.messageRequired") }}</span>
                 } @else if (f["message"].errors["minlength"]) {
-                  <span>Message must be at least 10 characters</span>
+                  <span>{{ t("contact.errors.messageMinLength") }}</span>
                 }
               </div>
             }
@@ -134,13 +135,13 @@
             class="submit-button"
             [disabled]="submitted && !contactForm.valid"
           >
-            Send Message
+            {{ t("contact.form.send") }}
           </button>
 
           @if (submitSuccess) {
             <div class="success-message">
               <i class="fas fa-check-circle"></i>
-              Thank you for your message! I'll get back to you soon.
+              {{ t("contact.form.success") }}
             </div>
           }
         </form>

@@ -3,23 +3,52 @@
     <div class="logo">Hazem</div>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#home">{{ t("nav.home") }}</a>
+        </li>
+        <li>
+          <a href="#about">{{ t("nav.about") }}</a>
+        </li>
+        <li>
+          <a href="#experience">{{ t("nav.experience") }}</a>
+        </li>
+        <li>
+          <a href="#education">{{ t("nav.education") }}</a>
+        </li>
+        <li>
+          <a href="#skills">{{ t("nav.skills") }}</a>
+        </li>
+        <li>
+          <a href="#projects">{{ t("nav.projects") }}</a>
+        </li>
+        <li>
+          <a href="#contact">{{ t("nav.contact") }}</a>
+        </li>
       </ul>
-      <button class="theme-toggle" (click)="toggleTheme()">
-        <i
-          class="fas"
-          [ngClass]="{
-            'fa-sun': isDark,
-            'fa-moon': !isDark
-          }"
-        ></i>
-      </button>
+      <div class="nav-actions">
+        <button
+          class="lang-toggle"
+          (click)="toggleLanguage()"
+          [attr.aria-label]="
+            currentLang() === 'en'
+              ? 'Switch to Arabic'
+              : 'التبديل إلى الإنجليزية'
+          "
+        >
+          <span class="lang-text">{{
+            currentLang() === "en" ? "عربي" : "EN"
+          }}</span>
+        </button>
+        <button class="theme-toggle" (click)="toggleTheme()">
+          <i
+            class="fas"
+            [ngClass]="{
+              'fa-sun': isDark,
+              'fa-moon': !isDark,
+            }"
+          ></i>
+        </button>
+      </div>
     </div>
   </div>
 </nav>

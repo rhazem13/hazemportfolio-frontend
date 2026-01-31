@@ -215,3 +215,22 @@
     }
   }
 }
+
+/* RTL Support */
+:host-context(html[dir="rtl"]) {
+  .skill-category {
+    text-align: right;
+  }
+
+  .category-header {
+    flex-direction: row-reverse;
+
+    h3 {
+      text-align: right;
+    }
+  }
+
+  .skill-item {
+    flex-direction: row-reverse;
+  }
+}

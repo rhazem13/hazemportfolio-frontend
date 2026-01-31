@@ -1236,3 +1236,18 @@
     }
   }
 }
+
+/* RTL Support */
+:host-context(html[dir="rtl"]) {
+  .hero-text {
+    text-align: right;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+  }
+
+  .cta-buttons {
+    justify-content: flex-end;
+  }
+}

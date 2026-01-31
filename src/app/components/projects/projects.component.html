@@ -1,8 +1,10 @@
 <section id="projects" class="projects-section">
   <div class="container">
-    <h2 class="section-title" appScrollReveal="fadeInUp">{{ sectionTitle }}</h2>
+    <h2 class="section-title" appScrollReveal="fadeInUp">
+      {{ t("projects.title") }}
+    </h2>
     <p class="section-subtitle" appScrollReveal="fadeInUp" [delay]="100">
-      {{ sectionSubtitle }}
+      {{ t("projects.subtitle") }}
     </p>
 
     <div class="projects-grid">
@@ -17,7 +19,7 @@
                 class="project-link"
               >
                 <i class="fab fa-github"></i>
-                View on GitHub
+                {{ t("projects.viewGithub") }}
               </a>
               @if (project.liveUrl) {
                 <a
@@ -26,7 +28,7 @@
                   class="project-link"
                 >
                   <i class="fas fa-external-link-alt"></i>
-                  Live Preview
+                  {{ t("projects.livePreview") }}
                 </a>
               }
             </div>
@@ -37,10 +39,14 @@
               class="project-description-wrapper"
               [class.expanded]="expandedProjects[i]"
             >
-              <p class="project-description">{{ project.description }}</p>
-              @if (project.description.length > 120) {
+              <p class="project-description">{{ getDescription(project) }}</p>
+              @if (getDescription(project).length > 120) {
                 <button class="read-more-btn" (click)="toggleDescription(i)">
-                  {{ expandedProjects[i] ? "Show less" : "Read more" }}
+                  {{
+                    expandedProjects[i]
+                      ? t("projects.showLess")
+                      : t("projects.readMore")
+                  }}
                 </button>
               }
             </div>

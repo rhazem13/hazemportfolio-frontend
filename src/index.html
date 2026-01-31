@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <title>Hazem - Software Engineer Portfolio</title>
@@ -14,15 +14,23 @@
       content="software engineer, web developer, portfolio, projects, programming"
     />
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+    <!-- Google Fonts - Inter (English) & Cairo (Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Prevent theme flash -->
+    <!-- Prevent theme flash and set language/direction -->
     <script>
       (function () {
         try {
+          // Theme handling
           const savedTheme = localStorage.getItem("theme");
           if (savedTheme === "dark") {
             document.documentElement.setAttribute("data-theme", "dark");
@@ -31,6 +39,18 @@
             window.matchMedia("(prefers-color-scheme: dark)").matches
           ) {
             document.documentElement.setAttribute("data-theme", "dark");
+          }
+          // Language/RTL handling
+          const savedLang = localStorage.getItem("language");
+          if (savedLang === "ar") {
+            document.documentElement.setAttribute("lang", "ar");
+            document.documentElement.setAttribute("dir", "rtl");
+          } else if (
+            !savedLang &&
+            navigator.language.toLowerCase().startsWith("ar")
+          ) {
+            document.documentElement.setAttribute("lang", "ar");
+            document.documentElement.setAttribute("dir", "rtl");
           }
         } catch (e) {}
       })();
