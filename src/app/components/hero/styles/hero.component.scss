@@ -5,8 +5,7 @@
   justify-content: center;
   position: relative;
   padding: 4rem 2rem 2.5rem;
-  background: url("/assets/sectiononebackground.webp") center center / cover
-    no-repeat;
+  background-color: #0a1628; /* Fallback color matching image tones */
   color: #f8f9fa;
   overflow: hidden;
 
@@ -19,6 +18,40 @@
       rgba(0, 20, 40, 0.2) 0%,
       rgba(0, 0, 0, 0.35) 100%
     );
+    z-index: 1;
+  }
+}
+
+/* Hero Background with Blur-Up Loading Effect */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  
+  /* Tiny blurred thumbnail as CSS background - loads instantly */
+  background: url("/assets/sectiononebackground-thumb.webp") center center / cover no-repeat;
+  filter: blur(20px);
+  transform: scale(1.1); /* Prevent blur edges from showing */
+  transition: filter 0.5s ease-out, transform 0.5s ease-out;
+
+  &.loaded {
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+
+  .hero-background.loaded & {
+    opacity: 1;
   }
 }
 
@@ -28,7 +61,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0; /* keep birds behind content */
+  z-index: 1; /* Above background, below content */
 }
 
 .bird {
@@ -260,6 +293,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 
   .wind {
     position: absolute;
@@ -337,6 +371,7 @@
   height: 60%;
   overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 
   .ray {
     position: absolute;
@@ -395,6 +430,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 
   .particle {
     position: absolute;
@@ -594,6 +630,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 1;
 
   .shape {
     position: absolute;
@@ -837,6 +874,7 @@
     linear-gradient(90deg, rgba(255, 209, 148, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
+  z-index: 1;
   opacity: 0.45;
   animation: gridFade 10s ease-in-out infinite;
 }
@@ -861,6 +899,7 @@
     transparent 50%
   );
   pointer-events: none;
+  z-index: 1;
   animation: overlayPulse 15s ease-in-out infinite;
 }
 
@@ -885,7 +924,7 @@
   justify-content: space-between;
   gap: 4rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-text {

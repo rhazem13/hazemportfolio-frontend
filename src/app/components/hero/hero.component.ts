@@ -10,9 +10,15 @@ import { TranslationService } from '../../services/translation.service';
   styleUrls: ['./styles/hero.component.scss'],
 })
 export class HeroComponent {
+  heroImageLoaded = false;
+
   constructor(public translationService: TranslationService) {}
 
   t(key: string): string {
     return this.translationService.t(key);
+  }
+
+  onHeroImageLoad(): void {
+    this.heroImageLoaded = true;
   }
 }

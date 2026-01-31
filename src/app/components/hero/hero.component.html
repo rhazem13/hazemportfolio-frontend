@@ -1,4 +1,16 @@
 <section id="home" class="hero">
+  <!-- Hero Background Image with Blur-Up Loading -->
+  <div class="hero-background" [class.loaded]="heroImageLoaded">
+    <img
+      src="/assets/sectiononebackground.webp"
+      alt=""
+      class="hero-bg-image"
+      (load)="onHeroImageLoad()"
+      fetchpriority="high"
+      loading="eager"
+    />
+  </div>
+
   <!-- Flying birds in the sky -->
   <div class="birds-container" aria-hidden="true">
     <div class="bird bird-1">
