@@ -35,7 +35,18 @@ export type ScrollAnimation =
 export class ScrollRevealDirective implements OnInit, OnDestroy {
   @Input('appScrollReveal') animation: ScrollAnimation = 'fadeInUp';
   @Input() delay: number = 0;
-  @Input() threshold: number = 0.15;
+  /**
+   * How much of the element must be visible before triggering (0 = any intersection)
+   * Use 0 for earliest possible trigger. Can be overridden per element.
+   */
+  @Input() threshold: number = 0;
+
+  /**
+   * rootMargin allows pre-triggering before the element fully enters the viewport
+   * default uses a positive bottom margin so elements animate when ~150px away
+   */
+  @Input() rootMargin: string = '0px 0px 150px 0px';
+
   @Input() once: boolean = true;
 
   private observer: IntersectionObserver | null = null;
@@ -84,7 +95,7 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
           }
         });
       },
-      { threshold: this.threshold, rootMargin: '0px 0px -50px 0px' },
+      { threshold: this.threshold, rootMargin: this.rootMargin },
     );
 
     this.observer.observe(this.el.nativeElement);
