@@ -68,12 +68,12 @@ footer {
     gap: 0.5rem;
 
     &::before {
-      content: "⚡";
+      content: "";
       font-size: 0.9rem;
     }
 
     &::after {
-      content: "⚡";
+      content: "";
       font-size: 0.9rem;
     }
   }
