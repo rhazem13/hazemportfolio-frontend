@@ -1,0 +1,55 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-title">{{ sectionTitle }}</h2>
+    <p class="section-subtitle">{{ sectionSubtitle }}</p>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title; let i = $index) {
+        <div class="project-card">
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title" />
+            <div class="project-overlay">
+              <a
+                [href]="project.githubUrl"
+                target="_blank"
+                class="project-link"
+              >
+                <i class="fab fa-github"></i>
+                View on GitHub
+              </a>
+              @if (project.liveUrl) {
+                <a
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  Live Preview
+                </a>
+              }
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <div
+              class="project-description-wrapper"
+              [class.expanded]="expandedProjects[i]"
+            >
+              <p class="project-description">{{ project.description }}</p>
+              @if (project.description.length > 120) {
+                <button class="read-more-btn" (click)="toggleDescription(i)">
+                  {{ expandedProjects[i] ? "Show less" : "Read more" }}
+                </button>
+              }
+            </div>
+            <div class="project-tech">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

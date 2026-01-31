@@ -1,0 +1,249 @@
+.education-section {
+  padding: 5rem 0;
+  background-color: var(--surface-color);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--primary-color),
+      transparent
+    );
+    opacity: 0.3;
+  }
+
+  /* Decorative background */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 160, 160, 0.06) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), #00d4ff);
+      border-radius: 2px;
+    }
+  }
+
+  .education-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        var(--primary-color),
+        #00d4ff,
+        var(--primary-color)
+      );
+      opacity: 0.3;
+      border-radius: 2px;
+    }
+  }
+
+  .education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon-container {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary-color), #00d4ff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 2rem;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 8px 25px rgba(0, 160, 160, 0.35);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Animated ring */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        border: 2px dashed rgba(0, 160, 160, 0.3);
+        animation: rotate 15s linear infinite;
+      }
+
+      i {
+        color: #052023;
+        font-size: 1.6rem;
+      }
+    }
+
+    &:hover .icon-container {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 12px 35px rgba(0, 160, 160, 0.5);
+    }
+
+    .education-content {
+      background-color: var(--card-background);
+      padding: 1.75rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px var(--shadow-color);
+      flex-grow: 1;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), #00d4ff);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      &:hover {
+        transform: translateX(8px);
+        box-shadow: 0 15px 40px var(--shadow-color);
+        border-color: rgba(0, 160, 160, 0.2);
+
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+
+      .degree {
+        color: var(--text-color);
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .institution-year {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .institution {
+          font-weight: 600;
+        }
+
+        .year {
+          background: linear-gradient(135deg, var(--primary-color), #00d4ff);
+          color: #052023;
+          padding: 0.35rem 1rem;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          box-shadow: 0 2px 10px rgba(0, 160, 160, 0.3);
+        }
+      }
+
+      .details {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .education-section {
+    .education-timeline {
+      &::before {
+        left: 35px;
+      }
+    }
+
+    .education-item {
+      .icon-container {
+        width: 60px;
+        height: 60px;
+        margin-right: 1.5rem;
+
+        i {
+          font-size: 1.4rem;
+        }
+      }
+
+      .education-content {
+        padding: 1.5rem;
+
+        .institution-year {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+}

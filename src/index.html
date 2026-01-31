@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hazem - Software Engineer Portfolio</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio website of Hazem - Software Engineer showcasing projects, skills, and professional experience"
+    />
+    <meta
+      name="keywords"
+      content="software engineer, web developer, portfolio, projects, programming"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Prevent theme flash -->
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          } else if (
+            !savedTheme &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
