@@ -15,33 +15,381 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.45) 100%
+      180deg,
+      rgba(0, 20, 40, 0.2) 0%,
+      rgba(0, 0, 0, 0.35) 100%
     );
-    backdrop-filter: blur(0px);
-  }
-
-  /* Animated gradient orbs */
-  &::after {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(
-      circle,
-      rgba(0, 255, 255, 0.15) 0%,
-      transparent 70%
-    );
-    border-radius: 50%;
-    top: -200px;
-    right: -200px;
-    animation: float 8s ease-in-out infinite;
-    pointer-events: none;
   }
 }
 
-/* Floating particles decoration */
+/* ========== FLYING BIRDS ========== */
+.birds-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0; /* keep birds behind content */
+}
+
+.bird {
+  position: absolute;
+  transform-style: preserve-3d;
+  perspective: 500px;
+
+  .wing {
+    position: absolute;
+    background: linear-gradient(
+      135deg,
+      rgba(30, 30, 30, 0.9),
+      rgba(60, 60, 60, 0.7)
+    );
+    border-radius: 50% 50% 0 50%;
+    transform-origin: right center;
+
+    &.wing-left {
+      animation: flapLeft 0.3s ease-in-out infinite alternate;
+    }
+
+    &.wing-right {
+      transform: scaleX(-1);
+      animation: flapRight 0.3s ease-in-out infinite alternate;
+    }
+  }
+}
+
+/* Individual bird positioning and sizing */
+.bird-1 {
+  top: 8%;
+  animation: flyAcross1 18s linear infinite;
+
+  .wing {
+    width: 20px;
+    height: 8px;
+  }
+  .wing-left {
+    left: -10px;
+  }
+  .wing-right {
+    right: -10px;
+  }
+}
+
+.bird-2 {
+  top: 12%;
+  animation: flyAcross2 22s linear infinite;
+  animation-delay: -5s;
+
+  .wing {
+    width: 16px;
+    height: 6px;
+  }
+  .wing-left {
+    left: -8px;
+  }
+  .wing-right {
+    right: -8px;
+  }
+}
+
+.bird-3 {
+  top: 6%;
+  animation: flyAcross1 20s linear infinite;
+  animation-delay: -10s;
+
+  .wing {
+    width: 18px;
+    height: 7px;
+  }
+  .wing-left {
+    left: -9px;
+  }
+  .wing-right {
+    right: -9px;
+  }
+}
+
+.bird-4 {
+  top: 15%;
+  animation: flyAcross3 25s linear infinite;
+  animation-delay: -3s;
+
+  .wing {
+    width: 14px;
+    height: 5px;
+  }
+  .wing-left {
+    left: -7px;
+  }
+  .wing-right {
+    right: -7px;
+  }
+}
+
+.bird-5 {
+  top: 10%;
+  animation: flyAcross2 19s linear infinite;
+  animation-delay: -12s;
+
+  .wing {
+    width: 22px;
+    height: 9px;
+  }
+  .wing-left {
+    left: -11px;
+  }
+  .wing-right {
+    right: -11px;
+  }
+}
+
+.bird-6 {
+  top: 18%;
+  animation: flyAcross1 24s linear infinite;
+  animation-delay: -8s;
+
+  .wing {
+    width: 12px;
+    height: 5px;
+  }
+  .wing-left {
+    left: -6px;
+  }
+  .wing-right {
+    right: -6px;
+  }
+}
+
+.bird-7 {
+  top: 5%;
+  animation: flyAcross3 21s linear infinite;
+  animation-delay: -15s;
+
+  .wing {
+    width: 15px;
+    height: 6px;
+  }
+  .wing-left {
+    left: -7px;
+  }
+  .wing-right {
+    right: -7px;
+  }
+}
+
+@keyframes flapLeft {
+  0% {
+    transform: rotateZ(-30deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateZ(20deg) rotateY(-20deg);
+  }
+}
+
+@keyframes flapRight {
+  0% {
+    transform: scaleX(-1) rotateZ(-30deg) rotateY(0deg);
+  }
+  100% {
+    transform: scaleX(-1) rotateZ(20deg) rotateY(-20deg);
+  }
+}
+
+@keyframes flyAcross1 {
+  0% {
+    left: -5%;
+    transform: translateY(0) scale(0.8);
+  }
+  25% {
+    transform: translateY(-15px) scale(0.85);
+  }
+  50% {
+    transform: translateY(10px) scale(0.9);
+  }
+  75% {
+    transform: translateY(-8px) scale(0.85);
+  }
+  100% {
+    left: 105%;
+    transform: translateY(0) scale(0.8);
+  }
+}
+
+@keyframes flyAcross2 {
+  0% {
+    left: -8%;
+    transform: translateY(0) scale(0.7);
+  }
+  20% {
+    transform: translateY(-20px) scale(0.75);
+  }
+  40% {
+    transform: translateY(15px) scale(0.7);
+  }
+  60% {
+    transform: translateY(-10px) scale(0.75);
+  }
+  80% {
+    transform: translateY(5px) scale(0.7);
+  }
+  100% {
+    left: 108%;
+    transform: translateY(0) scale(0.7);
+  }
+}
+
+@keyframes flyAcross3 {
+  0% {
+    left: -3%;
+    transform: translateY(0) scale(0.6);
+  }
+  33% {
+    transform: translateY(-25px) scale(0.65);
+  }
+  66% {
+    transform: translateY(20px) scale(0.6);
+  }
+  100% {
+    left: 103%;
+    transform: translateY(0) scale(0.6);
+  }
+}
+
+/* ========== SHOOTING STARS ========== */
+.wind-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  .wind {
+    position: absolute;
+    top: 10%;
+    left: -40%;
+    width: 60%;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 209, 148, 0),
+      rgba(255, 209, 148, 0.45),
+      rgba(255, 209, 148, 0)
+    );
+    filter: blur(6px);
+    opacity: 0.7;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .wind-1 {
+    top: 12%;
+    animation: windFlow 8s linear infinite;
+    animation-delay: 0s;
+  }
+  .wind-2 {
+    top: 28%;
+    animation: windFlow 10s linear infinite;
+    animation-delay: 2s;
+    opacity: 0.5;
+    width: 50%;
+  }
+  .wind-3 {
+    top: 45%;
+    animation: windFlow 12s linear infinite;
+    animation-delay: 4s;
+    opacity: 0.6;
+    width: 70%;
+  }
+  .wind-4 {
+    top: 60%;
+    animation: windFlow 9s linear infinite;
+    animation-delay: 1s;
+    opacity: 0.45;
+    width: 65%;
+  }
+}
+
+@keyframes windFlow {
+  0% {
+    transform: translateX(0) translateY(0) scaleX(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(160%) translateY(-6px) scaleX(1.05);
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(320%) translateY(0) scaleX(0.9);
+    opacity: 0;
+  }
+}
+
+/* ========== LIGHT RAYS ========== */
+.light-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  overflow: hidden;
+  pointer-events: none;
+
+  .ray {
+    position: absolute;
+    top: -50%;
+    width: 2px;
+    height: 200%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 220, 150, 0.35),
+      rgba(255, 200, 120, 0.15) 30%,
+      transparent 70%
+    );
+    transform-origin: top center;
+    opacity: 0;
+    animation: rayShine 8s ease-in-out infinite;
+
+    &:nth-child(1) {
+      left: 20%;
+      transform: rotate(15deg);
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      left: 50%;
+      transform: rotate(-5deg);
+      animation-delay: 3s;
+    }
+
+    &:nth-child(3) {
+      left: 75%;
+      transform: rotate(10deg);
+      animation-delay: 6s;
+    }
+
+    &:nth-child(4) {
+      left: 35%;
+      transform: rotate(-8deg);
+      animation-delay: 4.5s;
+    }
+  }
+}
+
+@keyframes rayShine {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ========== FLOATING PARTICLES ========== */
 .hero-particles {
   position: absolute;
   inset: 0;
@@ -50,67 +398,485 @@
 
   .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(116, 231, 231, 0.6);
     border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
 
-    &:nth-child(1) {
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-      animation-duration: 7s;
+    &.small {
+      width: 3px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+      animation: floatParticle 10s ease-in-out infinite;
+
+      &:nth-child(1) {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      &:nth-child(2) {
+        top: 35%;
+        left: 25%;
+        animation-delay: 1s;
+      }
+      &:nth-child(3) {
+        top: 50%;
+        left: 15%;
+        animation-delay: 2s;
+      }
+      &:nth-child(4) {
+        top: 65%;
+        left: 85%;
+        animation-delay: 1.5s;
+      }
+      &:nth-child(5) {
+        top: 75%;
+        left: 70%;
+        animation-delay: 0.5s;
+      }
+      &:nth-child(6) {
+        top: 40%;
+        left: 90%;
+        animation-delay: 2.5s;
+      }
+      &:nth-child(7) {
+        top: 25%;
+        left: 75%;
+        animation-delay: 3s;
+      }
+      &:nth-child(8) {
+        top: 85%;
+        left: 30%;
+        animation-delay: 1.2s;
+      }
+      &:nth-child(9) {
+        top: 15%;
+        left: 45%;
+        animation-delay: 0.8s;
+      }
+      &:nth-child(10) {
+        top: 60%;
+        left: 5%;
+        animation-delay: 1.8s;
+      }
+      &:nth-child(11) {
+        top: 80%;
+        left: 55%;
+        animation-delay: 2.2s;
+      }
+      &:nth-child(12) {
+        top: 45%;
+        left: 65%;
+        animation-delay: 0.3s;
+      }
     }
-    &:nth-child(2) {
-      top: 40%;
-      left: 20%;
-      animation-delay: 1s;
-      animation-duration: 5s;
+
+    &.medium {
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 209, 148, 0.9),
+        transparent 70%
+      );
+      box-shadow: 0 0 15px rgba(255, 180, 72, 0.42);
+      animation: floatGlow 12s ease-in-out infinite;
+
+      &:nth-child(13) {
+        top: 30%;
+        left: 50%;
+        animation-delay: 0s;
+      }
+      &:nth-child(14) {
+        top: 55%;
+        left: 35%;
+        animation-delay: 2s;
+      }
+      &:nth-child(15) {
+        top: 70%;
+        left: 60%;
+        animation-delay: 4s;
+      }
+      &:nth-child(16) {
+        top: 45%;
+        left: 80%;
+        animation-delay: 1s;
+      }
+      &:nth-child(17) {
+        top: 20%;
+        left: 20%;
+        animation-delay: 3s;
+      }
+      &:nth-child(18) {
+        top: 80%;
+        left: 45%;
+        animation-delay: 2.5s;
+      }
     }
-    &:nth-child(3) {
-      top: 60%;
-      left: 80%;
-      animation-delay: 2s;
-      animation-duration: 8s;
-    }
-    &:nth-child(4) {
-      top: 80%;
-      left: 70%;
-      animation-delay: 0.5s;
-      animation-duration: 6s;
-    }
-    &:nth-child(5) {
-      top: 30%;
-      left: 90%;
-      animation-delay: 1.5s;
-      animation-duration: 7s;
-    }
-    &:nth-child(6) {
-      top: 70%;
-      left: 15%;
-      animation-delay: 2.5s;
-      animation-duration: 5.5s;
+
+    &.large {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 209, 148, 0.12),
+        transparent 70%
+      );
+      filter: blur(3px);
+      animation: floatOrb 18s ease-in-out infinite;
+
+      &:nth-child(19) {
+        top: 10%;
+        left: 60%;
+        width: 150px;
+        height: 150px;
+      }
+      &:nth-child(20) {
+        top: 50%;
+        left: 5%;
+        width: 120px;
+        height: 120px;
+        animation-delay: 5s;
+      }
+      &:nth-child(21) {
+        top: 70%;
+        left: 75%;
+        animation-delay: 10s;
+      }
+      &:nth-child(22) {
+        top: 30%;
+        left: 85%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 3s;
+      }
     }
   }
 }
 
-@keyframes float {
+@keyframes floatParticle {
   0%,
   100% {
     transform: translateY(0) translateX(0);
-  }
-  25% {
-    transform: translateY(-15px) translateX(5px);
+    opacity: 0.6;
   }
   50% {
-    transform: translateY(-25px) translateX(-5px);
-  }
-  75% {
-    transform: translateY(-10px) translateX(10px);
+    transform: translateY(-30px) translateX(15px);
+    opacity: 1;
   }
 }
 
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(30px, -50px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* ========== GEOMETRIC SHAPES ========== */
+.hero-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  .shape {
+    position: absolute;
+
+    &.ring-pulse {
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(255, 200, 120, 0.18);
+      border-radius: 50%;
+      top: 15%;
+      right: 10%;
+      animation: ringPulse 4s ease-in-out infinite;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        border: 1px solid rgba(255, 200, 120, 0.1);
+        border-radius: 50%;
+        animation: ringPulse 4s ease-in-out infinite reverse;
+      }
+
+      &::after {
+        inset: -40px;
+        animation-delay: 0.5s;
+      }
+
+      &.ring-2 {
+        width: 120px;
+        height: 120px;
+        top: auto;
+        bottom: 20%;
+        right: auto;
+        left: 5%;
+        animation-duration: 5s;
+        animation-delay: 1s;
+      }
+    }
+
+    &.hexagon {
+      width: 60px;
+      height: 35px;
+      background: rgba(255, 209, 148, 0.08);
+      position: absolute;
+      bottom: 30%;
+      left: 8%;
+      animation: floatHex 10s ease-in-out infinite;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+      &.hex-2 {
+        width: 100px;
+        height: 58px;
+        top: 20%;
+        bottom: auto;
+        left: auto;
+        right: 5%;
+        animation-delay: 2s;
+        animation-duration: 12s;
+        background: rgba(255, 209, 148, 0.06);
+      }
+
+      &.hex-3 {
+        width: 40px;
+        height: 23px;
+        top: 50%;
+        bottom: auto;
+        left: 15%;
+        animation-delay: 1s;
+        animation-duration: 8s;
+      }
+
+      &.hex-4 {
+        width: 80px;
+        height: 46px;
+        top: 10%;
+        bottom: auto;
+        left: 30%;
+        animation-delay: 3s;
+        animation-duration: 14s;
+        background: rgba(255, 209, 148, 0.05);
+      }
+
+      &.hex-5 {
+        width: 50px;
+        height: 29px;
+        top: auto;
+        bottom: 15%;
+        left: auto;
+        right: 25%;
+        animation-delay: 0.5s;
+        animation-duration: 9s;
+      }
+    }
+
+    &.diamond {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 209, 148, 0.16),
+        transparent
+      );
+      transform: rotate(45deg);
+      position: absolute;
+      top: 40%;
+      right: 15%;
+      animation: floatDiamond 8s ease-in-out infinite;
+
+      &.diamond-2 {
+        width: 20px;
+        height: 20px;
+        top: 60%;
+        right: auto;
+        left: 25%;
+        animation-delay: 2s;
+        animation-duration: 10s;
+      }
+    }
+
+    &.triangle {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 35px solid rgba(255, 209, 148, 0.08);
+      position: absolute;
+      top: 25%;
+      left: 20%;
+      animation: floatTriangle 11s ease-in-out infinite;
+
+      &.triangle-2 {
+        border-left-width: 15px;
+        border-right-width: 15px;
+        border-bottom-width: 26px;
+        top: auto;
+        bottom: 35%;
+        left: auto;
+        right: 8%;
+        animation-delay: 3s;
+        animation-duration: 9s;
+      }
+    }
+
+    &.circle-dot {
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 209, 148, 0.3);
+      border-radius: 50%;
+      position: absolute;
+      top: 35%;
+      left: 45%;
+      animation: pulseDot 3s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255, 209, 148, 0.4);
+
+      &.dot-2 {
+        width: 6px;
+        height: 6px;
+        top: 55%;
+        left: 70%;
+        animation-delay: 1s;
+      }
+
+      &.dot-3 {
+        width: 10px;
+        height: 10px;
+        top: 15%;
+        left: 55%;
+        animation-delay: 2s;
+      }
+    }
+  }
+}
+
+@keyframes ringPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes floatHex {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) rotate(30deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes floatTriangle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-25px) rotate(15deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes floatDiamond {
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(45deg) translateY(-25px);
+    opacity: 0.7;
+  }
+}
+
+/* ========== GRID OVERLAY ========== */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 209, 148, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 209, 148, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  opacity: 0.45;
+  animation: gridFade 10s ease-in-out infinite;
+}
+
+@keyframes gridFade {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ========== GRADIENT OVERLAY ========== */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(255, 209, 148, 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  animation: overlayPulse 15s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* ========== HERO CONTENT ========== */
 .hero-content {
   max-width: 1200px;
   width: 100%;
@@ -372,6 +1138,15 @@
   }
 
   .hero-text {
+    h1 {
+      display: block;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
     p {
       margin-left: auto;
       margin-right: auto;
