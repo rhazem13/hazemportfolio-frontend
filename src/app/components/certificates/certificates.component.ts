@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface CertificateItem {
   id: string;
@@ -14,7 +15,7 @@ interface CertificateItem {
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective],
   templateUrl: './certificates.component.html',
   styleUrls: ['./styles/certificates.component.scss'],
 })

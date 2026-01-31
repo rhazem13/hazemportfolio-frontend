@@ -1,11 +1,13 @@
 <section id="projects" class="projects-section">
   <div class="container">
-    <h2 class="section-title">{{ sectionTitle }}</h2>
-    <p class="section-subtitle">{{ sectionSubtitle }}</p>
+    <h2 class="section-title" appScrollReveal="fadeInUp">{{ sectionTitle }}</h2>
+    <p class="section-subtitle" appScrollReveal="fadeInUp" [delay]="100">
+      {{ sectionSubtitle }}
+    </p>
 
     <div class="projects-grid">
       @for (project of projects; track project.title; let i = $index) {
-        <div class="project-card">
+        <div class="project-card" appScrollReveal="fadeInUp" [delay]="i * 100">
           <div class="project-image">
             <img [src]="project.image" [alt]="project.title" />
             <div class="project-overlay">

@@ -1,21 +1,25 @@
 <section id="education" class="education-section">
   <div class="container">
-    <h2 class="section-title">Education</h2>
+    <h2 class="section-title" appScrollReveal="glitchIn">Education</h2>
     <div class="education-timeline">
-      @for (item of educationItems; track item) {
-      <div class="education-item">
-        <div class="icon-container">
-          <i [class]="item.icon"></i>
-        </div>
-        <div class="education-content">
-          <h3 class="degree">{{ item.degree }}</h3>
-          <div class="institution-year">
-            <span class="institution">{{ item.institution }}</span>
-            <span class="year">{{ item.year }}</span>
+      @for (item of educationItems; track item; let i = $index) {
+        <div
+          class="education-item"
+          appScrollReveal="fadeInRight"
+          [delay]="i * 200"
+        >
+          <div class="icon-container">
+            <i [class]="item.icon"></i>
           </div>
-          <p class="details">{{ item.details }}</p>
+          <div class="education-content">
+            <h3 class="degree">{{ item.degree }}</h3>
+            <div class="institution-year">
+              <span class="institution">{{ item.institution }}</span>
+              <span class="year">{{ item.year }}</span>
+            </div>
+            <p class="details">{{ item.details }}</p>
+          </div>
         </div>
-      </div>
       }
     </div>
   </div>

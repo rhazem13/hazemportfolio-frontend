@@ -1182,7 +1182,8 @@
 @media (max-width: 576px) {
   .hero {
     padding: 1rem;
-    min-height: calc(100vh - 8rem);
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
   }
 
   .hero-content {

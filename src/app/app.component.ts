@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 import { AboutComponent } from './components/about/about.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CustomCursorComponent } from './components/custom-cursor/custom-cursor.component';
 import { EducationComponent } from './components/education/education.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ScrollSurprisesComponent } from './components/scroll-surprises/scroll-surprises.component';
 import { SkillsComponent } from './components/skills/skills.component';
 
 @Component({
@@ -26,8 +28,14 @@ import { SkillsComponent } from './components/skills/skills.component';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
+    CustomCursorComponent,
+    ScrollSurprisesComponent,
   ],
   template: `
+    <!-- Custom cursor and scroll surprises -->
+    <app-custom-cursor></app-custom-cursor>
+    <app-scroll-surprises></app-scroll-surprises>
+
     <div class="app-container">
       <app-navbar></app-navbar>
       <main>

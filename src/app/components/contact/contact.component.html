@@ -1,9 +1,9 @@
 <section id="contact" class="contact-section">
   <div class="container">
-    <h2 class="section-title">Get In Touch</h2>
+    <h2 class="section-title" appScrollReveal="jello">Get In Touch</h2>
     <div class="contact-content">
       <!-- Contact Information -->
-      <div class="contact-info">
+      <div class="contact-info" appScrollReveal="fadeInLeft" [delay]="200">
         <h3>Let's Connect</h3>
         <p>
           Feel free to reach out for opportunities, collaborations, or just to
@@ -35,14 +35,14 @@
               <h4>Social</h4>
               <div class="social-links">
                 @for (social of contactInfo.social; track social) {
-                <a
-                  [href]="social.url"
-                  target="_blank"
-                  rel="noopener"
-                  [title]="social.name"
-                >
-                  <i [class]="social.icon"></i>
-                </a>
+                  <a
+                    [href]="social.url"
+                    target="_blank"
+                    rel="noopener"
+                    [title]="social.name"
+                  >
+                    <i [class]="social.icon"></i>
+                  </a>
                 }
               </div>
             </div>
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Contact Form -->
-      <div class="contact-form">
+      <div class="contact-form" appScrollReveal="fadeInRight" [delay]="300">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name">Name</label>
@@ -62,14 +62,14 @@
               [class.invalid]="submitted && f['name'].errors"
               placeholder="Your name"
             />
-            @if (submitted && f['name'].errors) {
-            <div class="error-message">
-              @if (f['name'].errors['required']) {
-              <span>Name is required</span>
-              } @else if (f['name'].errors['minlength']) {
-              <span>Name must be at least 2 characters</span>
-              }
-            </div>
+            @if (submitted && f["name"].errors) {
+              <div class="error-message">
+                @if (f["name"].errors["required"]) {
+                  <span>Name is required</span>
+                } @else if (f["name"].errors["minlength"]) {
+                  <span>Name must be at least 2 characters</span>
+                }
+              </div>
             }
           </div>
 
@@ -82,14 +82,14 @@
               [class.invalid]="submitted && f['email'].errors"
               placeholder="Your email"
             />
-            @if (submitted && f['email'].errors) {
-            <div class="error-message">
-              @if (f['email'].errors['required']) {
-              <span>Email is required</span>
-              } @else if (f['email'].errors['email']) {
-              <span>Please enter a valid email</span>
-              }
-            </div>
+            @if (submitted && f["email"].errors) {
+              <div class="error-message">
+                @if (f["email"].errors["required"]) {
+                  <span>Email is required</span>
+                } @else if (f["email"].errors["email"]) {
+                  <span>Please enter a valid email</span>
+                }
+              </div>
             }
           </div>
 
@@ -102,10 +102,10 @@
               [class.invalid]="submitted && f['subject'].errors"
               placeholder="Subject"
             />
-            @if (submitted && f['subject'].errors?.['required']) {
-            <div class="error-message">
-              <span>Subject is required</span>
-            </div>
+            @if (submitted && f["subject"].errors?.["required"]) {
+              <div class="error-message">
+                <span>Subject is required</span>
+              </div>
             }
           </div>
 
@@ -118,14 +118,14 @@
               placeholder="Your message"
               rows="5"
             ></textarea>
-            @if (submitted && f['message'].errors) {
-            <div class="error-message">
-              @if (f['message'].errors['required']) {
-              <span>Message is required</span>
-              } @else if (f['message'].errors['minlength']) {
-              <span>Message must be at least 10 characters</span>
-              }
-            </div>
+            @if (submitted && f["message"].errors) {
+              <div class="error-message">
+                @if (f["message"].errors["required"]) {
+                  <span>Message is required</span>
+                } @else if (f["message"].errors["minlength"]) {
+                  <span>Message must be at least 10 characters</span>
+                }
+              </div>
             }
           </div>
 
@@ -138,10 +138,10 @@
           </button>
 
           @if (submitSuccess) {
-          <div class="success-message">
-            <i class="fas fa-check-circle"></i>
-            Thank you for your message! I'll get back to you soon.
-          </div>
+            <div class="success-message">
+              <i class="fas fa-check-circle"></i>
+              Thank you for your message! I'll get back to you soon.
+            </div>
           }
         </form>
       </div>

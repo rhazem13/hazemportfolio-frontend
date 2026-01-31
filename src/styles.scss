@@ -584,3 +584,355 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================
+   CUSTOM CURSOR STYLES
+   ========================================== */
+
+/* Hide default cursor on desktop */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
+/* Keep cursor visible on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  *,
+  *::before,
+  *::after {
+    cursor: auto !important;
+  }
+}
+
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================== */
+
+/* Shake animation */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Jello animation */
+@keyframes jello {
+  0%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+}
+
+.animate-jello {
+  animation: jello 1s ease both;
+}
+
+/* Rainbow animation */
+@keyframes rainbowGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    border-color: #ff0000;
+  }
+  17% {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+    border-color: #ffa500;
+  }
+  33% {
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    border-color: #ffff00;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    border-color: #00ff00;
+  }
+  67% {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    border-color: #0000ff;
+  }
+  83% {
+    box-shadow: 0 0 20px rgba(75, 0, 130, 0.5);
+    border-color: #4b0082;
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(238, 130, 238, 0.5);
+    border-color: #ee82ee;
+  }
+}
+
+.animate-rainbow {
+  animation: rainbowGlow 3s linear infinite;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stagger-children.animated > *:nth-child(1) {
+  animation: fadeInUp 0.6s ease forwards 0.1s;
+}
+.stagger-children.animated > *:nth-child(2) {
+  animation: fadeInUp 0.6s ease forwards 0.2s;
+}
+.stagger-children.animated > *:nth-child(3) {
+  animation: fadeInUp 0.6s ease forwards 0.3s;
+}
+.stagger-children.animated > *:nth-child(4) {
+  animation: fadeInUp 0.6s ease forwards 0.4s;
+}
+.stagger-children.animated > *:nth-child(5) {
+  animation: fadeInUp 0.6s ease forwards 0.5s;
+}
+.stagger-children.animated > *:nth-child(6) {
+  animation: fadeInUp 0.6s ease forwards 0.6s;
+}
+.stagger-children.animated > *:nth-child(7) {
+  animation: fadeInUp 0.6s ease forwards 0.7s;
+}
+.stagger-children.animated > *:nth-child(8) {
+  animation: fadeInUp 0.6s ease forwards 0.8s;
+}
+
+/* Parallax scroll effect */
+.parallax-slow {
+  transition: transform 0.1s linear;
+}
+
+.parallax-medium {
+  transition: transform 0.1s linear;
+}
+
+.parallax-fast {
+  transition: transform 0.1s linear;
+}
+
+/* Magnetic hover effect */
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Tilt 3D effect */
+.tilt-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.tilt-3d:hover {
+  transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* Glow on scroll */
+.scroll-glow {
+  transition: box-shadow 0.5s ease;
+}
+
+.scroll-glow.in-view {
+  box-shadow:
+    0 0 40px rgba(0, 255, 255, 0.3),
+    0 0 80px rgba(0, 255, 255, 0.1);
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text-reveal {
+  animation: textReveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* Bounce entrance */
+@keyframes bounceEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(100px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1) translateY(-20px);
+  }
+  70% {
+    transform: scale(0.9) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.bounce-entrance {
+  animation: bounceEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Flip card entrance */
+@keyframes flipEntrance {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0);
+  }
+}
+
+.flip-entrance {
+  animation: flipEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Zoom blur entrance */
+@keyframes zoomBlur {
+  0% {
+    opacity: 0;
+    transform: scale(2);
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.zoom-blur-entrance {
+  animation: zoomBlur 0.6s ease-out forwards;
+}
+
+/* Wave animation for sections */
+@keyframes sectionWave {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+/* Floating elements */
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-element {
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.float-element-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.float-element-delay-2 {
+  animation-delay: 1s;
+}
+
+.float-element-delay-3 {
+  animation-delay: 1.5s;
+}
+
+/* Glitch text effect */
+@keyframes glitchText {
+  0%,
+  100% {
+    text-shadow:
+      -2px 0 #ff00ff,
+      2px 0 #00ffff;
+  }
+  25% {
+    text-shadow:
+      2px 0 #ff00ff,
+      -2px 0 #00ffff;
+  }
+  50% {
+    text-shadow:
+      -2px 2px #ff00ff,
+      2px -2px #00ffff;
+  }
+  75% {
+    text-shadow:
+      2px -2px #ff00ff,
+      -2px 2px #00ffff;
+  }
+}
+
+.glitch-text:hover {
+  animation: glitchText 0.3s linear infinite;
+}
+
+/* Neon flicker */
+@keyframes neonFlicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow:
+      0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color),
+      0 0 20px var(--primary-color),
+      0 0 40px var(--primary-color);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.neon-flicker {
+  animation: neonFlicker 2s linear infinite;
+}
