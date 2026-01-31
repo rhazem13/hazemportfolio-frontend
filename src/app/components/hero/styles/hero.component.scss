@@ -27,12 +27,15 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  
+
   /* Tiny blurred thumbnail as CSS background - loads instantly */
-  background: url("/assets/sectiononebackground-thumb.webp") center center / cover no-repeat;
+  background: url("/assets/sectiononebackground-thumb.webp") center center /
+    cover no-repeat;
   filter: blur(20px);
   transform: scale(1.1); /* Prevent blur edges from showing */
-  transition: filter 0.5s ease-out, transform 0.5s ease-out;
+  transition:
+    filter 0.5s ease-out,
+    transform 0.5s ease-out;
 
   &.loaded {
     filter: blur(0);
@@ -284,6 +287,13 @@
   100% {
     left: 103%;
     transform: translateY(0) scale(0.6);
+  }
+}
+
+/* Hide birds on mobile - CSS animations with left property are broken on many mobile browsers */
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  .birds-container {
+    display: none;
   }
 }
 
@@ -1174,9 +1184,12 @@
     flex-direction: column-reverse;
     text-align: center;
     gap: 2rem;
+    justify-content: center;
   }
 
   .hero-text {
+    text-align: center;
+
     h1 {
       display: block;
 
@@ -1202,6 +1215,14 @@
 
   .cta-buttons {
     justify-content: center;
+    align-items: center;
+
+    .cta-button {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .image-container {
@@ -1227,6 +1248,7 @@
 
   .hero-content {
     gap: 1rem;
+    justify-content: center;
   }
 
   .image-container {
@@ -1236,8 +1258,15 @@
   }
 
   .hero-text {
+    text-align: center;
+
     h1 {
       font-size: 2.5rem;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     h2 {
@@ -1246,12 +1275,28 @@
 
     p {
       font-size: 1.1rem;
+      margin-left: auto;
+      margin-right: auto;
     }
+  }
+
+  .social-links {
+    justify-content: center;
   }
 
   .cta-buttons {
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
+
+    .cta-button {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 280px;
+    }
   }
 }
 
@@ -1266,27 +1311,49 @@
   }
 
   .hero-text {
+    text-align: center;
+
     h1 {
       font-size: 2rem;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     h2 {
       font-size: 1.3rem;
     }
   }
-}
-
-/* RTL Support */
-:host-context(html[dir="rtl"]) {
-  .hero-text {
-    text-align: right;
-  }
 
   .social-links {
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .cta-buttons {
-    justify-content: flex-end;
+    align-items: center;
+
+    .cta-button {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}
+
+/* RTL Support - Desktop only, mobile stays centered */
+@media (min-width: 577px) {
+  :host-context(html[dir="rtl"]) {
+    .hero-text {
+      text-align: right;
+    }
+
+    .social-links {
+      justify-content: flex-end;
+    }
+
+    .cta-buttons {
+      justify-content: flex-end;
+    }
   }
 }
