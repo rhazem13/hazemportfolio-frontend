@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+main {
+  flex: 1;
+  margin-top: 4rem;
+}

@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ScrollSurprisesComponent } from './components/scroll-surprises/scroll-surprises.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -30,48 +31,9 @@ import { SkillsComponent } from './components/skills/skills.component';
     FooterComponent,
     CustomCursorComponent,
     ScrollSurprisesComponent,
+    RouterOutlet
   ],
-  template: `
-    <!-- Custom cursor and scroll surprises -->
-    <app-custom-cursor></app-custom-cursor>
-    <app-scroll-surprises></app-scroll-surprises>
-
-    <div class="app-container">
-      <app-navbar></app-navbar>
-      <main>
-        <app-hero></app-hero>
-        <app-about></app-about>
-        <app-education></app-education>
-        <app-experience></app-experience>
-        <app-certificates></app-certificates>
-        <app-skills></app-skills>
-        <app-projects></app-projects>
-        <app-contact></app-contact>
-        <app-footer></app-footer>
-      </main>
-    </div>
-  `,
-  styles: [
-    `
-      :host {
-        display: block;
-        color: var(--text-color);
-        background-color: var(--background-color);
-      }
-
-      .app-container {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background-color: var(--background-color);
-        color: var(--text-color);
-      }
-
-      main {
-        flex: 1;
-        margin-top: 4rem;
-      }
-    `,
-  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent { }
