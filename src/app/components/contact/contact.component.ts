@@ -8,11 +8,12 @@ import {
 } from '@angular/forms';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { TranslationService } from '../../services/translation.service';
+import { Contact3dSceneComponent } from '../contact-3d-scene/contact-3d-scene.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, ScrollRevealDirective],
+  imports: [CommonModule, ReactiveFormsModule, ScrollRevealDirective, Contact3dSceneComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
@@ -71,13 +72,12 @@ export class ContactComponent {
 
     if (this.contactForm.valid) {
       const formData = this.contactForm.value;
-      const mailtoLink = `mailto:${
-        this.contactInfo.email
-      }?subject=${encodeURIComponent(
-        formData.subject,
-      )}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-      )}`;
+      const mailtoLink = `mailto:${this.contactInfo.email
+        }?subject=${encodeURIComponent(
+          formData.subject,
+        )}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+        )}`;
 
       window.location.href = mailtoLink;
 
