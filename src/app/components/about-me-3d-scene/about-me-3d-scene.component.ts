@@ -100,7 +100,7 @@ export class AboutMe3dSceneComponent implements OnInit, AfterViewInit, OnDestroy
             console.log('Guy Animations:', guyAnimations);
 
             // Set Position & Scale for Character
-            const guyScale = 16; // Much larger scale for better visibility
+            const guyScale = 15; // Much larger scale for better visibility
             guy.scale.set(guyScale, guyScale, guyScale);
             guy.position.set(0, -1, 0);
 

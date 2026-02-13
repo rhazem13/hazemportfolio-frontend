@@ -11,6 +11,7 @@ interface Project {
   githubUrl: string;
   liveUrl?: string;
   technologies: string[];
+  isPrivate?: boolean;
 }
 
 @Component({
@@ -31,6 +32,17 @@ export class ProjectsComponent {
   }
 
   projects: Project[] = [
+    {
+      title: 'Naqaa',
+      description:
+        'A bilingual full-stack e-commerce platform dedicated to selling organic fertilizers and promoting sustainable agriculture with a modern user experience. It includes an advanced dashboard for inventory management and order tracking system, built with Node.js, React.js, and PostgreSQL.',
+      descriptionAr:
+        'منصة تجارة إلكترونية متكاملة (Full-Stack) تدعم اللغتين، مخصصة لبيع الأسمدة العضوية وتعزيز الزراعة المستدامة بتجربة مستخدم عصرية. تتضمن لوحة تحكم متقدمة لإدارة المخزون ونظام تتبع للطلبات، معتمدة على تقنيات Node.js وReact.js وقواعد بيانات PostgreSQL.',
+      image: 'assets/Naqaa.png',
+      githubUrl: '',
+      isPrivate: true,
+      technologies: ['React.js', 'Node.js', 'PostgreSQL', 'Express.js'],
+    },
     {
       title: 'BeFriends',
       description:
