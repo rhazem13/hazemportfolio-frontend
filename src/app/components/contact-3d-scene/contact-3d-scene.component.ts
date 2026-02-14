@@ -69,6 +69,7 @@ export class Contact3dSceneComponent implements OnInit, AfterViewInit, OnDestroy
         const THREE = await import('three');
         const { GLTFLoader } = await import('three-stdlib');
         const { OrbitControls } = await import('three-stdlib');
+        const { DRACOLoader } = await import('three-stdlib');
 
         this.clock = new THREE.Clock();
         this.scene = new THREE.Scene();
@@ -101,6 +102,9 @@ export class Contact3dSceneComponent implements OnInit, AfterViewInit, OnDestroy
 
         // Load 3D Model (GLB/GLTF)
         const gltfLoader = new GLTFLoader();
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath('assets/draco/');
+        gltfLoader.setDRACOLoader(dracoLoader);
 
         try {
             const gltf = await new Promise<any>((resolve, reject) => {
@@ -158,6 +162,9 @@ export class Contact3dSceneComponent implements OnInit, AfterViewInit, OnDestroy
             this.controls = new OrbitControls(this.camera, this.renderer.domElement);
             this.controls.enableDamping = true;
             this.controls.dampingFactor = 0.05;
+            this.controls.enableZoom = false;
+            this.controls.enableRotate = false;
+            this.controls.enablePan = false;
             this.controls.target.set(0, 12, 0);
             this.controls.update();
 
