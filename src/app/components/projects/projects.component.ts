@@ -44,6 +44,23 @@ export class ProjectsComponent {
       technologies: ['React.js', 'Node.js', 'PostgreSQL', 'Express.js'],
     },
     {
+      title: 'SEMS Conference 2023',
+      description:
+        'The project is a promotional website for the Saudi Emergency Medical Services (SEMS) Conference 2023, organized by the Saudi Red Crescent Authority to highlight emergency medical advancements. It is built using HTML5 and CSS3 (incorporating Bootstrap, Animate.css, and FontAwesome), with JavaScript handling the interactive elements and responsive design.',
+      descriptionAr:
+        'هذا المشروع عبارة عن موقع ترويجي لمؤتمر الخدمات الطبية الطارئة السعودي (SEMS) 2023، الذي تنظمه هيئة الهلال الأحمر السعودي لتسليط الضوء على التطورات الطبية الطارئة. تم بناؤه باستخدام HTML5 و CSS3 (بما في ذلك Bootstrap و Animate.css و FontAwesome)، مع استخدام JavaScript للتعامل مع العناصر التفاعلية والتصميم المتجاوب.',
+      image: 'assets/sems.png',
+      githubUrl: '',
+      isPrivate: true,
+      liveUrl: 'https://semslanding.netlify.app/',
+      technologies: [
+        'HTML5 & CSS3',
+        'JavaScript & jQuery',
+        'Bootstrap',
+        'Animate.css',
+      ],
+    },
+    {
       title: 'BeFriends',
       description:
         'A social networking platform that helps connect people with similar interests and hobbies.',
