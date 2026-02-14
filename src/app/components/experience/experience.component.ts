@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+
 import { TranslationService } from '../../services/translation.service';
 
 interface ExperienceItem {
@@ -20,12 +20,12 @@ interface ExperienceItem {
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, ScrollRevealDirective],
+  imports: [CommonModule],
   templateUrl: './experience.component.html',
   styleUrls: ['./styles/experience.component.scss'],
 })
 export class ExperienceComponent {
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService) { }
 
   t(key: string): string {
     return this.translationService.t(key);

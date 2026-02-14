@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+
 import { TranslationService } from '../../services/translation.service';
 
 interface EducationItem {
@@ -17,12 +17,12 @@ interface EducationItem {
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CommonModule, ScrollRevealDirective],
+  imports: [CommonModule],
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent {
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService) { }
 
   t(key: string): string {
     return this.translationService.t(key);

@@ -1,24 +1,24 @@
 <section id="skills" class="section skills">
   <div class="container">
-    <h2 class="section-title" appScrollReveal="fadeInUp">
+    <h2 class="section-title">
       {{ t("skills.title") }}
     </h2>
     <div class="skills-grid">
       @for (category of skillCategories; track category; let i = $index) {
-        <div class="skill-category" appScrollReveal="scaleIn" [delay]="i * 80">
-          <div class="category-header">
-            <i [class]="category.icon"></i>
-            <h3>{{ getCategoryTitle(category) }}</h3>
-          </div>
-          <div class="skill-items">
-            @for (skill of category.skills; track skill) {
-              <div class="skill-item">
-                <i [class]="skill.icon"></i>
-                <span>{{ getSkillName(skill) }}</span>
-              </div>
-            }
-          </div>
+      <div class="skill-category">
+        <div class="category-header">
+          <i [class]="category.icon"></i>
+          <h3>{{ getCategoryTitle(category) }}</h3>
         </div>
+        <div class="skill-items">
+          @for (skill of category.skills; track skill) {
+          <div class="skill-item">
+            <i [class]="skill.icon"></i>
+            <span>{{ getSkillName(skill) }}</span>
+          </div>
+          }
+        </div>
+      </div>
       }
     </div>
   </div>

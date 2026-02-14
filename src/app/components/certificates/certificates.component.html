@@ -1,6 +1,6 @@
 <section id="certificates" class="certificates-section">
   <div class="container">
-    <div class="section-heading" appScrollReveal="fadeInUp">
+    <div class="section-heading">
       <span class="section-kicker">{{ t("certificates.kicker") }}</span>
       <h2 class="section-title">{{ t("certificates.title") }}</h2>
       <p class="section-subtitle">{{ t("certificates.subtitle") }}</p>
@@ -8,65 +8,41 @@
 
     <div class="certificates-grid" role="list">
       @for (
-        certificate of certificates();
-        track certificate.id;
-        let i = $index
+      certificate of certificates();
+      track certificate.id;
+      let i = $index
       ) {
-        <article
-          class="certificate-card"
-          role="listitem"
-          appScrollReveal="scaleIn"
-          [delay]="i * 150"
-        >
-          <a
-            class="certificate-download"
-            [href]="certificate.certificateAsset"
-            download
-            [title]="t('certificates.download')"
-          >
-            <i class="fas fa-download" aria-hidden="true"></i>
-            <span class="visually-hidden"
-              >{{ t("certificates.download") }}
-              {{ getTitle(certificate) }}</span
-            >
-          </a>
-          <div class="certificate-media">
-            <img
-              class="issuer-icon"
-              [src]="certificate.icon"
-              [alt]="getIssuer(certificate) + ' logo'"
-              loading="lazy"
-            />
+      <article class="certificate-card" role="listitem">
+        <a class="certificate-download" [href]="certificate.certificateAsset" download
+          [title]="t('certificates.download')">
+          <i class="fas fa-download" aria-hidden="true"></i>
+          <span class="visually-hidden">{{ t("certificates.download") }}
+            {{ getTitle(certificate) }}</span>
+        </a>
+        <div class="certificate-media">
+          <img class="issuer-icon" [src]="certificate.icon" [alt]="getIssuer(certificate) + ' logo'" loading="lazy" />
+        </div>
+        <div class="certificate-body">
+          <div class="certificate-meta">
+            <h3 class="certificate-title">{{ getTitle(certificate) }}</h3>
+            <p class="certificate-issuer">{{ getIssuer(certificate) }}</p>
           </div>
-          <div class="certificate-body">
-            <div class="certificate-meta">
-              <h3 class="certificate-title">{{ getTitle(certificate) }}</h3>
-              <p class="certificate-issuer">{{ getIssuer(certificate) }}</p>
-            </div>
-            <ul class="focus-areas" aria-label="Focus areas covered">
-              @for (area of getFocusAreas(certificate); track area) {
-                <li>
-                  <i class="fas fa-circle-notch" aria-hidden="true"></i>
-                  <span>{{ area }}</span>
-                </li>
-              }
-            </ul>
-            @if (certificate.credentialUrl) {
-              <a
-                class="credential-link"
-                [href]="certificate.credentialUrl"
-                target="_blank"
-                rel="noopener"
-              >
-                {{ t("certificates.viewCredential") }}
-                <i
-                  class="fas fa-arrow-up-right-from-square"
-                  aria-hidden="true"
-                ></i>
-              </a>
+          <ul class="focus-areas" aria-label="Focus areas covered">
+            @for (area of getFocusAreas(certificate); track area) {
+            <li>
+              <i class="fas fa-circle-notch" aria-hidden="true"></i>
+              <span>{{ area }}</span>
+            </li>
             }
-          </div>
-        </article>
+          </ul>
+          @if (certificate.credentialUrl) {
+          <a class="credential-link" [href]="certificate.credentialUrl" target="_blank" rel="noopener">
+            {{ t("certificates.viewCredential") }}
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          }
+        </div>
+      </article>
       }
     </div>
   </div>

@@ -6,14 +6,14 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+
 import { TranslationService } from '../../services/translation.service';
 import { Contact3dSceneComponent } from '../contact-3d-scene/contact-3d-scene.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, ScrollRevealDirective, Contact3dSceneComponent],
+  imports: [CommonModule, ReactiveFormsModule, Contact3dSceneComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })

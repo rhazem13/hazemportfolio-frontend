@@ -1,27 +1,23 @@
 <section id="education" class="education-section">
   <div class="container">
-    <h2 class="section-title" appScrollReveal="glitchIn">
+    <h2 class="section-title">
       {{ t("education.title") }}
     </h2>
     <div class="education-timeline">
       @for (item of educationItems; track item; let i = $index) {
-        <div
-          class="education-item"
-          appScrollReveal="fadeInRight"
-          [delay]="i * 200"
-        >
-          <div class="icon-container">
-            <i [class]="item.icon"></i>
-          </div>
-          <div class="education-content">
-            <h3 class="degree">{{ getDegree(item) }}</h3>
-            <div class="institution-year">
-              <span class="institution">{{ getInstitution(item) }}</span>
-              <span class="year">{{ item.year }}</span>
-            </div>
-            <p class="details">{{ getDetails(item) }}</p>
-          </div>
+      <div class="education-item">
+        <div class="icon-container">
+          <i [class]="item.icon"></i>
         </div>
+        <div class="education-content">
+          <h3 class="degree">{{ getDegree(item) }}</h3>
+          <div class="institution-year">
+            <span class="institution">{{ getInstitution(item) }}</span>
+            <span class="year">{{ item.year }}</span>
+          </div>
+          <p class="details">{{ getDetails(item) }}</p>
+        </div>
+      </div>
       }
     </div>
   </div>

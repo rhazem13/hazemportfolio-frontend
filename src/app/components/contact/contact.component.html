@@ -1,11 +1,11 @@
 <section id="contact" class="contact-section">
   <div class="container">
-    <h2 class="section-title" appScrollReveal="jello">
+    <h2 class="section-title">
       {{ t("contact.title") }}
     </h2>
 
     <!-- Contact Information - Horizontal on top -->
-    <div class="contact-info" appScrollReveal="fadeInUp" [delay]="200">
+    <div class="contact-info">
       <div class="info-items">
         <div class="info-item">
           <i class="fas fa-envelope"></i>
@@ -42,7 +42,7 @@
     <!-- Form and 3D Scene Row -->
     <div class="contact-bottom-row">
       <!-- Contact Form -->
-      <div class="contact-form" appScrollReveal="fadeInLeft" [delay]="300">
+      <div class="contact-form">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name">{{ t("contact.form.name") }}</label>
@@ -114,7 +114,7 @@
       </div>
 
       <!-- 3D Scene -->
-      <div class="contact-3d" appScrollReveal="fadeInRight" [delay]="400">
+      <div class="contact-3d">
         <app-contact-3d-scene></app-contact-3d-scene>
       </div>
     </div>

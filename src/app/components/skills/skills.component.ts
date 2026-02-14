@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+
 import { TranslationService } from '../../services/translation.service';
 
 interface Skill {
@@ -20,12 +20,12 @@ interface SkillCategory {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, ScrollRevealDirective],
+  imports: [CommonModule],
   templateUrl: './skills.component.html',
   styleUrls: ['./styles/skills.component.scss'],
 })
 export class SkillsComponent {
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService) { }
 
   t(key: string): string {
     return this.translationService.t(key);

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+
 import { TranslationService } from '../../services/translation.service';
 
 interface CertificateItem {
@@ -19,12 +19,12 @@ interface CertificateItem {
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CommonModule, ScrollRevealDirective],
+  imports: [CommonModule],
   templateUrl: './certificates.component.html',
   styleUrls: ['./styles/certificates.component.scss'],
 })
 export class CertificatesComponent {
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService) { }
 
   t(key: string): string {
     return this.translationService.t(key);
