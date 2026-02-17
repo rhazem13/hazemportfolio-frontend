@@ -114,6 +114,7 @@ export class ProjectsComponent {
       descriptionAr: 'منصة مجتمعية لمشاركة واكتشاف مطالبات الذكاء الاصطناعي.',
       image: 'assets/promptshare_result.webp',
       githubUrl: 'https://github.com/rhazem13/PromptShare',
+      liveUrl: 'https://prompt-share-tau.vercel.app/',
       technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
     },
     {
