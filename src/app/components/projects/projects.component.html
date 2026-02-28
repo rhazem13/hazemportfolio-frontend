@@ -11,7 +11,7 @@
       @for (project of projects; track project.title; let i = $index) {
       <div class="project-card">
         <div class="project-image">
-          <img [src]="project.image" [alt]="project.title" />
+          <img [src]="project.image" [alt]="project.title" loading="lazy" />
           <div class="project-overlay">
             @if (project.isPrivate) {
             <span class="project-link private-code">
@@ -23,14 +23,16 @@
               }}
             </span>
             } @else {
-            <a [href]="project.githubUrl" target="_blank" class="project-link">
-              <i class="fab fa-github"></i>
+            <a [href]="project.githubUrl" target="_blank" class="project-link"
+              [attr.aria-label]="project.title + ' GitHub repository'">
+              <i class="fab fa-github" aria-hidden="true"></i>
               {{ t("projects.viewGithub") }}
             </a>
             }
             @if (project.liveUrl) {
-            <a [href]="project.liveUrl" target="_blank" class="project-link">
-              <i class="fas fa-external-link-alt"></i>
+            <a [href]="project.liveUrl" target="_blank" class="project-link"
+              [attr.aria-label]="project.title + ' live preview'">
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
               {{ t("projects.livePreview") }}
             </a>
             }
@@ -39,9 +41,10 @@
         <div class="project-info">
           <h3 class="project-title">{{ project.title }}</h3>
           <div class="project-description-wrapper" [class.expanded]="expandedProjects[i]">
-            <p class="project-description">{{ getDescription(project) }}</p>
+            <p class="project-description" [id]="'desc-' + i">{{ getDescription(project) }}</p>
             @if (getDescription(project).length > 120) {
-            <button class="read-more-btn" (click)="toggleDescription(i)">
+            <button class="read-more-btn" (click)="toggleDescription(i)" [attr.aria-expanded]="expandedProjects[i]"
+              [attr.aria-controls]="'desc-' + i">
               {{
               expandedProjects[i]
               ? t("projects.showLess")

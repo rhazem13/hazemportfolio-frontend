@@ -1,20 +1,53 @@
 <!-- Custom cursor and scroll surprises -->
-<app-custom-cursor></app-custom-cursor>
+@defer (on idle) {
 <app-scroll-surprises></app-scroll-surprises>
+}
 
 <div class="app-container">
   <app-navbar></app-navbar>
   <main>
     <app-hero></app-hero>
+    @defer (on viewport) {
     <app-about></app-about>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
+    @defer (on viewport) {
     <app-education></app-education>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
+    @defer (on viewport) {
     <app-experience></app-experience>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
+    @defer (on viewport) {
     <app-certificates></app-certificates>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
+    @defer (on viewport) {
     <app-skills></app-skills>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
+    @defer (on viewport) {
     <app-projects></app-projects>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
+    @defer (on viewport) {
     <app-contact></app-contact>
+    } @placeholder {
+    <div style="min-height: 80vh;"></div>
+    }
   </main>
+  @defer (on viewport) {
   <app-footer></app-footer>
+  } @placeholder {
+  <div style="min-height: 100px;"></div>
+  }
 </div>
 
 <router-outlet></router-outlet>

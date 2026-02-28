@@ -10,7 +10,7 @@
         <div class="info-item">
           <i class="fas fa-envelope"></i>
           <div class="info-text">
-            <h4>{{ t("contact.email") }}</h4>
+            <h3>{{ t("contact.email") }}</h3>
             <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
           </div>
         </div>
@@ -18,7 +18,7 @@
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
           <div class="info-text">
-            <h4>{{ t("contact.location") }}</h4>
+            <h3>{{ t("contact.location") }}</h3>
             <p>{{ getLocation() }}</p>
           </div>
         </div>
@@ -26,11 +26,12 @@
         <div class="info-item">
           <i class="fas fa-share-alt"></i>
           <div class="info-text">
-            <h4>{{ t("contact.social") }}</h4>
+            <h3>{{ t("contact.social") }}</h3>
             <div class="social-links">
               @for (social of contactInfo.social; track social) {
-              <a [href]="social.url" target="_blank" rel="noopener" [title]="social.name">
-                <i [class]="social.icon"></i>
+              <a [href]="social.url" target="_blank" rel="noopener" [title]="social.name"
+                [attr.aria-label]="social.name">
+                <i [class]="social.icon" aria-hidden="true"></i>
               </a>
               }
             </div>

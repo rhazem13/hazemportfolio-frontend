@@ -1,62 +1,65 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Hazem - Software Engineer Portfolio</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Portfolio website of Hazem - Software Engineer showcasing projects, skills, and professional experience"
-    />
-    <meta
-      name="keywords"
-      content="software engineer, web developer, portfolio, projects, programming"
-    />
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
-    <!-- Google Fonts - Inter (English) & Cairo (Arabic) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hazem - Software Engineer Portfolio</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Portfolio website of Hazem - Software Engineer showcasing projects, skills, and professional experience" />
+  <meta name="keywords" content="software engineer, web developer, portfolio, projects, programming" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+  <!-- Google Fonts - Inter (English) & Cairo (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <!-- Prevent theme flash and set language/direction -->
-    <script>
-      (function () {
-        try {
-          // Theme handling
-          const savedTheme = localStorage.getItem("theme");
-          if (savedTheme === "dark") {
-            document.documentElement.setAttribute("data-theme", "dark");
-          } else if (
-            !savedTheme &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-          ) {
-            document.documentElement.setAttribute("data-theme", "dark");
-          }
-          // Language/RTL handling
-          const savedLang = localStorage.getItem("language");
-          if (savedLang === "ar") {
-            document.documentElement.setAttribute("lang", "ar");
-            document.documentElement.setAttribute("dir", "rtl");
-          } else if (
-            !savedLang &&
-            navigator.language.toLowerCase().startsWith("ar")
-          ) {
-            document.documentElement.setAttribute("lang", "ar");
-            document.documentElement.setAttribute("dir", "rtl");
-          }
-        } catch (e) {}
-      })();
-    </script>
-  </head>
-  <body>
-    <app-root></app-root>
-  </body>
+      rel="stylesheet" />
+  </noscript>
+  <!-- Font Awesome for icons -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </noscript>
+  <!-- Prevent theme flash and set language/direction -->
+  <script>
+    (function () {
+      try {
+        // Theme handling
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else if (
+          !savedTheme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+        // Language/RTL handling
+        const savedLang = localStorage.getItem("language");
+        if (savedLang === "ar") {
+          document.documentElement.setAttribute("lang", "ar");
+          document.documentElement.setAttribute("dir", "rtl");
+        } else if (
+          !savedLang &&
+          navigator.language.toLowerCase().startsWith("ar")
+        ) {
+          document.documentElement.setAttribute("lang", "ar");
+          document.documentElement.setAttribute("dir", "rtl");
+        }
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
 </html>

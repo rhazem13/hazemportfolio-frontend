@@ -1,14 +1,8 @@
 <section id="home" class="hero">
   <!-- Hero Background Image with Blur-Up Loading -->
   <div class="hero-background" [class.loaded]="heroImageLoaded">
-    <img
-      src="/assets/sectiononebackground.webp"
-      alt=""
-      class="hero-bg-image"
-      (load)="onHeroImageLoad()"
-      fetchpriority="high"
-      loading="eager"
-    />
+    <img src="/assets/sectiononebackground.webp" alt="" class="hero-bg-image" (load)="onHeroImageLoad()"
+      fetchpriority="high" loading="eager" />
   </div>
 
   <!-- Flying birds in the sky -->
@@ -118,41 +112,27 @@
       <h2>{{ t("hero.title") }}</h2>
       <p>{{ t("hero.description") }}</p>
       <div class="social-links">
-        <a
-          href="https://github.com/rhazem13"
-          target="_blank"
-          rel="noopener"
-          title="GitHub"
-        >
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/rhazem13" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
-        <a
-          href="https://linkedin.com/in/rhazem13"
-          target="_blank"
-          rel="noopener"
-          title="LinkedIn"
-        >
-          <i class="fab fa-linkedin"></i>
+        <a href="https://linkedin.com/in/rhazem13" target="_blank" rel="noopener" title="LinkedIn"
+          aria-label="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
-        <a
-          href="https://leetcode.com/u/rhazem13"
-          target="_blank"
-          rel="noopener"
-          title="LeetCode"
-        >
-          <i class="fas fa-code"></i>
+        <a href="https://leetcode.com/u/rhazem13" target="_blank" rel="noopener" title="LeetCode" aria-label="LeetCode">
+          <i class="fas fa-code" aria-hidden="true"></i>
         </a>
-        <a href="mailto:rhazem13@yahoo.com" title="Email">
-          <i class="fas fa-envelope"></i>
+        <a href="mailto:rhazem13@yahoo.com" title="Email" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
         </a>
       </div>
       <div class="cta-buttons">
         <a href="#projects" class="cta-button primary">{{
           t("hero.viewWork")
-        }}</a>
+          }}</a>
         <a href="#contact" class="cta-button secondary">{{
           t("hero.contactMe")
-        }}</a>
+          }}</a>
       </div>
     </div>
   </div>
