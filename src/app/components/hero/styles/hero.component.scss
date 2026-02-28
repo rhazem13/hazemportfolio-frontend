@@ -246,73 +246,67 @@
 
 @keyframes flyAcross1 {
   0% {
-    left: -5%;
-    transform: translateY(0) scale(0.8);
+    transform: translateX(-10vw) translateY(0) scale(0.8);
   }
 
   25% {
-    transform: translateY(-15px) scale(0.85);
+    transform: translateX(20vw) translateY(-15px) scale(0.85);
   }
 
   50% {
-    transform: translateY(10px) scale(0.9);
+    transform: translateX(50vw) translateY(10px) scale(0.9);
   }
 
   75% {
-    transform: translateY(-8px) scale(0.85);
+    transform: translateX(80vw) translateY(-8px) scale(0.85);
   }
 
   100% {
-    left: 105%;
-    transform: translateY(0) scale(0.8);
+    transform: translateX(110vw) translateY(0) scale(0.8);
   }
 }
 
 @keyframes flyAcross2 {
   0% {
-    left: -8%;
-    transform: translateY(0) scale(0.7);
+    transform: translateX(-10vw) translateY(0) scale(0.7);
   }
 
   20% {
-    transform: translateY(-20px) scale(0.75);
+    transform: translateX(15vw) translateY(-20px) scale(0.75);
   }
 
   40% {
-    transform: translateY(15px) scale(0.7);
+    transform: translateX(40vw) translateY(15px) scale(0.7);
   }
 
   60% {
-    transform: translateY(-10px) scale(0.75);
+    transform: translateX(65vw) translateY(-10px) scale(0.75);
   }
 
   80% {
-    transform: translateY(5px) scale(0.7);
+    transform: translateX(90vw) translateY(5px) scale(0.7);
   }
 
   100% {
-    left: 108%;
-    transform: translateY(0) scale(0.7);
+    transform: translateX(110vw) translateY(0) scale(0.7);
   }
 }
 
 @keyframes flyAcross3 {
   0% {
-    left: -3%;
-    transform: translateY(0) scale(0.6);
+    transform: translateX(-10vw) translateY(0) scale(0.6);
   }
 
   33% {
-    transform: translateY(-25px) scale(0.65);
+    transform: translateX(30vw) translateY(-25px) scale(0.65);
   }
 
   66% {
-    transform: translateY(20px) scale(0.6);
+    transform: translateX(70vw) translateY(20px) scale(0.6);
   }
 
   100% {
-    left: 103%;
-    transform: translateY(0) scale(0.6);
+    transform: translateX(110vw) translateY(0) scale(0.6);
   }
 }
 
@@ -1020,10 +1014,12 @@
       position: absolute;
       bottom: -5px;
       left: 0;
-      width: 0;
+      width: 60%;
       height: 3px;
       background: linear-gradient(90deg, #74e7e7, #00d4ff);
       border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
       animation: expandWidth 1s ease 0.5s forwards;
     }
   }
@@ -1060,7 +1056,7 @@
 
 @keyframes expandWidth {
   to {
-    width: 60%;
+    transform: scaleX(1);
   }
 }
 

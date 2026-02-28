@@ -1,8 +1,11 @@
 <section id="home" class="hero">
   <!-- Hero Background Image with Blur-Up Loading -->
   <div class="hero-background" [class.loaded]="heroImageLoaded">
-    <img ngSrc="/assets/sectiononebackground.webp" alt="" class="hero-bg-image" (load)="onHeroImageLoad()" priority
-      fill />
+    <picture>
+      <source media="(max-width: 768px)" srcset="/assets/sectiononebackground-mobile.webp" />
+      <img src="/assets/sectiononebackground.webp" alt="" class="hero-bg-image" (load)="onHeroImageLoad()"
+        fetchpriority="high" />
+    </picture>
   </div>
 
   <!-- Flying birds in the sky -->
