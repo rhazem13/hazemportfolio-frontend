@@ -11,7 +11,7 @@
       @for (project of projects; track project.title; let i = $index) {
       <div class="project-card">
         <div class="project-image">
-          <img [src]="project.image" [alt]="project.title" loading="lazy" />
+          <img [ngSrc]="project.image" [alt]="project.title" fill />
           <div class="project-overlay">
             @if (project.isPrivate) {
             <span class="project-link private-code">

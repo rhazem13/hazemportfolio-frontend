@@ -1,18 +1,18 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './hero.component.html',
   styleUrls: ['./styles/hero.component.scss'],
 })
 export class HeroComponent {
   heroImageLoaded = false;
 
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService) { }
 
   t(key: string): string {
     return this.translationService.t(key);

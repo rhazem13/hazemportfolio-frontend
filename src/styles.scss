@@ -240,17 +240,13 @@ html {
   }
 }
 
-@keyframes gradientShift {
+@keyframes hueShift {
   0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
+    filter: hue-rotate(0deg);
   }
 
   100% {
-    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
   }
 }
 
@@ -373,11 +369,8 @@ html {
       var(--primary-color),
       #00d4ff,
       var(--primary-color));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientShift 3s ease infinite;
+  animation: hueShift 4s linear infinite;
 }
 
 /* Glow Effects */
@@ -413,8 +406,7 @@ html {
       var(--primary-color),
       #00d4ff,
       var(--primary-color));
-  background-size: 200% auto;
-  animation: gradientShift 3s ease infinite;
+  animation: hueShift 4s linear infinite;
   z-index: -1;
 }
 
@@ -539,18 +531,19 @@ html {
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg,
       transparent,
       rgba(255, 255, 255, 0.3),
       transparent);
-  transition: left 0.5s ease;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
 }
 
 .btn-primary:hover::before {
-  left: 100%;
+  transform: translateX(100%);
 }
 
 .btn-primary:hover {

@@ -11,27 +11,26 @@ footer {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: -100%;
+    right: auto;
+    width: 300%;
     height: 4px;
-    background: linear-gradient(
-      90deg,
-      var(--primary-color),
-      #00d4ff,
-      var(--primary-color),
-      #00d4ff,
-      var(--primary-color)
-    );
-    background-size: 200% 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        var(--primary-color),
+        #00d4ff,
+        var(--primary-color),
+        transparent);
     animation: shimmer 3s linear infinite;
   }
 
   @keyframes shimmer {
     0% {
-      background-position: -200% 0;
+      transform: translateX(-33%);
     }
+
     100% {
-      background-position: 200% 0;
+      transform: translateX(33%);
     }
   }
 
@@ -44,11 +43,9 @@ footer {
     transform: translateX(-50%);
     width: 300px;
     height: 200px;
-    background: radial-gradient(
-      ellipse,
-      rgba(0, 160, 160, 0.1) 0%,
-      transparent 70%
-    );
+    background: radial-gradient(ellipse,
+        rgba(0, 160, 160, 0.1) 0%,
+        transparent 70%);
     pointer-events: none;
   }
 }

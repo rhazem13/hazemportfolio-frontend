@@ -20,7 +20,8 @@
             {{ getTitle(certificate) }}</span>
         </a>
         <div class="certificate-media">
-          <img class="issuer-icon" [src]="certificate.icon" [alt]="getIssuer(certificate) + ' logo'" loading="lazy" />
+          <img class="issuer-icon" [ngSrc]="certificate.icon" [alt]="getIssuer(certificate) + ' logo'" width="72"
+            height="72" />
         </div>
         <div class="certificate-body">
           <div class="certificate-meta">

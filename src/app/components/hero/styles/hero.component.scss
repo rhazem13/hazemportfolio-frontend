@@ -1031,14 +1031,19 @@
   h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #74e7e7, #00d4ff, #74e7e7);
+    background: linear-gradient(135deg,
+        #74e7e7 0%,
+        #00d4ff 50%,
+        #74e7e7 100%);
     background-size: 200% auto;
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: gradientShift 3s ease infinite;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    animation:
+      textHueShift 4s linear infinite,
+      shimmer 3s linear infinite;
   }
 
   p {
@@ -1071,17 +1076,13 @@
   }
 }
 
-@keyframes gradientShift {
+@keyframes textHueShift {
   0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
+    filter: hue-rotate(0deg);
   }
 
   100% {
-    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
   }
 }
 

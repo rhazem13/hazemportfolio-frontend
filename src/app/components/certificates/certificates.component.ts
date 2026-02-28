@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 
 import { TranslationService } from '../../services/translation.service';
@@ -19,7 +19,7 @@ interface CertificateItem {
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './certificates.component.html',
   styleUrls: ['./styles/certificates.component.scss'],
 })
