@@ -80,6 +80,10 @@ body {
   transition:
     background 0.3s ease,
     color 0.3s ease;
+
+  @media (max-width: 768px) {
+    background: var(--background-color);
+  }
 }
 
 [data-theme="dark"] body {
@@ -94,6 +98,10 @@ body {
       rgba(0, 255, 255, 0.12),
       transparent 55%),
     var(--background-color);
+
+  @media (max-width: 768px) {
+    background: var(--background-color);
+  }
 }
 
 section {

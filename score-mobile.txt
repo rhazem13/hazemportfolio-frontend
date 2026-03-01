@@ -1,0 +1,15 @@
+--- MOBILE PERFORMANCE ---
+Performance Score: 81
+FCP: 3.4 s
+LCP: 3.8 s
+TBT: 50 ms
+CLS: 0.012
+SI: 3.4 s
+
+--- OPPORTUNITIES ---
+unused-javascript | savings=600ms
+unused-css-rules | savings=150ms
+
+--- DIAGNOSTICS ---
+Diagnostic: unused-javascript | score=0 | value=Est savings of 112 KiB
+Diagnostic: unused-css-rules | score=0 | value=Est savings of 36 KiB

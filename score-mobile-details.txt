@@ -1,0 +1,12 @@
+
+Network Requests (Critical/Large):
+http://127.0.0.1:4200/ | size: 49775 | start: undefined | end: undefined | type: Document
+http://127.0.0.1:4200/assets/sectiononebackground-mobile.webp | size: 8665 | start: undefined | end: undefined | type: Image
+https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap | size: 1706 | start: undefined | end: undefined | type: Stylesheet
+http://127.0.0.1:4200/chunk-VZXLYRC2.js | size: 18556 | start: undefined | end: undefined | type: Script
+http://127.0.0.1:4200/chunk-JISII677.js | size: 181667 | start: undefined | end: undefined | type: Script
+http://127.0.0.1:4200/chunk-JKOY2XUY.js | size: 1253 | start: undefined | end: undefined | type: Script
+http://127.0.0.1:4200/polyfills-B6TNHZQ6.js | size: 34937 | start: undefined | end: undefined | type: Script
+http://127.0.0.1:4200/main-OVYWWUCT.js | size: 118120 | start: undefined | end: undefined | type: Script
+http://127.0.0.1:4200/styles-GCXRPWB2.css | size: 20802 | start: undefined | end: undefined | type: Stylesheet
+http://127.0.0.1:4200/assets/sectiononebackground-thumb.webp | size: 8905 | start: undefined | end: undefined | type: Image

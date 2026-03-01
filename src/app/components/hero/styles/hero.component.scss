@@ -1442,3 +1442,17 @@
     }
   }
 }
+
+/* Optimize performance on mobile by disabling heavy decorative elements */
+@media (max-width: 768px) {
+
+  .hero-particles,
+  .hero-shapes,
+  .light-rays,
+  .wind-lines,
+  .birds-container,
+  .hero-grid,
+  .hero-overlay {
+    display: none !important;
+  }
+}

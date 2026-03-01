@@ -1,0 +1,14 @@
+Opportunity: unused-javascript - 600ms
+Opportunity: unused-css-rules - 150ms
+
+Main thread breakdown:
+Other: 639.3559999999984ms
+Style & Layout: 540.6680000000003ms
+Rendering: 318.06000000000245ms
+Script Evaluation: 257.023999999999ms
+Parse HTML & CSS: 22.684ms
+Script Parsing & Compilation: 3.3960000000000004ms
+
+Bootup time:
+http://127.0.0.1:4200/: 1487.6360000000034ms (script: 145.11199999999917ms)
+Unattributable: 254.52400000000196ms (script: 100.90400000000017ms)
