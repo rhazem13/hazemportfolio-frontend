@@ -20,8 +20,11 @@ const fontFaceRegex = /@font-face\s*{[^}]*}/g;
 let match;
 while ((match = fontFaceRegex.exec(css)) !== null) {
     let rule = match[0];
-    if (!rule.includes('font-display')) {
-        rule = rule.replace('}', 'font-display: swap;}');
+    // Replace any existing font-display value (e.g. block) with swap
+    if (/font-display\s*:\s*\w+/.test(rule)) {
+        rule = rule.replace(/font-display\s*:\s*\w+/, 'font-display:swap');
+    } else {
+        rule = rule.replace('}', 'font-display:swap;}');
     }
     rule = rule.replace(/\.\.\/webfonts\//g, 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/');
     subsetCss += rule + '\n';
