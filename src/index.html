@@ -35,6 +35,13 @@
   <!-- Google Fonts - Inter (English) & Cairo (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+  <!-- Preload hero background image to start LCP as early as possible -->
+  <link rel="preload" href="/assets/sectiononebackground.webp" as="image"
+    imagesrcset="/assets/sectiononebackground-mobile.webp 768w, /assets/sectiononebackground.webp 1400w"
+    imagesizes="(max-width: 768px) 100vw, 100vw" fetchpriority="high" />
+
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'" />

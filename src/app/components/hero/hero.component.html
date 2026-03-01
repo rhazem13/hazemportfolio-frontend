@@ -1,10 +1,11 @@
 <section id="home" class="hero">
   <!-- Hero Background Image with Blur-Up Loading -->
-  <div class="hero-background" [class.loaded]="heroImageLoaded">
+  <div class="hero-background loaded">
     <picture>
       <source media="(max-width: 768px)" srcset="/assets/sectiononebackground-mobile.webp" />
-      <img src="/assets/sectiononebackground.webp" alt="" class="hero-bg-image" (load)="onHeroImageLoad()"
-        fetchpriority="high" />
+      <img src="/assets/sectiononebackground.webp"
+        srcset="/assets/sectiononebackground.webp 1400w, /assets/sectiononebackground-mobile.webp 768w"
+        sizes="(max-width: 768px) 100vw, 100vw" alt="" class="hero-bg-image" fetchpriority="high" />
     </picture>
   </div>
 

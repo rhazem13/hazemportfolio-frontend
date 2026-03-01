@@ -23,7 +23,21 @@
         </div>
       </div>
       <div class="about-image">
+        @defer (on viewport) {
         <app-about-me-3d-scene></app-about-me-3d-scene>
+        } @placeholder {
+        <div class="scene-placeholder" aria-hidden="true">
+          <div class="placeholder-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+        </div>
+        } @loading (minimum 200ms) {
+        <div class="scene-placeholder" aria-hidden="true">
+          <div class="placeholder-icon loading">
+            <i class="fas fa-circle-notch fa-spin"></i>
+          </div>
+        </div>
+        }
       </div>
     </div>
   </div>
