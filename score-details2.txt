@@ -1,0 +1,15 @@
+
+Unused CSS:
+
+Main Thread Breakdown:
+  other: 638ms
+  styleLayout: 448ms
+  paintCompositeRender: 307ms
+  scriptEvaluation: 221ms
+  parseHTML: 20ms
+  scriptParseCompile: 4ms
+
+Non-composited animations:
+  Node: section#home > div.hero-content > div.hero-text > h2
+    Snippet: <h2 _ngcontent-ng-c13570017="">
+    - Unsupported CSS Property: background-position-x

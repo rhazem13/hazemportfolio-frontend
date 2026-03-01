@@ -379,7 +379,6 @@ html {
       #00d4ff,
       var(--primary-color));
   -webkit-text-fill-color: transparent;
-  animation: hueShift 4s linear infinite;
 }
 
 /* Glow Effects */
@@ -415,7 +414,6 @@ html {
       var(--primary-color),
       #00d4ff,
       var(--primary-color));
-  animation: hueShift 4s linear infinite;
   z-index: -1;
 }
 

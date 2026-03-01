@@ -1037,9 +1037,7 @@
     -webkit-text-fill-color: transparent;
     font-weight: 600;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    animation:
-      textHueShift 4s linear infinite,
-      shimmer 3s linear infinite;
+    animation: shimmer 3s linear infinite;
   }
 
   p {
@@ -1257,11 +1255,11 @@
     text-align: center;
 
     h1 {
-      display: block;
+      display: inline-block;
 
       &::after {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 20%;
+        transform-origin: center;
       }
     }
 
@@ -1331,8 +1329,8 @@
       font-size: 2.5rem;
 
       &::after {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 20%;
+        transform-origin: center;
       }
     }
 
@@ -1384,8 +1382,8 @@
       font-size: 2rem;
 
       &::after {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 20%;
+        transform-origin: center;
       }
     }
 

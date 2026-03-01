@@ -5,7 +5,8 @@
   --surface-color: #f8f9fa;
   --text-color: #212529;
   --text-secondary: #6c757d;
-  --primary-color: #00a0a0; /* Darker cyan for better contrast in light mode */
+  --primary-color: #00a0a0;
+  /* Darker cyan for better contrast in light mode */
   --border-color: #dee2e6;
   --card-background: #ffffff;
   --hover-color: #e9ecef;
@@ -21,7 +22,8 @@
   --surface-color: #2d2d2d;
   --text-color: #e9ecef;
   --text-secondary: #adb5bd;
-  --primary-color: #00ffff; /* Bright cyan for dark mode */
+  --primary-color: #00ffff;
+  /* Bright cyan for dark mode */
   --border-color: #444444;
   --card-background: #2d2d2d;
   --hover-color: #3d3d3d;
@@ -49,7 +51,13 @@
   color: var(--dark-gray);
 }
 
-// Transitions
-* {
+// Theme transitions - scoped to specific semantic elements to avoid forced reflows
+body,
+.navbar,
+.section,
+.card-elevated,
+.certificate-card,
+.hero,
+footer {
   transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -1,0 +1,19 @@
+
+Server response time: Root document took 10 ms
+
+Network RTT:
+  https://cdnjs.cloudflare.com - 73.3ms
+  https://fonts.googleapis.com - 43.4ms
+  http://localhost:4200 - 0.1ms
+  https://fonts.gstatic.com - 0.0ms
+
+Diagnostics:
+  Num requests: 14
+  Num scripts: 5
+  Num stylesheets: 2
+  Num fonts: 3
+  Total byte weight: 457.8KB
+  Total task time: 409ms
+  Main doc transfer: 8.6KB
+  Max RTT: 73.3ms
+  Max server latency: 76.1ms

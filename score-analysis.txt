@@ -1,0 +1,31 @@
+Performance: 81
+FCP: 3.0 s score: 0.5
+LCP: 4.1 s score: 0.47
+SI: 3.1 s score: 0.93
+TBT: 0 ms score: 1
+CLS: 0.012 score: 1
+
+Unused JS:
+  chunk-MW27ZBEW.js - transfer: 58.3KB, savings: 28.4KB
+
+Top network requests by size:
+  fa-solid-900.woff2 - 153.5KB - end: 0ms
+  fa-brands-400.woff2 - 115.3KB - end: 0ms
+  chunk-MW27ZBEW.js - 58.4KB - end: 0ms
+  UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2 - 47.3KB - end: 0ms
+  main-6A4SAL3D.js - 29.5KB - end: 0ms
+  polyfills-B6TNHZQ6.js - 12.4KB - end: 0ms
+   - 8.6KB - end: 0ms
+  sectiononebackground-thumb.webp - 8.5KB - end: 0ms
+  sectiononebackground-mobile.webp - 8.3KB - end: 0ms
+  chunk-UDKMGLDN.js - 4.8KB - end: 0ms
+  styles-RX3YSHHP.css - 4.6KB - end: 0ms
+  favicon.ico?v=2 - 4.4KB - end: 0ms
+  css2?family=Cairo:wght@400;600;700&family=Inter:wg - 1.5KB - end: 0ms
+
+Non-composited animations: 1
+
+Long tasks: 3
+  duration: 129ms, start: 756ms
+  duration: 81ms, start: 675ms
+  duration: 75ms, start: 1679ms
