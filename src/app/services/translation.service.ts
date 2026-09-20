@@ -40,23 +40,43 @@ export class TranslationService {
 
       // Hero Section
       hero: {
-        greeting: "Hi, I'm Hazem Ragab",
-        title: 'Full-Stack Software Engineer',
+        eyebrow: 'Software engineering for complex operations',
+        greeting: 'Hazem Ragab',
+        title: 'I build dependable web systems from interface to API.',
         description:
-          'Specializing in efficient APIs and responsive frontends, with a deep passion for problem solving and algorithms. Building robust, scalable applications using modern technologies.',
-        viewWork: 'View My Work',
-        contactMe: 'Contact Me',
+          'Software Engineer at DP World, working across Angular, .NET, Azure, and SQL to turn complex operational needs into clear, resilient products.',
+        viewWork: 'View selected work',
+        downloadResume: 'Download résumé',
+        socialLabel: 'Professional profiles',
+        imageAlt: 'Hazem Ragab seated on a mountain overlooking the landscape',
+        currentLabel: 'Current role',
+        currentValue: 'Software Engineer · DP World',
+        proofLabel: 'Professional snapshot',
+        stackLabel: 'Core stack',
+        stackValue: 'Angular · .NET · Azure · SQL',
+        foundationLabel: 'Foundation',
+        foundationValue: 'First in class · 3.91 / 4.0',
+        locationLabel: 'Based in',
+        locationValue: 'Suez, Egypt',
       },
 
       // About Section
       about: {
+        kicker: 'Profile',
         title: 'About Me',
         lead: 'A detail-oriented Software Engineer passionate about crafting efficient solutions and turning complex problems into elegant code.',
         description:
           'I specialize in building robust, scalable applications with a focus on clean architecture and optimal performance. As a recent Computer Science graduate and the top of my class, I combine strong theoretical foundations with practical development experience through various successful freelance projects.',
-        problemSolver: 'Problem Solver',
-        cleanCode: 'Clean Code Advocate',
-        fullStack: 'Full Stack Developer',
+        resume: 'Download full résumé',
+        evidenceLabel: 'Engineering evidence',
+        currentTitle: 'Current role',
+        currentValue: 'Software Engineer at DP World',
+        domainsTitle: 'Operational domains',
+        domainsValue: 'Logistics · Finance · Safety',
+        stackTitle: 'Core stack',
+        stackValue: 'Angular · .NET · Azure · SQL',
+        foundationTitle: 'Academic foundation',
+        foundationValue: 'First in class · 3.91 / 4.0 GPA',
       },
 
       // Experience Section
@@ -84,7 +104,10 @@ export class TranslationService {
 
       // Skills Section
       skills: {
+        kicker: 'Capabilities',
         title: 'Skills & Technologies',
+        subtitle:
+          'A focused toolkit for building maintainable products across the interface, service, data, and delivery layers.',
         categories: {
           programming: 'Programming Languages',
           backend: 'Backend Development',
@@ -101,11 +124,16 @@ export class TranslationService {
 
       // Projects Section
       projects: {
-        title: 'Personal Projects',
+        kicker: 'Selected work',
+        title: 'Systems I have shipped',
         subtitle:
-          'A collection of projects I built to learn and experiment with different technologies',
+          'A focused selection of client and product work, followed by an archive of earlier projects.',
         viewGithub: 'View on GitHub',
         livePreview: 'Live Preview',
+        privateCode: 'Private repository',
+        technologiesLabel: 'Technologies used',
+        viewArchive: 'View project archive',
+        showFeatured: 'Show selected work only',
         readMore: 'Read more',
         showLess: 'Show less',
         descriptions: {
@@ -127,6 +155,8 @@ export class TranslationService {
       // Education Section
       education: {
         title: 'Education',
+        kicker: 'Foundation',
+        subtitle: 'Academic grounding that supports practical engineering decisions.',
         degrees: {
           bsc: 'B.Sc. in Computer Science',
           webDev: 'Web Development Using .Net',
@@ -145,10 +175,12 @@ export class TranslationService {
       certificates: {
         title: 'Certifications',
         subtitle:
-          'Professional certifications and achievements that showcase my expertise',
-        kicker: 'credentials',
-        viewCredential: 'View credential',
+          'Selected credentials that reinforce my engineering and computer science foundation.',
+        kicker: 'Credentials',
         download: 'Download certificate',
+        focusAreasLabel: 'Focus areas covered',
+        viewAll: 'View all 11 credentials',
+        showFeatured: 'Show selected credentials only',
       },
 
       // Contact Section
@@ -157,10 +189,17 @@ export class TranslationService {
         subtitle: "Let's Connect",
         description:
           'Feel free to reach out for opportunities, collaborations, or just to say hello!',
+        actionsLabel: 'Direct contact options',
+        emailAction: 'Email me',
+        openProfile: 'Open profile',
+        resumeLabel: 'Résumé',
+        resumeAction: 'Download PDF',
         email: 'Email',
         location: 'Location',
         social: 'Social',
         form: {
+          heading: 'Start an email',
+          note: 'Submitting opens your email app with the message filled in. Nothing is sent automatically.',
           name: 'Name',
           namePlaceholder: 'Your name',
           email: 'Email',
@@ -169,8 +208,7 @@ export class TranslationService {
           subjectPlaceholder: 'Subject',
           message: 'Message',
           messagePlaceholder: 'Your message',
-          send: 'Send Message',
-          success: "Thank you for your message! I'll get back to you soon.",
+          send: 'Draft email',
         },
         errors: {
           nameRequired: 'Name is required',
@@ -204,30 +242,50 @@ export class TranslationService {
 
       // Hero Section
       hero: {
-        greeting: 'مرحباً، أنا حازم رجب',
-        title: 'مهندس برمجيات متكامل',
+        eyebrow: 'هندسة برمجيات للعمليات المعقدة',
+        greeting: 'حازم رجب',
+        title: 'أبني أنظمة ويب موثوقة، من واجهة المستخدم إلى واجهات برمجة التطبيقات.',
         description:
-          'متخصص في بناء واجهات برمجية فعّالة وواجهات مستخدم متجاوبة، مع شغف عميق بحل المشكلات والخوارزميات. أبني تطبيقات قوية وقابلة للتوسع باستخدام أحدث التقنيات.',
-        viewWork: 'استعرض أعمالي',
-        contactMe: 'تواصل معي',
+          'مهندس برمجيات في دي بي ورلد، أعمل باستخدام Angular و.NET وAzure وSQL لتحويل المتطلبات التشغيلية المعقدة إلى منتجات واضحة وموثوقة.',
+        viewWork: 'عرض الأعمال المختارة',
+        downloadResume: 'تحميل السيرة الذاتية',
+        socialLabel: 'الحسابات المهنية',
+        imageAlt: 'حازم رجب جالس على جبل، يتأمل المناظر الطبيعية',
+        currentLabel: 'الدور الحالي',
+        currentValue: 'مهندس برمجيات · دي بي ورلد',
+        proofLabel: 'ملخص مهني',
+        stackLabel: 'التقنيات الأساسية',
+        stackValue: 'Angular · .NET · Azure · SQL',
+        foundationLabel: 'الأساس الأكاديمي',
+        foundationValue: 'الأول على الدفعة · 3.91 من 4.0',
+        locationLabel: 'الموقع',
+        locationValue: 'السويس، مصر',
       },
 
       // About Section
       about: {
+        kicker: 'الملف المهني',
         title: 'نبذة عني',
-        lead: 'مهندس برمجيات دقيق في التفاصيل، شغوف بصياغة حلول فعّالة وتحويل المشكلات المعقدة إلى أكواد أنيقة.',
+        lead: 'مهندس برمجيات يهتم بالتفاصيل، ويحوّل المشكلات المعقدة إلى حلول فعّالة وكود واضح.',
         description:
-          'أتخصص في بناء تطبيقات قوية وقابلة للتوسع مع التركيز على البنية النظيفة والأداء الأمثل. كخريج حديث في علوم الحاسب وأول دفعتي، أجمع بين الأسس النظرية القوية والخبرة العملية في التطوير من خلال مشاريع حرة ناجحة متعددة.',
-        problemSolver: 'محلل مشكلات',
-        cleanCode: 'مناصر للكود النظيف',
-        fullStack: 'مطور متكامل',
+          'أتخصص في تطوير تطبيقات متينة وقابلة للتوسع، مع التركيز على بنية برمجية نظيفة وأداء موثوق. وبوصفي خريج علوم حاسب والأول على دفعتي، أجمع بين أساس نظري قوي وخبرة عملية في تطوير منتجات ومشاريع مستقلة ناجحة.',
+        resume: 'تحميل السيرة الذاتية الكاملة',
+        evidenceLabel: 'دلائل الكفاءة الهندسية',
+        currentTitle: 'الدور الحالي',
+        currentValue: 'مهندس برمجيات في دي بي ورلد',
+        domainsTitle: 'مجالات التشغيل',
+        domainsValue: 'اللوجستيات · المالية · السلامة',
+        stackTitle: 'التقنيات الأساسية',
+        stackValue: 'Angular · .NET · Azure · SQL',
+        foundationTitle: 'الأساس الأكاديمي',
+        foundationValue: 'الأول على الدفعة · معدل 3.91 من 4.0',
       },
 
       // Experience Section
       experience: {
         title: 'الخبرات',
         kicker: 'الخبرات',
-        subtitle: 'تقديم منتجات متينة وثقافة هندسية تعاونية.',
+        subtitle: 'تطوير منتجات موثوقة وتعزيز ثقافة هندسية قائمة على التعاون.',
         present: 'الحالي',
         justStarted: 'بداية جديدة',
         yr: 'سنة',
@@ -241,74 +299,86 @@ export class TranslationService {
         },
         summaries: {
           dpWorld:
-            'تطوير تطبيقات ويب معقدة عالية الأداء تدعم قطاعات اللوجستيات والمالية والسلامة وغيرها من المجالات الحيوية.',
+            'تطوير تطبيقات ويب متقدمة وعالية الأداء تدعم قطاعات اللوجستيات والمالية والسلامة وغيرها من المجالات الحيوية.',
         },
       },
 
       // Skills Section
       skills: {
+        kicker: 'القدرات',
         title: 'المهارات والتقنيات',
+        subtitle:
+          'مجموعة أدوات مركزة لبناء منتجات قابلة للصيانة عبر طبقات الواجهة والخدمات والبيانات والنشر.',
         categories: {
           programming: 'لغات البرمجة',
-          backend: 'تطوير الـ Backend',
-          frontend: 'تطوير الـ Frontend',
+          backend: 'تطوير الواجهة الخلفية',
+          frontend: 'تطوير الواجهة الأمامية',
           databases: 'قواعد البيانات',
-          devops: 'DevOps والأدوات',
+          devops: 'عمليات التطوير والأدوات',
           other: 'مهارات أخرى',
         },
         items: {
           problemSolving: 'حل المشكلات',
-          cleanCode: 'Clean Code',
+          cleanCode: 'الكود النظيف',
         },
       },
 
       // Projects Section
       projects: {
-        title: 'المشاريع الشخصية',
+        kicker: 'أعمال مختارة',
+        title: 'أنظمة ساهمت في تطويرها',
         subtitle:
-          'مجموعة من المشاريع التي بنيتها للتعلم والتجربة مع تقنيات مختلفة',
+          'مجموعة مختارة من أعمال العملاء والمنتجات، يتبعها أرشيف للمشاريع السابقة.',
         viewGithub: 'عرض على GitHub',
         livePreview: 'معاينة مباشرة',
+        privateCode: 'مستودع خاص',
+        technologiesLabel: 'التقنيات المستخدمة',
+        viewArchive: 'عرض أرشيف المشاريع',
+        showFeatured: 'عرض الأعمال المختارة فقط',
         readMore: 'اقرأ المزيد',
         showLess: 'عرض أقل',
         descriptions: {
           befriends:
             'منصة تواصل اجتماعي تساعد على ربط الأشخاص ذوي الاهتمامات والهوايات المتشابهة.',
-          escanor: 'منصة متجر إلكتروني للملابس بتصميم عصري وتجربة تسوق سلسة.',
+          escanor: 'منصة للتجارة الإلكترونية في مجال الأزياء، بتصميم عصري وتجربة تسوق سلسة.',
           charity:
             'منصة تربط المتبرعين بالمنظمات الخيرية وتتبع التبرعات، مع خاصية التعرف على الصور بالذكاء الاصطناعي باستخدام YOLOv5.',
           promptshare: 'منصة مجتمعية لمشاركة واكتشاف أوامر الذكاء الاصطناعي.',
           coligo:
-            'تطبيق اختبارات للطلاب مبني بـ React للواجهة الأمامية و Express.js مع MongoDB للواجهة الخلفية.',
+            'تطبيق اختبارات للطلاب مبني باستخدام React للواجهة الأمامية وExpress.js مع MongoDB للواجهة الخلفية.',
           employeeManager:
-            'تطبيق بسيط لإدارة الموظفين مبني بـ Angular للواجهة الأمامية و .NET Core مع Sql Server للواجهة الخلفية.',
+            'تطبيق لإدارة الموظفين مبني باستخدام Angular للواجهة الأمامية و.NET Core مع SQL Server للواجهة الخلفية.',
         },
       },
 
       // Education Section
       education: {
         title: 'التعليم',
+        kicker: 'الأساس الأكاديمي',
+        subtitle: 'أساس أكاديمي يدعم القرارات الهندسية العملية.',
         degrees: {
           bsc: 'بكالوريوس علوم الحاسب',
-          webDev: 'تطوير الويب باستخدام .Net',
+          webDev: 'تطوير الويب باستخدام .NET',
         },
         institutions: {
           suez: 'جامعة السويس',
           iti: 'معهد تكنولوجيا المعلومات',
         },
         details: {
-          suez: 'تخرجت الأول على دفعتي بمعدل 3.91 من 4.0',
-          iti: 'برنامج تطوير احترافي',
+          suez: 'الأول على الدفعة بمعدل 3.91 من 4.0',
+          iti: 'برنامج احترافي لتطوير الويب',
         },
       },
 
       // Certificates Section
       certificates: {
         title: 'الشهادات المهنية',
-        subtitle: 'شهادات وإنجازات مهنية تعكس خبرتي',
+        subtitle: 'شهادات مختارة تعزز خبرتي في الهندسة وعلوم الحاسب.',
         kicker: 'أوراق الاعتماد',
-        viewCredential: 'عرض الشهادة',
         download: 'تحميل الشهادة',
+        focusAreasLabel: 'المجالات التي تغطيها الشهادة',
+        viewAll: 'عرض جميع الشهادات الإحدى عشرة',
+        showFeatured: 'عرض الشهادات المختارة فقط',
       },
 
       // Contact Section
@@ -316,11 +386,18 @@ export class TranslationService {
         title: 'تواصل معي',
         subtitle: 'دعنا نتواصل',
         description:
-          'لا تتردد في التواصل للحصول على فرص أو تعاون أو حتى لمجرد إلقاء التحية!',
+          'يسعدني التواصل بشأن فرص العمل أو التعاون أو الاستفسارات المهنية.',
+        actionsLabel: 'خيارات التواصل المباشر',
+        emailAction: 'راسلني',
+        openProfile: 'فتح الملف الشخصي',
+        resumeLabel: 'السيرة الذاتية',
+        resumeAction: 'تحميل PDF',
         email: 'البريد الإلكتروني',
         location: 'الموقع',
         social: 'التواصل الاجتماعي',
         form: {
+        heading: 'إنشاء رسالة بريد إلكتروني',
+          note: 'عند الإرسال، سيفتح تطبيق البريد لديك مع تعبئة الرسالة. لن يتم إرسال أي شيء تلقائياً.',
           name: 'الاسم',
           namePlaceholder: 'اسمك',
           email: 'البريد الإلكتروني',
@@ -329,8 +406,7 @@ export class TranslationService {
           subjectPlaceholder: 'الموضوع',
           message: 'الرسالة',
           messagePlaceholder: 'رسالتك',
-          send: 'إرسال الرسالة',
-          success: 'شكراً لرسالتك! سأرد عليك قريباً.',
+          send: 'إنشاء مسودة بريد',
         },
         errors: {
           nameRequired: 'الاسم مطلوب',
