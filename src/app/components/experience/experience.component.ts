@@ -33,11 +33,23 @@ export class ExperienceComponent {
 
   readonly experiences: ExperienceItem[] = [
     {
+      id: 'intella-backend-engineer-2026',
+      role: 'Backend Engineer',
+      roleAr: 'مهندس برمجيات خلفية',
+      company: 'intella',
+      startDate: new Date('2026-04-01T00:00:00Z'),
+      summary: 'Backend Engineer at intella.',
+      summaryAr: 'مهندس برمجيات خلفية في إنتيلا.',
+      achievements: [],
+      technologies: [],
+    },
+    {
       id: 'dp-world-software-engineer-2025',
       role: 'Software Engineer',
       roleAr: 'مهندس برمجيات',
       company: 'DP World',
-      startDate: new Date('2025-06-17T00:00:00Z'),
+      startDate: new Date('2025-06-01T00:00:00Z'),
+      endDate: new Date('2026-04-01T00:00:00Z'),
       summary:
         'Developing high-performance, complex web applications that support logistics, finance, safety, and other mission-critical domains.',
       summaryAr:
