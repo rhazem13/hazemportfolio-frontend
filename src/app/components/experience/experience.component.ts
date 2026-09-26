@@ -65,35 +65,4 @@ export class ExperienceComponent {
       timeZone: 'UTC',
     }).format(date);
   }
-
-  getExperienceDuration(experience: ExperienceItem): string {
-    const start = experience.startDate;
-    const end = experience.endDate ?? new Date();
-
-    let months =
-      (end.getUTCFullYear() - start.getUTCFullYear()) * 12 +
-      (end.getUTCMonth() - start.getUTCMonth());
-
-    if (end.getUTCDate() < start.getUTCDate()) {
-      months -= 1;
-    }
-
-    if (months <= 0) {
-      return 'Just getting started';
-    }
-
-    const years = Math.floor(months / 12);
-    const remainingMonths = months % 12;
-
-    const parts: string[] = [];
-    if (years > 0) {
-      parts.push(`${years} ${years === 1 ? 'yr' : 'yrs'}`);
-    }
-
-    if (remainingMonths > 0) {
-      parts.push(`${remainingMonths} mo`);
-    }
-
-    return parts.join(' ');
-  }
 }

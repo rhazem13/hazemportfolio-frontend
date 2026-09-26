@@ -34,7 +34,7 @@ export class ProjectsComponent {
       projectType: 'Client project',
       problem: 'The app needed to track donations between donors and charities, with a way for admins to manage them.',
       contribution: 'Built the Flask API and React screens for submitting and managing donations.',
-      engineering: 'Added role-based permissions, PayPal integration and checks on document images.',
+      engineering: 'Added role-based permissions, PayPal integration and image-based validation for uploaded documents.',
       technologies: ['Flask', 'PostgreSQL', 'PayPal', 'React'],
     },
   ];

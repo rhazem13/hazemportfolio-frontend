@@ -47,9 +47,6 @@
 }
 
 .meta-block {
-  display: grid;
-  gap: 0.35rem;
-  align-content: start;
   text-align: end;
 }
 
@@ -60,13 +57,9 @@
   font-weight: 650;
 }
 
-.duration,
-.summary {
-  color: var(--text-secondary);
-}
-
 .summary {
   max-width: 48rem;
+  color: var(--text-secondary);
   font-size: 1rem;
 }
 
