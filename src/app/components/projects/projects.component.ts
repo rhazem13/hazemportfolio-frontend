@@ -1,156 +1,70 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 
-interface Project {
+interface CaseStudy {
   title: string;
-  description: string;
-  descriptionAr: string;
-  image: string;
-  githubUrl: string;
-  liveUrl?: string;
+  context: string;
+  contextAr: string;
+  problem: string;
+  problemAr: string;
+  contribution: string;
+  contributionAr: string;
+  engineering: string;
+  engineeringAr: string;
   technologies: string[];
-  isPrivate?: boolean;
 }
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './projects.component.html',
   styleUrls: ['./styles/projects.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class ProjectsComponent {
-  constructor(public translationService: TranslationService) {
-    // Initialize all descriptions as collapsed
-    this.expandedProjects = this.projects.map(() => false);
+  constructor(public translationService: TranslationService) {}
+
+  t(key: string): string { return this.translationService.t(key); }
+  localized(english: string, arabic: string): string {
+    return this.translationService.currentLang() === 'ar' ? arabic : english;
   }
 
-  t(key: string): string {
-    return this.translationService.t(key);
-  }
-
-  projects: Project[] = [
+  readonly projects: CaseStudy[] = [
     {
-      title: 'TeebaSystems',
-      description:
-        'A professional landing page for a software company, designed to showcase their solutions and services.',
-      descriptionAr:
-        'صفحة هبوط احترافية لشركة برمجيات، مصممة لعرض حلولهم وخدماتهم.',
-      image: 'assets/tebapc_result.webp',
-      githubUrl: '',
-      isPrivate: true,
-      liveUrl: 'https://www.teebasystems.com.eg/',
-      technologies: ['React', 'SCSS', 'Reactstrap'],
+      title: 'Memory Mate',
+      context: 'Academic · Backend and geospatial data',
+      contextAr: 'مشروع أكاديمي · خدمات خلفية وبيانات جغرافية',
+      problem: 'Support location-based social features and frequent reads in an application backend.',
+      problemAr: 'دعم ميزات اجتماعية تعتمد على الموقع وطلبات قراءة متكررة في الخدمة الخلفية.',
+      contribution: 'Designed and implemented core Flask APIs and backend logic.',
+      contributionAr: 'صممت ونفذت واجهات Flask والمنطق الأساسي للخدمة الخلفية.',
+      engineering: 'Used PostgreSQL with PostGIS for geotagging and nearby-friend queries; added Redis caching for frequently requested data.',
+      engineeringAr: 'استخدمت PostgreSQL وPostGIS للاستعلامات الجغرافية والأصدقاء القريبين، وأضفت Redis لتخزين البيانات كثيرة الطلب مؤقتاً.',
+      technologies: ['Flask', 'PostgreSQL', 'PostGIS', 'Redis', 'REST APIs'],
     },
     {
-      title: 'Naqaa',
-      description:
-        'A bilingual full-stack e-commerce platform dedicated to selling organic fertilizers and promoting sustainable agriculture with a modern user experience. It includes an advanced dashboard for inventory management and order tracking system, built with Node.js, React.js, and PostgreSQL.',
-      descriptionAr:
-        'منصة تجارة إلكترونية متكاملة (Full-Stack) تدعم اللغتين، مخصصة لبيع الأسمدة العضوية وتعزيز الزراعة المستدامة بتجربة مستخدم عصرية. تتضمن لوحة تحكم متقدمة لإدارة المخزون ونظام تتبع للطلبات، معتمدة على تقنيات Node.js وReact.js وقواعد بيانات PostgreSQL.',
-      image: 'assets/Naqaa_result.webp',
-      githubUrl: '',
-      isPrivate: true,
-      technologies: ['React.js', 'Node.js', 'PostgreSQL', 'Express.js'],
+      title: 'Charity Donations',
+      context: 'Client project · Payments and access control',
+      contextAr: 'مشروع عميل · مدفوعات وصلاحيات',
+      problem: 'Coordinate donation flows across donors, charities and administrators.',
+      problemAr: 'تنسيق التبرعات بين المتبرعين والجمعيات والمشرفين.',
+      contribution: 'Built a React and Flask application with role-based access, donation workflows and PayPal integration.',
+      contributionAr: 'بنيت تطبيق React وFlask بصلاحيات حسب الدور ومسارات التبرع وتكامل PayPal.',
+      engineering: 'Collected and labeled a dataset, trained a YOLO model and integrated image-based document validation into the application.',
+      engineeringAr: 'جمعت وصنفت مجموعة بيانات ودربت نموذج YOLO ودمجت فحص المستندات بالصور داخل التطبيق.',
+      technologies: ['Flask', 'React', 'PostgreSQL', 'PayPal', 'YOLO'],
     },
     {
-      title: 'SEMS Conference 2023',
-      description:
-        'The project is a promotional website for the Saudi Emergency Medical Services (SEMS) Conference 2023, organized by the Saudi Red Crescent Authority to highlight emergency medical advancements. It is built using HTML5 and CSS3 (incorporating Bootstrap, Animate.css, and FontAwesome), with JavaScript handling the interactive elements and responsive design.',
-      descriptionAr:
-        'هذا المشروع عبارة عن موقع ترويجي لمؤتمر الخدمات الطبية الطارئة السعودي (SEMS) 2023، الذي تنظمه هيئة الهلال الأحمر السعودي لتسليط الضوء على التطورات الطبية الطارئة. تم بناؤه باستخدام HTML5 و CSS3 (بما في ذلك Bootstrap و Animate.css و FontAwesome)، مع استخدام JavaScript للتعامل مع العناصر التفاعلية والتصميم المتجاوب.',
-      image: 'assets/sems_result.webp',
-      githubUrl: '',
-      isPrivate: true,
-      liveUrl: 'https://semslanding.netlify.app/',
-      technologies: [
-        'HTML5 & CSS3',
-        'JavaScript & jQuery',
-        'Bootstrap',
-        'Animate.css',
-      ],
-    },
-    {
-      title: 'BeFriends',
-      description:
-        'A social networking platform that helps connect people with similar interests and hobbies.',
-      descriptionAr:
-        'منصة تواصل اجتماعي تساعد في ربط الأشخاص ذوي الاهتمامات والهوايات المتشابهة.',
-      image: 'assets/befriends_result.webp',
-      githubUrl: 'https://github.com/rhazem13/BeFriends',
-      technologies: ['Angular', '.NET Core', 'SQL Server', 'Entity Framework'],
-    },
-    {
-      title: 'ESCANOR',
-      description:
-        'An e-commerce clothing store platform with modern design and seamless shopping experience.',
-      descriptionAr: 'منصة متجر ملابس إلكتروني بتصميم عصري وتجربة تسوق سلسة.',
-      image: 'assets/escanor_result.webp',
-      githubUrl: 'https://github.com/rhazem13/ClothingStoreV2',
-      technologies: [
-        'ASP.NET Core MVC',
-        'C#',
-        'SQL Server',
-        'Entity Framework',
-        'Bootstrap',
-      ],
-    },
-    {
-      title: 'Charity',
-      description:
-        'A platform connecting donors with charitable organizations and tracking donations, featuring AI-powered image recognition using YOLOv5.',
-      descriptionAr:
-        'منصة تربط المتبرعين بالمنظمات الخيرية وتتبع التبرعات، مع ميزة التعرف على الصور بالذكاء الاصطناعي باستخدام YOLOv5.',
-      image: 'assets/charity_result.webp',
-      githubUrl: 'https://github.com/rhazem13/Charity',
-      technologies: ['React', 'Flask', 'PostgreSQL', 'YOLOv5', 'Python'],
-    },
-    {
-      title: 'PromptShare',
-      description:
-        'A community-driven platform for sharing and discovering AI prompts.',
-      descriptionAr: 'منصة مجتمعية لمشاركة واكتشاف مطالبات الذكاء الاصطناعي.',
-      image: 'assets/promptshare_result.webp',
-      githubUrl: 'https://github.com/rhazem13/PromptShare',
-      liveUrl: 'https://prompt-share-tau.vercel.app/',
-      technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
-    },
-    {
-      title: 'Coligo',
-      description:
-        'A student quizz application built with React for the frontend and Express.js with MongoDB for the backend.',
-      descriptionAr:
-        'تطبيق اختبارات للطلاب مبني باستخدام React للواجهة و Express.js مع MongoDB للخادم.',
-      image: 'assets/coligo_result.webp',
-      githubUrl: 'https://github.com/rhazem13/anyway-student-quizz-frontend',
-      liveUrl: 'https://www.youtube.com/watch?v=pz84OtMB9ZU',
-      technologies: ['React', 'Express.js', 'MongoDB'],
-    },
-    {
-      title: 'Employee Manager',
-      description:
-        'A simple employee manager application built with Angular for the frontend and .NET Core with Sql Server for the backend.',
-      descriptionAr:
-        'تطبيق بسيط لإدارة الموظفين مبني باستخدام Angular للواجهة و .NET Core مع SQL Server للخادم.',
-      image: 'assets/employeemanager_result.webp',
-      githubUrl: 'https://github.com/rhazem13/employeemanager_frontend',
-      liveUrl: 'https://www.youtube.com/watch?v=VSpK8Iqligk&t',
-      technologies: ['Angular', '.NET Core', 'SQL Server', 'Entity Framework'],
+      title: 'AskCity',
+      context: 'Client project · Real-time social platform',
+      contextAr: 'مشروع عميل · منصة اجتماعية فورية',
+      problem: 'Bring video, chat and location features into one cross-platform social product.',
+      problemAr: 'الجمع بين الفيديو والمحادثة والخرائط في منتج اجتماعي متعدد المنصات.',
+      contribution: 'Developed a Flutter app and PHP admin dashboard, with feeds, user interactions and Google Maps features.',
+      contributionAr: 'طورت تطبيق Flutter ولوحة إدارة PHP مع المنشورات وتفاعلات المستخدمين وميزات خرائط Google.',
+      engineering: 'Integrated Agora video calls and streams, Back4App real-time chat and Firebase phone authentication.',
+      engineeringAr: 'دمجت مكالمات وبث Agora ومحادثات Back4App الفورية ومصادقة الهاتف عبر Firebase.',
+      technologies: ['Flutter', 'PHP', 'Back4App', 'Agora', 'Firebase'],
     },
   ];
-
-  // Track expanded state for each project description
-  expandedProjects: boolean[] = [];
-
-  getDescription(project: Project): string {
-    return this.translationService.currentLang() === 'ar'
-      ? project.descriptionAr
-      : project.description;
-  }
-
-  toggleDescription(index: number): void {
-    this.expandedProjects[index] = !this.expandedProjects[index];
-  }
 }

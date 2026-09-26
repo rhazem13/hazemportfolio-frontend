@@ -17,7 +17,10 @@ describe('HeroComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('offers direct links to the work and resume', () => {
+    const element = fixture.nativeElement as HTMLElement;
+
+    expect(element.querySelector<HTMLAnchorElement>('a[href="#experience"]')).not.toBeNull();
+    expect(element.querySelector<HTMLAnchorElement>('a[href="/assets/Hazem_Ragab_Resume.pdf"]')).not.toBeNull();
   });
 });

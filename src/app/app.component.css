@@ -14,5 +14,24 @@
 
 main {
   flex: 1;
-  margin-top: 4rem;
+  min-width: 0;
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--text-color);
+  color: var(--background-color);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }

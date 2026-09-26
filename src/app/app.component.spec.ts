@@ -8,22 +8,15 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'hazemportfolio-frontend' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('hazemportfolio-frontend');
-  });
-
-  it('should render title', () => {
+  it('keeps every navigation link connected to a rendered section', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, hazemportfolio-frontend');
+
+    const links = compiled.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]');
+    for (const link of links) {
+      const id = link.getAttribute('href');
+      expect(compiled.querySelector(id!), id!).not.toBeNull();
+    }
   });
 });

@@ -1,28 +1,28 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="Primary navigation">
   <div class="nav-content">
-    <div class="logo">Hazem</div>
+    <a class="logo" href="#home" aria-label="Hazem Ragab, home" (click)="closeMenu()">
+      <span class="logo-mark" aria-hidden="true">HR</span>
+      <span class="logo-name">Hazem Ragab</span>
+    </a>
     <div class="nav-right">
-      <ul class="nav-links">
+      <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
+        aria-controls="primary-navigation"
+        [attr.aria-label]="isMenuOpen ? (currentLang() === 'en' ? 'Close menu' : 'إغلاق القائمة') : (currentLang() === 'en' ? 'Open menu' : 'فتح القائمة')">
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="primary-navigation" class="nav-links" [class.is-open]="isMenuOpen">
         <li>
-          <a href="#home">{{ t("nav.home") }}</a>
+          <a href="#experience" (click)="closeMenu()">{{ t("nav.experience") }}</a>
         </li>
         <li>
-          <a href="#about">{{ t("nav.about") }}</a>
+          <a href="#projects" (click)="closeMenu()">{{ t("nav.projects") }}</a>
         </li>
         <li>
-          <a href="#experience">{{ t("nav.experience") }}</a>
+          <a href="#skills" (click)="closeMenu()">{{ t("nav.skills") }}</a>
         </li>
         <li>
-          <a href="#education">{{ t("nav.education") }}</a>
-        </li>
-        <li>
-          <a href="#skills">{{ t("nav.skills") }}</a>
-        </li>
-        <li>
-          <a href="#projects">{{ t("nav.projects") }}</a>
-        </li>
-        <li>
-          <a href="#contact">{{ t("nav.contact") }}</a>
+          <a href="#contact" (click)="closeMenu()">{{ t("nav.contact") }}</a>
         </li>
       </ul>
       <div class="nav-actions">
@@ -35,11 +35,9 @@
             currentLang() === "en" ? "عربي" : "EN"
             }}</span>
         </button>
-        <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle theme">
-          <i class="fas" [ngClass]="{
-              'fa-sun': isDark,
-              'fa-moon': !isDark,
-            }"></i>
+        <button class="theme-toggle" type="button" (click)="toggleTheme()"
+          [attr.aria-label]="isDark ? 'Use light theme' : 'Use dark theme'" [attr.aria-pressed]="isDark">
+          <span aria-hidden="true">{{ isDark ? "☀" : "☾" }}</span>
         </button>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { TranslationService } from '../../services/translation.service';
 
@@ -11,14 +11,14 @@ interface EducationItem {
   year: string;
   details: string;
   detailsAr: string;
-  icon: string;
 }
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './education.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent {
@@ -37,7 +37,6 @@ export class EducationComponent {
       year: '2023',
       details: 'Graduated first in class with a 3.91/4.0 GPA',
       detailsAr: 'تخرجت الأول على الدفعة بمعدل تراكمي 3.91/4.0',
-      icon: 'fas fa-graduation-cap',
     },
     {
       degree: 'Web Development Using .Net',
@@ -47,7 +46,6 @@ export class EducationComponent {
       year: '2021',
       details: 'Professional development program',
       detailsAr: 'برنامج تطوير مهني',
-      icon: 'fas fa-certificate',
     },
   ];
 

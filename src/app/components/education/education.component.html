@@ -1,13 +1,15 @@
 <section id="education" class="education-section">
   <div class="container">
-    <h2 class="section-title">
-      {{ t("education.title") }}
-    </h2>
+    <header class="section-heading">
+      <span class="section-kicker">{{ t("education.kicker") }}</span>
+      <h2 class="section-title">{{ t("education.title") }}</h2>
+      <p class="section-subtitle">{{ t("education.subtitle") }}</p>
+    </header>
     <div class="education-timeline">
       @for (item of educationItems; track item; let i = $index) {
-      <div class="education-item">
-        <div class="icon-container">
-          <i [class]="item.icon"></i>
+      <article class="education-item">
+        <div class="icon-container" aria-hidden="true">
+          <span>{{ i === 0 ? "BSc" : "ITI" }}</span>
         </div>
         <div class="education-content">
           <h3 class="degree">{{ getDegree(item) }}</h3>
@@ -17,7 +19,7 @@
           </div>
           <p class="details">{{ getDetails(item) }}</p>
         </div>
-      </div>
+      </article>
       }
     </div>
   </div>

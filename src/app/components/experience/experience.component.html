@@ -38,21 +38,21 @@
 
           <p class="summary">{{ getSummary(experience) }}</p>
 
-          @if (experience.achievements.length) {
+          @if (getAchievements(experience).length) {
           <ul class="achievements">
             @for (
-            achievement of experience.achievements;
+            achievement of getAchievements(experience);
             track achievement
             ) {
             <li>
-              <i class="fas fa-check" aria-hidden="true"></i>
+              <i aria-hidden="true">✓</i>
               <span>{{ achievement }}</span>
             </li>
             }
           </ul>
           }
 
-          <div class="tech-stack" aria-label="Technologies used">
+          <div class="tech-stack" [attr.aria-label]="translationService.currentLang() === 'ar' ? 'التقنيات المستخدمة' : 'Technologies used'">
             @for (tech of experience.technologies; track tech) {
             <span class="tech-pill">{{ tech }}</span>
             }

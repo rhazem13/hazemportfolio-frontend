@@ -17,7 +17,12 @@ describe('ContactComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('exposes validation errors instead of opening an incomplete email', () => {
+    component.onSubmit();
+    fixture.detectChanges();
+
+    const element = fixture.nativeElement as HTMLElement;
+    expect(component.submitted).toBe(true);
+    expect(element.querySelectorAll('[role="alert"]').length).toBe(4);
   });
 });

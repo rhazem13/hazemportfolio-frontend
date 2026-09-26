@@ -1,5 +1,5 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, computed, signal, ChangeDetectionStrategy } from '@angular/core';
 
 import { TranslationService } from '../../services/translation.service';
 
@@ -10,7 +10,6 @@ interface CertificateItem {
   issuer: string;
   issuerAr: string;
   icon: string;
-  credentialUrl?: string;
   focusAreas: string[];
   focusAreasAr: string[];
   certificateAsset: string;
@@ -19,12 +18,15 @@ interface CertificateItem {
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [NgOptimizedImage],
   templateUrl: './certificates.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./styles/certificates.component.scss'],
 })
 export class CertificatesComponent {
-  constructor(public translationService: TranslationService) { }
+  readonly showAllCertificates = signal(false);
+
+  constructor(public translationService: TranslationService) {}
 
   t(key: string): string {
     return this.translationService.t(key);
@@ -37,7 +39,7 @@ export class CertificatesComponent {
       titleAr: 'علوم الحاسب',
       issuer: 'Suez University',
       issuerAr: 'جامعة السويس',
-      icon: 'assets/icons/suezuniversity.jpg',
+      icon: 'assets/icons/suezuniversity.webp',
       certificateAsset: 'assets/certificates/ComputerScienceBsc.pdf',
       focusAreas: [
         'Systems Fundamentals',
@@ -175,7 +177,15 @@ export class CertificatesComponent {
     },
   ]);
 
-  readonly certificates = computed(() => this.certificateItems());
+  readonly certificates = computed(() =>
+    this.showAllCertificates()
+      ? this.certificateItems()
+      : this.certificateItems().slice(0, 3),
+  );
+
+  toggleCertificates(): void {
+    this.showAllCertificates.update((showAll) => !showAll);
+  }
 
   getTitle(cert: CertificateItem): string {
     return this.translationService.currentLang() === 'ar'

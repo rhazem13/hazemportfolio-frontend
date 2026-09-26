@@ -1,66 +1,30 @@
-<section id="projects" class="projects-section">
+<section id="projects" class="projects-section" aria-labelledby="projects-heading">
   <div class="container">
-    <h2 class="section-title">
-      {{ t("projects.title") }}
-    </h2>
-    <p class="section-subtitle">
-      {{ t("projects.subtitle") }}
-    </p>
-
-    <div class="projects-grid">
-      @for (project of projects; track project.title; let i = $index) {
-      <div class="project-card">
-        <div class="project-image">
-          <img [ngSrc]="project.image" [alt]="project.title" fill />
-          <div class="project-overlay">
-            @if (project.isPrivate) {
-            <span class="project-link private-code">
-              <i class="fas fa-lock"></i>
-              {{
-              translationService.currentLang() === "ar"
-              ? "كود خاص"
-              : "Private Code"
-              }}
-            </span>
-            } @else {
-            <a [href]="project.githubUrl" target="_blank" class="project-link"
-              [attr.aria-label]="project.title + ' GitHub repository'">
-              <i class="fab fa-github" aria-hidden="true"></i>
-              {{ t("projects.viewGithub") }}
-            </a>
-            }
-            @if (project.liveUrl) {
-            <a [href]="project.liveUrl" target="_blank" class="project-link"
-              [attr.aria-label]="project.title + ' live preview'">
-              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-              {{ t("projects.livePreview") }}
-            </a>
-            }
-          </div>
+    <header class="projects-heading">
+      <span class="section-kicker">{{ t("projects.kicker") }}</span>
+      <h2 id="projects-heading" class="section-title">{{ t("projects.title") }}</h2>
+      <p class="section-subtitle">{{ t("projects.subtitle") }}</p>
+    </header>
+    <div class="case-list">
+      @for (project of projects; track project.title) {
+      <article class="case-study">
+        <div class="case-intro">
+          <p class="case-context">{{ localized(project.context, project.contextAr) }}</p>
+          <h3>{{ project.title }}</h3>
+          <ul class="project-tech" [attr.aria-label]="t('projects.technologiesLabel')">
+            @for (tech of project.technologies; track tech) { <li>{{ tech }}</li> }
+          </ul>
         </div>
-        <div class="project-info">
-          <h3 class="project-title">{{ project.title }}</h3>
-          <div class="project-description-wrapper" [class.expanded]="expandedProjects[i]">
-            <p class="project-description" [id]="'desc-' + i">{{ getDescription(project) }}</p>
-            @if (getDescription(project).length > 120) {
-            <button class="read-more-btn" (click)="toggleDescription(i)" [attr.aria-expanded]="expandedProjects[i]"
-              [attr.aria-controls]="'desc-' + i">
-              {{
-              expandedProjects[i]
-              ? t("projects.showLess")
-              : t("projects.readMore")
-              }}
-            </button>
-            }
-          </div>
-          <div class="project-tech">
-            @for (tech of project.technologies; track tech) {
-            <span class="tech-tag">{{ tech }}</span>
-            }
-          </div>
-        </div>
-      </div>
+        <dl class="case-detail">
+          <div><dt>{{ localized('Problem', 'المشكلة') }}</dt><dd>{{ localized(project.problem, project.problemAr) }}</dd></div>
+          <div><dt>{{ localized('My work', 'دوري') }}</dt><dd>{{ localized(project.contribution, project.contributionAr) }}</dd></div>
+          <div><dt>{{ localized('Engineering', 'الجانب الهندسي') }}</dt><dd>{{ localized(project.engineering, project.engineeringAr) }}</dd></div>
+        </dl>
+      </article>
       }
     </div>
+    <p class="public-work">{{ localized('For a public code sample, see', 'للاطلاع على نموذج كود عام، انظر') }}
+      <a href="https://github.com/rhazem13/PromptShare" target="_blank" rel="noopener noreferrer">PromptShare on GitHub ↗</a>.
+    </p>
   </div>
 </section>

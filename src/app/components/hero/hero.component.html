@@ -1,143 +1,58 @@
-<section id="home" class="hero">
-  <!-- Hero Background Image with Blur-Up Loading -->
-  <div class="hero-background loaded">
-    <picture>
-      <source media="(max-width: 768px)" srcset="/assets/sectiononebackground-mobile.webp" />
-      <img src="/assets/sectiononebackground.webp"
-        srcset="/assets/sectiononebackground.webp 1400w, /assets/sectiononebackground-mobile.webp 768w"
-        sizes="(max-width: 768px) 100vw, 100vw" alt="" class="hero-bg-image" fetchpriority="high" />
-    </picture>
-  </div>
+<section id="home" class="hero" aria-labelledby="hero-heading">
+  <div class="hero-shell container">
+    <div class="hero-copy">
+      <p class="hero-eyebrow">
+        <span aria-hidden="true"></span>
+        {{ t("hero.eyebrow") }}
+      </p>
+      <h1 id="hero-heading">{{ t("hero.greeting") }}</h1>
+      <p class="hero-title">{{ t("hero.title") }}</p>
+      <p class="hero-description">{{ t("hero.description") }}</p>
 
-  <!-- Flying birds in the sky -->
-  <div class="birds-container" aria-hidden="true">
-    <div class="bird bird-1">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-    <div class="bird bird-2">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-    <div class="bird bird-3">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-    <div class="bird bird-4">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-    <div class="bird bird-5">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-    <div class="bird bird-6">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-    <div class="bird bird-7">
-      <span class="wing wing-left"></span>
-      <span class="wing wing-right"></span>
-    </div>
-  </div>
-
-  <!-- Wind accents -->
-  <div class="wind-lines" aria-hidden="true">
-    <span class="wind wind-1"></span>
-    <span class="wind wind-2"></span>
-    <span class="wind wind-3"></span>
-    <span class="wind wind-4"></span>
-  </div>
-
-  <!-- Enhanced floating particles background -->
-  <div class="hero-particles">
-    <!-- Small particles -->
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <span class="particle small"></span>
-    <!-- Medium glowing particles -->
-    <span class="particle medium"></span>
-    <span class="particle medium"></span>
-    <span class="particle medium"></span>
-    <span class="particle medium"></span>
-    <span class="particle medium"></span>
-    <span class="particle medium"></span>
-    <!-- Large aurora orbs -->
-    <span class="particle large"></span>
-    <span class="particle large"></span>
-    <span class="particle large"></span>
-    <span class="particle large"></span>
-  </div>
-
-  <!-- Animated light rays from sky -->
-  <div class="light-rays">
-    <span class="ray"></span>
-    <span class="ray"></span>
-    <span class="ray"></span>
-    <span class="ray"></span>
-  </div>
-
-  <!-- Floating geometric shapes - more hexagons and variety -->
-  <div class="hero-shapes">
-    <div class="shape ring-pulse"></div>
-    <div class="shape ring-pulse ring-2"></div>
-    <div class="shape hexagon hex-1"></div>
-    <div class="shape hexagon hex-2"></div>
-    <div class="shape hexagon hex-3"></div>
-    <div class="shape hexagon hex-4"></div>
-    <div class="shape hexagon hex-5"></div>
-    <div class="shape diamond"></div>
-    <div class="shape diamond diamond-2"></div>
-    <div class="shape triangle"></div>
-    <div class="shape triangle triangle-2"></div>
-    <div class="shape circle-dot"></div>
-    <div class="shape circle-dot dot-2"></div>
-    <div class="shape circle-dot dot-3"></div>
-  </div>
-
-  <!-- Subtle grid overlay -->
-  <div class="hero-grid"></div>
-
-  <!-- Gradient overlay for depth -->
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>{{ t("hero.greeting") }}</h1>
-      <h2>{{ t("hero.title") }}</h2>
-      <p>{{ t("hero.description") }}</p>
-      <div class="social-links">
-        <a href="https://github.com/rhazem13" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://linkedin.com/in/rhazem13" target="_blank" rel="noopener" title="LinkedIn"
-          aria-label="LinkedIn">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://leetcode.com/u/rhazem13" target="_blank" rel="noopener" title="LeetCode" aria-label="LeetCode">
-          <i class="fas fa-code" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:rhazem13@yahoo.com" title="Email" aria-label="Email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
+      <div class="hero-actions">
+        <a href="#experience" class="hero-action primary">{{ t("hero.viewWork") }}</a>
+        <a href="/assets/Hazem_Ragab_Resume.pdf" class="hero-action secondary" target="_blank" rel="noopener noreferrer">
+          {{ t("hero.downloadResume") }}
+          <span aria-hidden="true">↗</span>
         </a>
       </div>
-      <div class="cta-buttons">
-        <a href="#projects" class="cta-button primary">{{
-          t("hero.viewWork")
-          }}</a>
-        <a href="#contact" class="cta-button secondary">{{
-          t("hero.contactMe")
-          }}</a>
+
+      <nav class="hero-social" [attr.aria-label]="t('hero.socialLabel')">
+        <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/rhazem13" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:rhazem13@yahoo.com">Email</a>
+      </nav>
+    </div>
+
+    <aside class="hero-evidence" [attr.aria-label]="t('hero.evidence')">
+      <div class="evidence-topline"><span>{{ t("hero.evidence") }}</span><span>INTELLA / 2026</span></div>
+      <div class="evidence-row">
+        <strong>{{ t("hero.quotaValue") }}</strong>
+        <p>{{ t("hero.quotaLabel") }}</p>
       </div>
+      <div class="evidence-row">
+        <strong class="latency-value">{{ t("hero.latencyValue") }}</strong>
+        <p>{{ t("hero.latencyLabel") }}</p>
+      </div>
+      <div class="evidence-foot">
+        <span>{{ t("hero.systemsLabel") }}</span>
+        <p>{{ t("hero.systemsValue") }}</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero-proof container" role="list" [attr.aria-label]="t('hero.proofLabel')">
+    <div role="listitem">
+      <span>{{ t("hero.stackLabel") }}</span>
+      <strong>{{ t("hero.stackValue") }}</strong>
+    </div>
+    <div role="listitem">
+      <span>{{ t("hero.foundationLabel") }}</span>
+      <strong>{{ t("hero.foundationValue") }}</strong>
+    </div>
+    <div role="listitem">
+      <span>{{ t("hero.locationLabel") }}</span>
+      <strong>{{ t("hero.locationValue") }}</strong>
     </div>
   </div>
 </section>

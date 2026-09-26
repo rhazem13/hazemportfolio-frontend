@@ -1,24 +1,21 @@
-<section id="skills" class="section skills">
+<section id="skills" class="skills" aria-labelledby="skills-heading">
   <div class="container">
-    <h2 class="section-title">
-      {{ t("skills.title") }}
-    </h2>
+    <header class="skills-heading">
+      <span class="section-kicker">{{ t("skills.kicker") }}</span>
+      <h2 id="skills-heading" class="section-title">{{ t("skills.title") }}</h2>
+      <p class="section-subtitle">{{ t("skills.subtitle") }}</p>
+    </header>
+
     <div class="skills-grid">
-      @for (category of skillCategories; track category; let i = $index) {
-      <div class="skill-category">
-        <div class="category-header">
-          <i [class]="category.icon"></i>
-          <h3>{{ getCategoryTitle(category) }}</h3>
-        </div>
-        <div class="skill-items">
-          @for (skill of category.skills; track skill) {
-          <div class="skill-item">
-            <i [class]="skill.icon"></i>
-            <span>{{ getSkillName(skill) }}</span>
-          </div>
+      @for (category of skillCategories; track category.titleEn) {
+      <article class="skill-category">
+        <h3>{{ getCategoryTitle(category) }}</h3>
+        <ul>
+          @for (skill of category.skills; track skill.name) {
+          <li>{{ getSkillName(skill) }}</li>
           }
-        </div>
-      </div>
+        </ul>
+      </article>
       }
     </div>
   </div>

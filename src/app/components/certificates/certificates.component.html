@@ -1,50 +1,42 @@
-<section id="certificates" class="certificates-section">
+<section id="certificates" class="certificates-section" aria-labelledby="certificates-heading">
   <div class="container">
-    <div class="section-heading">
+    <header class="certificates-heading">
       <span class="section-kicker">{{ t("certificates.kicker") }}</span>
-      <h2 class="section-title">{{ t("certificates.title") }}</h2>
+      <h2 id="certificates-heading" class="section-title">{{ t("certificates.title") }}</h2>
       <p class="section-subtitle">{{ t("certificates.subtitle") }}</p>
-    </div>
+    </header>
 
     <div class="certificates-grid" role="list">
-      @for (
-      certificate of certificates();
-      track certificate.id;
-      let i = $index
-      ) {
+      @for (certificate of certificates(); track certificate.id) {
       <article class="certificate-card" role="listitem">
-        <a class="certificate-download" [href]="certificate.certificateAsset" download
-          [title]="t('certificates.download')">
-          <i class="fas fa-download" aria-hidden="true"></i>
-          <span class="visually-hidden">{{ t("certificates.download") }}
-            {{ getTitle(certificate) }}</span>
-        </a>
         <div class="certificate-media">
-          <img class="issuer-icon" [ngSrc]="certificate.icon" [alt]="getIssuer(certificate) + ' logo'" width="72"
-            height="72" />
+          <img class="issuer-icon" [ngSrc]="certificate.icon" [alt]="getIssuer(certificate) + ' logo'" width="64"
+            height="64" />
         </div>
+
         <div class="certificate-body">
-          <div class="certificate-meta">
-            <h3 class="certificate-title">{{ getTitle(certificate) }}</h3>
-            <p class="certificate-issuer">{{ getIssuer(certificate) }}</p>
-          </div>
-          <ul class="focus-areas" aria-label="Focus areas covered">
+          <h3>{{ getTitle(certificate) }}</h3>
+          <p class="certificate-issuer">{{ getIssuer(certificate) }}</p>
+          <ul class="focus-areas" [attr.aria-label]="t('certificates.focusAreasLabel')">
             @for (area of getFocusAreas(certificate); track area) {
-            <li>
-              <i class="fas fa-circle-notch" aria-hidden="true"></i>
-              <span>{{ area }}</span>
-            </li>
+            <li>{{ area }}</li>
             }
           </ul>
-          @if (certificate.credentialUrl) {
-          <a class="credential-link" [href]="certificate.credentialUrl" target="_blank" rel="noopener">
-            {{ t("certificates.viewCredential") }}
-            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </a>
-          }
         </div>
+
+        <a class="certificate-download" [href]="certificate.certificateAsset" download>
+          {{ t("certificates.download") }}
+          <i class="fas fa-arrow-down" aria-hidden="true"></i>
+        </a>
       </article>
       }
     </div>
+
+    <button type="button" class="certificates-toggle" (click)="toggleCertificates()"
+      [attr.aria-expanded]="showAllCertificates()">
+      {{ showAllCertificates() ? t("certificates.showFeatured") : t("certificates.viewAll") }}
+      <i class="fas" [class.fa-plus]="!showAllCertificates()" [class.fa-minus]="showAllCertificates()"
+        aria-hidden="true"></i>
+    </button>
   </div>
 </section>

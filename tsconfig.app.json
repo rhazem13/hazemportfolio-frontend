@@ -10,10 +10,17 @@
   },
   "files": [
     "src/main.ts",
-    "src/main.server.ts",
-    "src/server.ts"
+    "src/main.server.ts"
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      "checks": {
+        "nullishCoalescingNotNullable": "suppress",
+        "optionalChainNotNullable": "suppress"
+      }
+    }
+  }
 }

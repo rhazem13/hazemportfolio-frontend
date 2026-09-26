@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { TranslationService } from '../../services/translation.service';
 
@@ -14,6 +14,7 @@ interface ExperienceItem {
   summary: string;
   summaryAr: string;
   achievements: string[];
+  achievementsAr: string[];
   technologies: string[];
 }
 
@@ -22,6 +23,7 @@ interface ExperienceItem {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './experience.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./styles/experience.component.scss'],
 })
 export class ExperienceComponent {
@@ -38,10 +40,19 @@ export class ExperienceComponent {
       roleAr: 'مهندس برمجيات خلفية',
       company: 'intella',
       startDate: new Date('2026-04-01T00:00:00Z'),
-      summary: 'Backend Engineer at intella.',
-      summaryAr: 'مهندس برمجيات خلفية في إنتيلا.',
-      achievements: [],
-      technologies: [],
+      summary: 'Build and debug production real-time audio services and external integrations, with a focus on concurrency, latency, multi-instance operation and reliability.',
+      summaryAr: 'أبني وأشخّص خدمات صوت فورية وتكاملات خارجية في بيئة الإنتاج، مع التركيز على التزامن وزمن الاستجابة والعمل عبر عدة نسخ وموثوقية الخدمة.',
+      achievements: [
+        'Fixed concurrent-session quota accounting that could allow roughly 5× usage over-consumption.',
+        'Reduced a recording-finalization path with a 60-second timeline gap from ~18.3 s to ~222 ms.',
+        'Moved shared state toward Redis to support coordination across backend instances.',
+      ],
+      achievementsAr: [
+        'عالجت خللاً في حساب حصص الجلسات المتزامنة كان قد يسمح باستهلاك يقارب خمسة أضعاف الحد المتوقع.',
+        'خفضت زمن إنهاء تسجيل في حالة فجوة زمنية مدتها 60 ثانية من نحو 18.3 ثانية إلى 222 مللي ثانية.',
+        'نقلت الحالة المشتركة تدريجياً إلى Redis لدعم التنسيق بين نسخ الخدمة.',
+      ],
+      technologies: ['Node.js', 'TypeScript', 'WebSockets', 'Redis', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana'],
     },
     {
       id: 'dp-world-software-engineer-2025',
@@ -50,19 +61,26 @@ export class ExperienceComponent {
       company: 'DP World',
       startDate: new Date('2025-06-01T00:00:00Z'),
       endDate: new Date('2026-04-01T00:00:00Z'),
-      summary:
-        'Developing high-performance, complex web applications that support logistics, finance, safety, and other mission-critical domains.',
-      summaryAr:
-        'تطوير تطبيقات ويب عالية الأداء ومعقدة تدعم اللوجستيات والمالية والسلامة وغيرها من المجالات الحيوية.',
-      achievements: [],
+      summary: 'Built and maintained enterprise applications supporting finance, logistics and safety operations with .NET Core, Angular and background Worker Services.',
+      summaryAr: 'طورت وصنت تطبيقات مؤسسية للمالية واللوجستيات والسلامة باستخدام .NET Core وAngular وخدمات الخلفية.',
+      achievements: ['Resolved production issues and helped modernize legacy application flows.'],
+      achievementsAr: ['عالجت مشكلات إنتاجية وساهمت في تحديث مسارات تطبيقات قديمة.'],
       technologies: [
-        'TypeScript',
-        'Angular',
-        '.NET CORE',
-        'Azure',
-        'Microsoft SQL Server',
-        'Oracle DB',
+        '.NET Core', 'C#', 'Angular', 'Worker Services', 'SQL Server',
       ],
+    },
+    {
+      id: 'freelance-software-engineer-2023',
+      role: 'Freelance Software Engineer',
+      roleAr: 'مهندس برمجيات مستقل',
+      company: 'Client projects',
+      startDate: new Date('2023-03-01T00:00:00Z'),
+      endDate: new Date('2025-08-01T00:00:00Z'),
+      summary: 'Delivered client products across commerce, social platforms and logistics, working on APIs, authentication, payments, maps and real-time features.',
+      summaryAr: 'أنجزت منتجات لعملاء في التجارة الإلكترونية والمنصات الاجتماعية واللوجستيات، شملت واجهات برمجة التطبيقات والمصادقة والمدفوعات والخرائط والميزات الفورية.',
+      achievements: [],
+      achievementsAr: [],
+      technologies: ['Flask', '.NET', 'Laravel', 'React', 'Flutter', 'PostgreSQL', 'PostGIS'],
     },
   ];
 
@@ -78,13 +96,23 @@ export class ExperienceComponent {
       : experience.summary;
   }
 
+  getAchievements(experience: ExperienceItem): string[] {
+    return this.translationService.currentLang() === 'ar'
+      ? experience.achievementsAr
+      : experience.achievements;
+  }
+
   getExperienceDuration(experience: ExperienceItem): string {
     const start = experience.startDate;
     const end = experience.endDate ?? new Date();
 
-    const months =
-      (end.getFullYear() - start.getFullYear()) * 12 +
-      (end.getMonth() - start.getMonth());
+    let months =
+      (end.getUTCFullYear() - start.getUTCFullYear()) * 12 +
+      (end.getUTCMonth() - start.getUTCMonth());
+
+    if (end.getUTCDate() < start.getUTCDate()) {
+      months -= 1;
+    }
 
     if (months <= 0) {
       return this.t('experience.justStarted');

@@ -14,8 +14,10 @@ export class ThemeService {
     if (isPlatformBrowser(this.platformId)) {
       // Wait for the document to be ready
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () =>
-          this.initializeTheme()
+        document.addEventListener(
+          'DOMContentLoaded',
+          () => this.initializeTheme(),
+          { once: true },
         );
       } else {
         this.initializeTheme();
@@ -24,16 +26,15 @@ export class ThemeService {
   }
 
   private initializeTheme(): void {
-    const initialTheme = this.getInitialTheme();
-    this.setDarkTheme(initialTheme);
+    this.applyTheme(this.getInitialTheme());
 
     // Listen for system theme changes
     if (window.matchMedia) {
       window
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-            this.setDarkTheme(e.matches);
+          if (!this.getStoredTheme()) {
+            this.applyTheme(e.matches);
           }
         });
     }
@@ -42,7 +43,7 @@ export class ThemeService {
   private getInitialTheme(): boolean {
     if (isPlatformBrowser(this.platformId)) {
       // First check localStorage
-      const savedTheme = localStorage.getItem('theme');
+      const savedTheme = this.getStoredTheme();
       if (savedTheme) {
         return savedTheme === 'dark';
       }
@@ -55,20 +56,34 @@ export class ThemeService {
     return false;
   }
 
+  private getStoredTheme(): string | null {
+    try {
+      return localStorage.getItem('theme');
+    } catch (error) {
+      if (error instanceof DOMException) {
+        return null;
+      }
+      throw error;
+    }
+  }
+
   setDarkTheme(isDark: boolean): void {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    // Update state
-    this.isDarkTheme.next(isDark);
-
-    // Save to localStorage
     try {
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    } catch (e) {
-      console.warn('Failed to save theme preference:', e);
+    } catch (error) {
+      if (!(error instanceof DOMException)) {
+        throw error;
+      }
     }
 
-    // Update DOM
+    this.applyTheme(isDark);
+  }
+
+  private applyTheme(isDark: boolean): void {
+    this.isDarkTheme.next(isDark);
+
     requestAnimationFrame(() => {
       if (isDark) {
         document.documentElement.setAttribute('data-theme', 'dark');

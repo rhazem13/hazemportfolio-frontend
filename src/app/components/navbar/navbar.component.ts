@@ -1,21 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component, computed } from '@angular/core';
+import { Component, HostListener, computed, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './navbar.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./styles/navbar.component.scss'],
 })
 export class NavbarComponent {
   isDark = false;
+  isMenuOpen = false;
 
-  // Translation signals
   currentLang = computed(() => this.translationService.lang());
-  isRTL = computed(() => this.translationService.isRTL());
 
   constructor(
     private themeService: ThemeService,
@@ -32,6 +30,19 @@ export class NavbarComponent {
 
   toggleLanguage() {
     this.translationService.toggleLanguage();
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  closeMenuOnEscape(): void {
+    this.closeMenu();
   }
 
   t(key: string): string {

@@ -1,12 +1,13 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './footer.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./styles/footer.component.scss'],
 })
 export class FooterComponent {

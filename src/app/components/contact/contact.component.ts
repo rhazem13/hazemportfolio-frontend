@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -8,39 +7,35 @@ import {
 } from '@angular/forms';
 
 import { TranslationService } from '../../services/translation.service';
-import { Contact3dSceneComponent } from '../contact-3d-scene/contact-3d-scene.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, Contact3dSceneComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   contactForm: FormGroup;
   submitted = false;
-  submitSuccess = false;
 
   contactInfo = {
     email: 'rhazem13@yahoo.com',
-    location: 'Al Arbeen, Suez',
+    location: 'Al Arbaeen, Suez, Egypt',
     locationAr: 'الأربعين، السويس',
     social: [
       {
         name: 'GitHub',
         url: 'https://github.com/rhazem13',
-        icon: 'fab fa-github',
       },
       {
         name: 'LinkedIn',
         url: 'https://linkedin.com/in/rhazem13',
-        icon: 'fab fa-linkedin',
       },
       {
         name: 'LeetCode',
         url: 'https://leetcode.com/u/rhazem13',
-        icon: 'fas fa-code',
       },
     ],
   };
@@ -67,33 +62,23 @@ export class ContactComponent {
       : this.contactInfo.location;
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.submitted = true;
 
-    if (this.contactForm.valid) {
-      const formData = this.contactForm.value;
-      const mailtoLink = `mailto:${this.contactInfo.email
-        }?subject=${encodeURIComponent(
-          formData.subject,
-        )}&body=${encodeURIComponent(
-          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-        )}`;
-
-      window.location.href = mailtoLink;
-
-      // Reset form and show success message
-      this.submitSuccess = true;
-      this.contactForm.reset();
-      this.submitted = false;
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        this.submitSuccess = false;
-      }, 5000);
+    if (this.contactForm.invalid) {
+      return;
     }
+
+    const formFields = this.contactForm.getRawValue();
+    const subject = encodeURIComponent(formFields.subject);
+    const body = encodeURIComponent(
+      `Name: ${formFields.name}\nEmail: ${formFields.email}\n\nMessage:\n${formFields.message}`,
+    );
+
+    window.location.href = `mailto:${this.contactInfo.email}?subject=${subject}&body=${body}`;
+    this.submitted = false;
   }
 
-  // Getter for easy access to form fields in template
   get f() {
     return this.contactForm.controls;
   }
