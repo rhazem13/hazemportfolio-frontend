@@ -151,6 +151,21 @@ section {
   text-transform: uppercase;
 }
 
+.section-kicker[data-index] {
+  display: inline-flex;
+  align-items: baseline;
+  justify-self: start;
+  gap: .8rem;
+}
+
+.section-kicker[data-index]::before {
+  display: inline-block;
+  color: var(--signal-color);
+  content: attr(data-index) ' /';
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
