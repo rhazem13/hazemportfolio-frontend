@@ -40,18 +40,10 @@ export class ExperienceComponent {
       roleAr: 'مهندس برمجيات خلفية',
       company: 'intella',
       startDate: new Date('2026-04-01T00:00:00Z'),
-      summary: 'Build and debug production real-time audio services and external integrations, with a focus on concurrency, latency, multi-instance operation and reliability.',
-      summaryAr: 'أبني وأشخّص خدمات صوت فورية وتكاملات خارجية في بيئة الإنتاج، مع التركيز على التزامن وزمن الاستجابة والعمل عبر عدة نسخ وموثوقية الخدمة.',
-      achievements: [
-        'Fixed concurrent-session quota accounting that could allow roughly 5× usage over-consumption.',
-        'Reduced a recording-finalization path with a 60-second timeline gap from ~18.3 s to ~222 ms.',
-        'Moved shared state toward Redis to support coordination across backend instances.',
-      ],
-      achievementsAr: [
-        'عالجت خللاً في حساب حصص الجلسات المتزامنة كان قد يسمح باستهلاك يقارب خمسة أضعاف الحد المتوقع.',
-        'خفضت زمن إنهاء تسجيل في حالة فجوة زمنية مدتها 60 ثانية من نحو 18.3 ثانية إلى 222 مللي ثانية.',
-        'نقلت الحالة المشتركة تدريجياً إلى Redis لدعم التنسيق بين نسخ الخدمة.',
-      ],
+      summary: 'Build and maintain backend services and external integrations for real-time products, with a focus on reliability.',
+      summaryAr: 'أبني وأصون خدمات خلفية وتكاملات خارجية لمنتجات فورية، مع التركيز على الموثوقية.',
+      achievements: [],
+      achievementsAr: [],
       technologies: ['Node.js', 'TypeScript', 'WebSockets', 'Redis', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana'],
     },
     {

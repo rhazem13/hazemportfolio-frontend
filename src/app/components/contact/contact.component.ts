@@ -11,8 +11,8 @@ import { TranslationService } from '../../services/translation.service';
 export class ContactComponent {
   contactInfo = {
     email: 'h.ragab.dev@gmail.com',
-    location: 'Al Arbaeen, Suez, Egypt',
-    locationAr: 'الأربعين، السويس',
+    location: 'Cairo, Egypt',
+    locationAr: 'القاهرة، مصر',
     social: [
       {
         name: 'GitHub',

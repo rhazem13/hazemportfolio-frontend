@@ -40,12 +40,12 @@ export class TranslationService {
 
       // Hero Section
       hero: {
-        eyebrow: 'Suez, Egypt · Open to remote roles',
+        eyebrow: 'Cairo, Egypt · Open to remote roles',
         greeting: 'Hazem Ragab',
         role: 'Backend software engineer',
-        title: 'I make complex systems dependable.',
+        title: 'I build backend services and integrations.',
         description:
-          'At Intella, I build real-time audio integrations and solve concurrency and reliability problems with Node.js, TypeScript and Redis. Before that, I shipped enterprise software at DP World.',
+          'I currently work at Intella with Node.js and TypeScript. Previously, I developed enterprise applications at DP World and delivered software for clients.',
         viewWork: 'Explore my work',
         downloadResume: 'Read my CV',
         email: 'Email',
@@ -53,23 +53,6 @@ export class TranslationService {
         imageAlt: 'Hazem Ragab seated on a mountain overlooking the landscape',
         currentLabel: 'Current role',
         currentValue: 'Backend Engineer · Intella',
-        evidence: 'A recent production fix',
-        noteLead: 'From 18.3 seconds to 222 milliseconds.',
-        noteBody: 'I redesigned a recording-finalization path for a 60-second timeline gap and added regression coverage so the improvement stays put.',
-        noteFooter: 'Intella · 2026',
-        quotaValue: '~5×',
-        quotaLabel: 'potential over-consumption prevented through quota accounting fix',
-        latencyValue: '18.3 s → 222 ms',
-        latencyLabel: 'recording finalization in a 60-second gap case',
-        systemsLabel: 'Working on now',
-        systemsValue: 'Live audio · WebSockets · Redis · multi-instance services',
-        proofLabel: 'Professional snapshot',
-        stackLabel: 'Core stack',
-        stackValue: 'Node.js · TypeScript · Redis',
-        foundationLabel: 'Previous role',
-        foundationValue: 'Software Engineer · DP World',
-        locationLabel: 'Commercial work',
-        locationValue: 'Client and company systems since 2023',
       },
 
       // About Section
@@ -96,7 +79,7 @@ export class TranslationService {
         title: 'Experience',
         kicker: 'Experience',
         subtitle:
-          'The systems I have built and the problems I have solved.',
+          'Backend and software engineering across product teams and client work.',
         present: 'Present',
         justStarted: 'Just getting started',
         yr: 'yr',
@@ -254,12 +237,12 @@ export class TranslationService {
 
       // Hero Section
       hero: {
-        eyebrow: 'السويس، مصر · متاح للعمل عن بُعد',
+        eyebrow: 'القاهرة، مصر · متاح للعمل عن بُعد',
         greeting: 'حازم رجب',
         role: 'مهندس برمجيات خلفية',
-        title: 'أجعل الأنظمة المعقدة أكثر اعتمادية.',
+        title: 'أبني خدمات خلفية وتكاملات برمجية.',
         description:
-          'أبني في إنتيلا تكاملات للصوت المباشر وأحل مشكلات التزامن والموثوقية باستخدام Node.js وTypeScript وRedis. وقبل ذلك طورت أنظمة مؤسسية في دي بي ورلد.',
+          'أعمل حالياً في إنتيلا باستخدام Node.js وTypeScript. وسبق أن طورت تطبيقات مؤسسية في دي بي ورلد وبرمجيات للعملاء.',
         viewWork: 'استكشف أعمالي',
         downloadResume: 'اقرأ سيرتي الذاتية',
         email: 'البريد الإلكتروني',
@@ -267,23 +250,6 @@ export class TranslationService {
         imageAlt: 'حازم رجب جالس على جبل، يتأمل المناظر الطبيعية',
         currentLabel: 'الدور الحالي',
         currentValue: 'مهندس برمجيات خلفية · إنتيلا',
-        evidence: 'إصلاح حديث في بيئة الإنتاج',
-        noteLead: 'من 18.3 ثانية إلى 222 مللي ثانية.',
-        noteBody: 'أعدت تصميم مسار إنهاء التسجيل عند وجود فجوة مدتها 60 ثانية، وأضفت اختبارات تمنع عودة المشكلة.',
-        noteFooter: 'إنتيلا · 2026',
-        quotaValue: 'نحو 5×',
-        quotaLabel: 'استهلاك زائد محتمل منعته معالجة حساب حصص الجلسات',
-        latencyValue: '18.3s → 222ms',
-        latencyLabel: 'زمن إنهاء تسجيل في حالة فجوة مدتها 60 ثانية',
-        systemsLabel: 'أعمل حالياً على',
-        systemsValue: 'الصوت المباشر · WebSockets · Redis · خدمات متعددة النسخ',
-        proofLabel: 'ملخص مهني',
-        stackLabel: 'التقنيات الأساسية',
-        stackValue: 'Node.js · TypeScript · Redis',
-        foundationLabel: 'الوظيفة السابقة',
-        foundationValue: 'مهندس برمجيات · دي بي ورلد',
-        locationLabel: 'الخبرة التجارية',
-        locationValue: 'أنظمة للعملاء والشركات منذ 2023',
       },
 
       // About Section
@@ -309,7 +275,7 @@ export class TranslationService {
       experience: {
         title: 'الخبرات',
         kicker: 'الخبرات',
-        subtitle: 'الأنظمة التي بنيتها والمشكلات التي عالجتها.',
+        subtitle: 'خبرة في هندسة البرمجيات الخلفية والمنتجات ومشاريع العملاء.',
         present: 'الحالي',
         justStarted: 'بداية جديدة',
         yr: 'سنة',
