@@ -93,7 +93,6 @@
   transform: scaleX(1);
 }
 
-.lang-toggle,
 .theme-toggle,
 .menu-toggle {
   display: inline-flex;
@@ -112,18 +111,10 @@
     color 180ms ease;
 }
 
-.lang-toggle {
-  padding-inline: 0.75rem;
-  font-family: var(--font-utility);
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
 .theme-toggle {
   border-radius: 0;
 }
 
-.lang-toggle:hover,
 .theme-toggle:hover,
 .menu-toggle:hover {
   border-color: var(--accent-color);
@@ -219,7 +210,6 @@
     gap: 0.5rem;
   }
 
-  .lang-toggle,
   .theme-toggle,
   .menu-toggle {
     min-width: 2.625rem;

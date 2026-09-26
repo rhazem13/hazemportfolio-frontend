@@ -1,31 +1,31 @@
 <section id="projects" class="projects-section" aria-labelledby="projects-heading">
   <div class="container">
     <header class="projects-heading">
-      <span class="section-kicker" data-index="02">{{ t("projects.kicker") }}</span>
-      <h2 id="projects-heading" class="section-title">{{ t("projects.title") }}</h2>
-      <p class="section-subtitle">{{ t("projects.subtitle") }}</p>
+      <span class="section-kicker" data-index="02">Selected work</span>
+      <h2 id="projects-heading" class="section-title">Selected work</h2>
+      <p class="section-subtitle">A few examples of the decisions behind the software.</p>
     </header>
     <div class="case-list">
       @for (project of projects; track project.title) {
       <article class="case-study">
         <div class="case-intro">
-          <p class="case-context">{{ localized(project.context, project.contextAr) }}</p>
+          <p class="case-context">{{ project.context }}</p>
           <h3>{{ project.title }}</h3>
-          <p class="case-type">{{ localized(project.projectType, project.projectTypeAr) }}</p>
-          <ul class="project-tech" [attr.aria-label]="t('projects.technologiesLabel')">
-            @for (tech of project.technologies; track tech) { <li dir="ltr">{{ tech }}</li> }
+          <p class="case-type">{{ project.projectType }}</p>
+          <ul class="project-tech" aria-label="Technologies used">
+            @for (tech of project.technologies; track tech) { <li>{{ tech }}</li> }
           </ul>
         </div>
         <dl class="case-detail">
-          <div><dt>{{ localized('Problem', 'المشكلة') }}</dt><dd>{{ localized(project.problem, project.problemAr) }}</dd></div>
-          <div><dt>{{ localized('My work', 'دوري') }}</dt><dd>{{ localized(project.contribution, project.contributionAr) }}</dd></div>
-          <div><dt>{{ localized('Engineering', 'التنفيذ التقني') }}</dt><dd>{{ localized(project.engineering, project.engineeringAr) }}</dd></div>
+          <div><dt>Problem</dt><dd>{{ project.problem }}</dd></div>
+          <div><dt>My work</dt><dd>{{ project.contribution }}</dd></div>
+          <div><dt>Engineering</dt><dd>{{ project.engineering }}</dd></div>
         </dl>
       </article>
       }
     </div>
-    <p class="public-work">{{ localized('For more code samples, see my', 'نماذج أخرى من الكود متاحة على') }}
-      <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">{{ localized('public repositories on GitHub ↗', 'حسابي في GitHub ↗') }}</a>.
+    <p class="public-work">For more code samples, see my
+      <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">public repositories on GitHub ↗</a>.
     </p>
   </div>
 </section>

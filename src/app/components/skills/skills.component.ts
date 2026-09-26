@@ -1,15 +1,12 @@
 
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import { TranslationService } from '../../services/translation.service';
-
 interface Skill {
   name: string;
 }
 
 interface SkillCategory {
-  titleEn: string;
-  titleAr: string;
+  title: string;
   skills: Skill[];
 }
 
@@ -22,16 +19,9 @@ interface SkillCategory {
   styleUrls: ['./styles/skills.component.scss'],
 })
 export class SkillsComponent {
-  constructor(public translationService: TranslationService) {}
-
-  t(key: string): string {
-    return this.translationService.t(key);
-  }
-
   skillCategories: SkillCategory[] = [
     {
-      titleEn: 'Backend',
-      titleAr: 'Backend',
+      title: 'Backend',
       skills: [
         { name: 'Node.js' },
         { name: 'TypeScript' },
@@ -44,8 +34,7 @@ export class SkillsComponent {
       ],
     },
     {
-      titleEn: 'Data & coordination',
-      titleAr: 'البيانات والتنسيق',
+      title: 'Data & coordination',
       skills: [
         { name: 'Redis' },
         { name: 'PostgreSQL' },
@@ -54,8 +43,7 @@ export class SkillsComponent {
       ],
     },
     {
-      titleEn: 'Infrastructure & delivery',
-      titleAr: 'البنية التحتية والنشر',
+      title: 'Infrastructure & delivery',
       skills: [
         { name: 'Docker' },
         { name: 'Kubernetes' },
@@ -65,8 +53,7 @@ export class SkillsComponent {
       ],
     },
     {
-      titleEn: 'Observability',
-      titleAr: 'Observability',
+      title: 'Observability',
       skills: [
         { name: 'Prometheus' },
         { name: 'Grafana' },
@@ -74,8 +61,7 @@ export class SkillsComponent {
       ],
     },
     {
-      titleEn: 'Engineering',
-      titleAr: 'هندسة البرمجيات',
+      title: 'Engineering',
       skills: [
         { name: 'Distributed systems' },
         { name: 'Concurrency' },
@@ -86,8 +72,7 @@ export class SkillsComponent {
       ],
     },
     {
-      titleEn: 'Additional product experience',
-      titleAr: 'خبرة أخرى في تطوير المنتجات',
+      title: 'Additional product experience',
       skills: [
         { name: 'Angular' },
         { name: 'React' },
@@ -97,9 +82,4 @@ export class SkillsComponent {
     },
   ];
 
-  getCategoryTitle(category: SkillCategory): string {
-    return this.translationService.currentLang() === 'ar'
-      ? this.translationService.format(category.titleAr)
-      : category.titleEn;
-  }
 }

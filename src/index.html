@@ -38,11 +38,11 @@
 
 
   <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Cairo:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Cairo:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
   </noscript>
 
@@ -62,7 +62,7 @@
     }
   </script>
 
-  <!-- Prevent theme flash and set language/direction -->
+  <!-- Prevent theme flash -->
   <script>
     (function () {
       try {
@@ -74,18 +74,6 @@
             "content",
             "#17232d"
           );
-        }
-        // Language/RTL handling
-        const savedLang = localStorage.getItem("language");
-        if (savedLang === "ar") {
-          document.documentElement.setAttribute("lang", "ar");
-          document.documentElement.setAttribute("dir", "rtl");
-        } else if (
-          !savedLang &&
-          navigator.language.toLowerCase().startsWith("ar")
-        ) {
-          document.documentElement.setAttribute("lang", "ar");
-          document.documentElement.setAttribute("dir", "rtl");
         }
       } catch (e) { }
     })();

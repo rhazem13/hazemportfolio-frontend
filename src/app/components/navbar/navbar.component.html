@@ -1,38 +1,32 @@
-<nav class="navbar" [attr.aria-label]="t('nav.primaryLabel')">
+<nav class="navbar" aria-label="Primary navigation">
   <div class="nav-content">
-    <a class="logo" href="#home" [attr.aria-label]="t('nav.homeLabel')" (click)="closeMenu()">
-      <span class="logo-name">{{ currentLang() === 'ar' ? 'حازم رجب' : 'Hazem Ragab' }}<span class="logo-period" aria-hidden="true">.</span></span>
+    <a class="logo" href="#home" aria-label="Hazem Ragab, home" (click)="closeMenu()">
+      <span class="logo-name">Hazem Ragab<span class="logo-period" aria-hidden="true">.</span></span>
     </a>
     <div class="nav-right">
       <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
         aria-controls="primary-navigation"
-        [attr.aria-label]="isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')">
+        [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'">
         <span></span>
         <span></span>
       </button>
       <ul id="primary-navigation" class="nav-links" [class.is-open]="isMenuOpen">
         <li>
-          <a href="#experience" (click)="closeMenu()">{{ t("nav.experience") }}</a>
+          <a href="#experience" (click)="closeMenu()">Experience</a>
         </li>
         <li>
-          <a href="#projects" (click)="closeMenu()">{{ t("nav.projects") }}</a>
+          <a href="#projects" (click)="closeMenu()">Projects</a>
         </li>
         <li>
-          <a href="#skills" (click)="closeMenu()">{{ t("nav.skills") }}</a>
+          <a href="#skills" (click)="closeMenu()">Skills</a>
         </li>
         <li>
-          <a href="#contact" (click)="closeMenu()">{{ t("nav.contact") }}</a>
+          <a href="#contact" (click)="closeMenu()">Contact</a>
         </li>
       </ul>
       <div class="nav-actions">
-        <button class="lang-toggle" type="button" (click)="toggleLanguage()"
-          [attr.aria-label]="currentLang() === 'en' ? t('nav.switchToArabic') : t('nav.switchToEnglish')">
-          <span class="lang-text">{{
-            currentLang() === "en" ? "عربي" : "EN"
-            }}</span>
-        </button>
         <button class="theme-toggle" type="button" (click)="toggleTheme()"
-          [attr.aria-label]="isDark ? t('nav.useLightTheme') : t('nav.useDarkTheme')" [attr.aria-pressed]="isDark">
+          [attr.aria-label]="isDark ? 'Use light theme' : 'Use dark theme'" [attr.aria-pressed]="isDark">
           <span aria-hidden="true">{{ isDark ? "☀" : "☾" }}</span>
         </button>
       </div>

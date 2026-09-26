@@ -1,6 +1,5 @@
-import { Component, HostListener, computed, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
-import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,12 +12,7 @@ export class NavbarComponent {
   isDark = false;
   isMenuOpen = false;
 
-  currentLang = computed(() => this.translationService.lang());
-
-  constructor(
-    private themeService: ThemeService,
-    public translationService: TranslationService,
-  ) {
+  constructor(private themeService: ThemeService) {
     this.themeService.isDarkTheme$.subscribe(
       (isDark) => (this.isDark = isDark),
     );
@@ -26,10 +20,6 @@ export class NavbarComponent {
 
   toggleTheme() {
     this.themeService.toggleTheme();
-  }
-
-  toggleLanguage() {
-    this.translationService.toggleLanguage();
   }
 
   toggleMenu(): void {
@@ -45,7 +35,4 @@ export class NavbarComponent {
     this.closeMenu();
   }
 
-  t(key: string): string {
-    return this.translationService.t(key);
-  }
 }

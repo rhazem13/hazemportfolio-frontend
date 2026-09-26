@@ -19,7 +19,6 @@
   --shadow-lg: 0 1.5rem 4rem rgba(25, 41, 54, 0.12);
   --font-display: "Archivo", "Arial Narrow", sans-serif;
   --font-primary: "IBM Plex Sans", "Segoe UI", sans-serif;
-  --font-arabic: "Cairo", "Segoe UI", sans-serif;
   --font-utility: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
   --content-width: 70rem;
   --header-height: 4.5rem;
@@ -74,26 +73,6 @@ body {
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-html[dir="rtl"],
-html[dir="rtl"] body {
-  font-family: var(--font-arabic);
-}
-
-html[dir="rtl"] body.rtl :is(
-  .hero-eyebrow,
-  .section-kicker,
-  .case-context,
-  .case-detail dt,
-  .company,
-  .period,
-  .institution-year,
-  .footer-content p
-) {
-  font-family: var(--font-arabic);
-  letter-spacing: 0;
-  text-transform: none;
 }
 
 img,

@@ -1,6 +1,5 @@
 
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,10 +9,4 @@ import { TranslationService } from '../../services/translation.service';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./styles/footer.component.scss'],
 })
-export class FooterComponent {
-  constructor(public translationService: TranslationService) {}
-
-  t(key: string): string {
-    return this.translationService.t(key);
-  }
-}
+export class FooterComponent {}

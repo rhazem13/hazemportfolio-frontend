@@ -1,21 +1,21 @@
 <section id="contact" class="contact-section" aria-labelledby="contact-heading">
   <div class="container contact-layout">
     <header class="contact-heading">
-      <span class="section-kicker" data-index="05">{{ t("contact.subtitle") }}</span>
-      <h2 id="contact-heading" class="section-title">{{ t("contact.title") }}</h2>
-      <p class="section-subtitle">{{ t("contact.description") }}</p>
+      <span class="section-kicker" data-index="05">Contact</span>
+      <h2 id="contact-heading" class="section-title">Let’s talk</h2>
+      <p class="section-subtitle">Open to international remote Backend Engineer and Software Engineer roles. Email is the quickest way to reach me.</p>
       <a class="contact-email" [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }} <span aria-hidden="true">↗</span></a>
     </header>
-    <nav class="contact-links" [attr.aria-label]="t('contact.actionsLabel')">
+    <nav class="contact-links" aria-label="Direct contact options">
       @for (social of contactInfo.social; track social.name) {
       <a [href]="social.url" target="_blank" rel="noopener noreferrer">
         <span>{{ social.name }}</span><span aria-hidden="true">↗</span>
       </a>
       }
       <a href="/assets/Hazem_Ragab_Resume.pdf" download>
-        <span>{{ t("contact.resumeAction") }}</span><span aria-hidden="true">↓</span>
+        <span>Download resume</span><span aria-hidden="true">↓</span>
       </a>
-      <p class="contact-location">{{ getLocation() }}</p>
+      <p class="contact-location">{{ contactInfo.location }}</p>
     </nav>
   </div>
 </section>

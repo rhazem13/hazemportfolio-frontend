@@ -1,18 +1,18 @@
 <section id="skills" class="skills" aria-labelledby="skills-heading">
   <div class="container">
     <header class="skills-heading">
-      <span class="section-kicker" data-index="03">{{ t("skills.kicker") }}</span>
-      <h2 id="skills-heading" class="section-title">{{ t("skills.title") }}</h2>
-      <p class="section-subtitle">{{ t("skills.subtitle") }}</p>
+      <span class="section-kicker" data-index="03">Capabilities</span>
+      <h2 id="skills-heading" class="section-title">What I work with</h2>
+      <p class="section-subtitle">Tools I have used to build, ship and debug backend systems.</p>
     </header>
 
     <div class="skills-grid">
-      @for (category of skillCategories; track category.titleEn) {
+      @for (category of skillCategories; track category.title) {
       <article class="skill-category">
-        <h3>{{ getCategoryTitle(category) }}</h3>
+        <h3>{{ category.title }}</h3>
         <ul>
           @for (skill of category.skills; track skill.name) {
-          <li dir="ltr">{{ skill.name }}</li>
+          <li>{{ skill.name }}</li>
           }
         </ul>
       </article>

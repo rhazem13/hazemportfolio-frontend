@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-about',
@@ -9,10 +8,4 @@ import { TranslationService } from '../../services/translation.service';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./styles/about.component.scss'],
 })
-export class AboutComponent {
-  constructor(public translationService: TranslationService) {}
-
-  t(key: string): string {
-    return this.translationService.t(key);
-  }
-}
+export class AboutComponent {}

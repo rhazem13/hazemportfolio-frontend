@@ -1,31 +1,31 @@
 <section id="certificates" class="certificates-section" aria-labelledby="certificates-heading">
   <div class="container">
     <header class="certificates-heading">
-      <span class="section-kicker">{{ t("certificates.kicker") }}</span>
-      <h2 id="certificates-heading" class="section-title">{{ t("certificates.title") }}</h2>
-      <p class="section-subtitle">{{ t("certificates.subtitle") }}</p>
+      <span class="section-kicker">Credentials</span>
+      <h2 id="certificates-heading" class="section-title">Certifications</h2>
+      <p class="section-subtitle">Selected credentials that reinforce my engineering and computer science foundation.</p>
     </header>
 
     <div class="certificates-grid" role="list">
       @for (certificate of certificates(); track certificate.id) {
       <article class="certificate-card" role="listitem">
         <div class="certificate-media">
-          <img class="issuer-icon" [ngSrc]="certificate.icon" [alt]="getIssuer(certificate) + ' logo'" width="64"
+          <img class="issuer-icon" [ngSrc]="certificate.icon" [alt]="certificate.issuer + ' logo'" width="64"
             height="64" />
         </div>
 
         <div class="certificate-body">
-          <h3>{{ getTitle(certificate) }}</h3>
-          <p class="certificate-issuer">{{ getIssuer(certificate) }}</p>
-          <ul class="focus-areas" [attr.aria-label]="t('certificates.focusAreasLabel')">
-            @for (area of getFocusAreas(certificate); track area) {
+          <h3>{{ certificate.title }}</h3>
+          <p class="certificate-issuer">{{ certificate.issuer }}</p>
+          <ul class="focus-areas" aria-label="Focus areas covered">
+            @for (area of certificate.focusAreas; track area) {
             <li>{{ area }}</li>
             }
           </ul>
         </div>
 
         <a class="certificate-download" [href]="certificate.certificateAsset" download>
-          {{ t("certificates.download") }}
+          Download certificate
           <i class="fas fa-arrow-down" aria-hidden="true"></i>
         </a>
       </article>
@@ -34,7 +34,7 @@
 
     <button type="button" class="certificates-toggle" (click)="toggleCertificates()"
       [attr.aria-expanded]="showAllCertificates()">
-      {{ showAllCertificates() ? t("certificates.showFeatured") : t("certificates.viewAll") }}
+      {{ showAllCertificates() ? 'Show selected credentials only' : 'View all 11 credentials' }}
       <i class="fas" [class.fa-plus]="!showAllCertificates()" [class.fa-minus]="showAllCertificates()"
         aria-hidden="true"></i>
     </button>

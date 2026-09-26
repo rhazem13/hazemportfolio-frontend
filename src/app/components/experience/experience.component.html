@@ -1,10 +1,10 @@
 <section id="experience" class="experience-section">
   <div class="container">
     <div class="section-heading">
-      <span class="section-kicker" data-index="01">{{ t("experience.kicker") }}</span>
-      <h2 class="section-title">{{ t("experience.title") }}</h2>
+      <span class="section-kicker" data-index="01">Experience</span>
+      <h2 class="section-title">Experience</h2>
       <p class="section-subtitle">
-        {{ t("experience.subtitle") }}
+        Backend and software engineering across product teams and client work.
       </p>
     </div>
 
@@ -18,13 +18,13 @@
         <div class="experience-content">
           <header class="experience-header">
             <div class="title-block">
-              <h3 class="role">{{ getRole(experience) }}</h3>
-              <p class="company">{{ getCompany(experience) }}</p>
+              <h3 class="role">{{ experience.role }}</h3>
+              <p class="company">{{ experience.company }}</p>
             </div>
             <div class="meta-block">
               <span class="period">
                 {{ formatDate(experience.startDate) }} —
-                {{ experience.endDate ? formatDate(experience.endDate) : t("experience.present") }}
+                {{ experience.endDate ? formatDate(experience.endDate) : "Present" }}
               </span>
               <span class="duration">{{
                 getExperienceDuration(experience)
@@ -32,12 +32,12 @@
             </div>
           </header>
 
-          <p class="summary">{{ getSummary(experience) }}</p>
+          <p class="summary">{{ experience.summary }}</p>
 
-          @if (getAchievements(experience).length) {
+          @if (experience.achievements.length) {
           <ul class="achievements">
             @for (
-            achievement of getAchievements(experience);
+            achievement of experience.achievements;
             track $index
             ) {
             <li>
@@ -48,9 +48,9 @@
           </ul>
           }
 
-          <div class="tech-stack" [attr.aria-label]="translationService.currentLang() === 'ar' ? 'التقنيات المستخدمة' : 'Technologies used'">
+          <div class="tech-stack" aria-label="Technologies used">
             @for (tech of experience.technologies; track tech) {
-            <span class="tech-pill" dir="ltr">{{ tech }}</span>
+            <span class="tech-pill">{{ tech }}</span>
             }
           </div>
         </div>

@@ -1,9 +1,9 @@
 <section id="education" class="education-section">
   <div class="container">
     <header class="section-heading">
-      <span class="section-kicker" data-index="04">{{ t("education.kicker") }}</span>
-      <h2 class="section-title">{{ t("education.title") }}</h2>
-      <p class="section-subtitle">{{ t("education.subtitle") }}</p>
+      <span class="section-kicker" data-index="04">Foundation</span>
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">Computer science foundations and hands-on training.</p>
     </header>
     <div class="education-timeline">
       @for (item of educationItems; track item; let i = $index) {
@@ -12,12 +12,12 @@
           <span>{{ i === 0 ? "BSc" : "ITI" }}</span>
         </div>
         <div class="education-content">
-          <h3 class="degree">{{ getDegree(item) }}</h3>
+          <h3 class="degree">{{ item.degree }}</h3>
           <div class="institution-year">
-            <span class="institution">{{ getInstitution(item) }}</span>
+            <span class="institution">{{ item.institution }}</span>
             <span class="year">{{ item.year }}</span>
           </div>
-          <p class="details">{{ getDetails(item) }}</p>
+          <p class="details">{{ item.details }}</p>
         </div>
       </article>
       }
