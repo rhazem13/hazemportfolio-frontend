@@ -2,18 +2,16 @@
 .projects-heading { display: grid; gap: .75rem; margin-bottom: 2.5rem; }
 .case-list { border-top: 1px solid var(--border-color); }
 .case-study { display: grid; grid-template-columns: minmax(14rem, .75fr) minmax(0, 1.25fr); gap: clamp(1.5rem, 5vw, 5rem); padding: 2.8rem 0; border-bottom: 1px solid var(--border-color); }
-.case-context { color: var(--accent-color); font-family: var(--font-utility); font-size: .9rem; font-weight: 700; }
+.case-context { color: var(--accent-color); font-family: var(--font-utility); font-size: .95rem; font-weight: 700; }
 .case-intro h3 { margin: .6rem 0 1rem; font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -.04em; line-height: 1.1; }
 .case-type { margin: -.55rem 0 1rem; color: var(--text-secondary); font-size: .9rem; }
 .project-tech { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; list-style: none; }
-.project-tech li { color: var(--text-secondary); font-size: .9rem; }
+.project-tech li { color: var(--text-secondary); font-size: .95rem; }
 .project-tech li + li::before { margin-inline-end: .4rem; color: var(--signal-color); content: '·'; }
 .case-detail { display: grid; gap: 1.35rem; }
 .case-detail div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; }
-.case-detail dt { color: var(--accent-color); font-family: var(--font-utility); font-size: .9rem; font-weight: 700; text-transform: uppercase; }
+.case-detail dt { color: var(--accent-color); font-family: var(--font-utility); font-size: .95rem; font-weight: 700; text-transform: uppercase; }
 .case-detail dd { margin: 0; color: var(--text-color); font-size: 1.05rem; line-height: 1.65; }
-.public-work { margin-top: 2rem; color: var(--text-secondary); }
-.public-work a { font-weight: 700; }
 @media (max-width: 700px) {
   .case-study { grid-template-columns: 1fr; gap: 1.5rem; }
   .case-detail div { grid-template-columns: 1fr; gap: .35rem; }

@@ -57,7 +57,6 @@ export class SkillsComponent {
       skills: [
         { name: 'Prometheus' },
         { name: 'Grafana' },
-        { name: 'Production reliability' },
       ],
     },
     {
@@ -65,7 +64,6 @@ export class SkillsComponent {
       skills: [
         { name: 'Distributed systems' },
         { name: 'Concurrency' },
-        { name: 'Multi-instance systems' },
         { name: 'Authentication & authorization' },
         { name: 'Performance debugging' },
         { name: 'Unit testing' },

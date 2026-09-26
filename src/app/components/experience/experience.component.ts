@@ -29,8 +29,8 @@ export class ExperienceComponent {
       summary: 'Build and operate Node.js and TypeScript services for real-time communication workflows and external integrations.',
       achievements: [
         'Moved shared session state and coordination to Redis for consistent behavior across service instances.',
-        'Added Prometheus and Grafana observability for service health and runtime behavior.',
-        'Investigated production reliability, performance and session-security issues.',
+        'Added Prometheus metrics and Grafana dashboards to make service health easier to inspect.',
+        'Debugged performance problems and session security issues in production.',
       ],
       technologies: ['Node.js', 'TypeScript', 'WebSockets', 'Redis', 'Docker', 'Kubernetes', 'Prometheus', 'Grafana'],
     },
@@ -41,7 +41,7 @@ export class ExperienceComponent {
       startDate: new Date('2025-06-01T00:00:00Z'),
       endDate: new Date('2026-04-01T00:00:00Z'),
       summary: 'Built and maintained enterprise applications supporting finance, logistics and safety operations with .NET Core, Angular and background Worker Services.',
-      achievements: ['Resolved production issues and helped modernize legacy application flows.'],
+      achievements: ['Fixed production issues and updated older application flows.'],
       technologies: [
         '.NET Core', 'C#', 'Angular', 'Worker Services', 'SQL Server',
       ],
@@ -52,7 +52,7 @@ export class ExperienceComponent {
       company: 'Client projects',
       startDate: new Date('2023-03-01T00:00:00Z'),
       endDate: new Date('2025-05-01T00:00:00Z'),
-      summary: 'Delivered client products across commerce, social platforms and logistics, working on APIs, authentication, payments, maps and real-time features.',
+      summary: 'Built APIs and product features for commerce, social and logistics clients, including payments and maps.',
       achievements: [],
       technologies: ['Flask', '.NET', 'Laravel', 'React', 'Flutter', 'PostgreSQL', 'PostGIS'],
     },

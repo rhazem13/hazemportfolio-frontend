@@ -4,22 +4,7 @@
   background: var(--background-color);
 }
 
-.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 3rem; align-items: end; margin-bottom: 2.5rem; }
-
-.section-kicker {
-  grid-column: 1;
-}
-
-.section-title {
-  grid-column: 1;
-}
-
-.section-subtitle {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: end;
-  max-width: 26rem;
-}
+.section-heading { display: grid; gap: .6rem; margin-bottom: 2.5rem; }
 
 .experience-card { display: flex; border-top: 1px solid var(--border-color); }
 .experience-card:last-child { border-bottom: 1px solid var(--border-color); }
@@ -55,7 +40,7 @@
   margin-top: 0.6rem;
   color: var(--accent-color);
   font-family: var(--font-utility);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -71,7 +56,7 @@
 .period {
   color: var(--text-color);
   font-family: var(--font-utility);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 650;
 }
 
@@ -115,28 +100,12 @@
   border: 0;
   color: var(--text-secondary);
   font-family: var(--font-utility);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 .tech-pill + .tech-pill::before { margin-inline-end: .55rem; color: var(--signal-color); content: '·'; }
 
 @media (max-width: 720px) {
-  .section-heading {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .section-kicker,
-  .section-title,
-  .section-subtitle {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .section-subtitle {
-    margin-top: 0.5rem;
-  }
-
   .experience-header {
     display: grid;
   }
