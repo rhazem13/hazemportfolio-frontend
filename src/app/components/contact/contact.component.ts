@@ -24,7 +24,7 @@ export class ContactComponent {
       },
       {
         name: 'LeetCode',
-        url: 'https://leetcode.com/u/rhazem13',
+        url: 'https://leetcode.com/u/rhazem13/',
       },
     ],
   };
