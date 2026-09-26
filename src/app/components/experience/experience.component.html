@@ -42,7 +42,7 @@
           <ul class="achievements">
             @for (
             achievement of getAchievements(experience);
-            track achievement
+            track $index
             ) {
             <li>
               <i aria-hidden="true">✓</i>
