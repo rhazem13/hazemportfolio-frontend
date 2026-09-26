@@ -5,6 +5,8 @@ interface CaseStudy {
   title: string;
   context: string;
   contextAr: string;
+  projectType: string;
+  projectTypeAr: string;
   problem: string;
   problemAr: string;
   contribution: string;
@@ -32,26 +34,30 @@ export class ProjectsComponent {
   readonly projects: CaseStudy[] = [
     {
       title: 'Memory Mate',
-      context: 'Academic · Backend and geospatial data',
-      contextAr: 'مشروع أكاديمي · خدمات خلفية وبيانات جغرافية',
-      problem: 'Support location-based social features and frequent reads in an application backend.',
-      problemAr: 'دعم ميزات اجتماعية تعتمد على الموقع وطلبات قراءة متكررة في الخدمة الخلفية.',
-      contribution: 'Designed and implemented core Flask APIs and backend logic.',
-      contributionAr: 'صممت ونفذت واجهات Flask والمنطق الأساسي للخدمة الخلفية.',
-      engineering: 'Used PostgreSQL with PostGIS for geotagging and nearby-friend queries; added Redis caching for frequently requested data.',
-      engineeringAr: 'استخدمت PostgreSQL وPostGIS للاستعلامات الجغرافية والأصدقاء القريبين، وأضفت Redis لتخزين البيانات كثيرة الطلب مؤقتاً.',
+      context: 'Backend APIs and geospatial data',
+      contextAr: 'واجهات خلفية وبيانات جغرافية',
+      projectType: 'Academic project',
+      projectTypeAr: 'مشروع أكاديمي',
+      problem: 'The backend needed to find nearby users and serve frequently requested data efficiently.',
+      problemAr: 'احتاجت الخدمة الخلفية إلى العثور على المستخدمين القريبين وتقديم البيانات كثيرة الطلب بكفاءة.',
+      contribution: 'Built Flask APIs for geotagging and nearby-friend features.',
+      contributionAr: 'بنيت واجهات Flask لتحديد المواقع وميزات العثور على الأصدقاء القريبين.',
+      engineering: 'Used PostGIS for nearby queries and Redis to cache frequently requested data.',
+      engineeringAr: 'استخدمت PostGIS للاستعلامات عن المواقع القريبة وRedis لتخزين البيانات كثيرة الطلب مؤقتاً.',
       technologies: ['Flask', 'PostgreSQL', 'PostGIS', 'Redis', 'REST APIs'],
     },
     {
       title: 'Charity Donations',
-      context: 'Client project · Payments and access control',
-      contextAr: 'مشروع عميل · مدفوعات وصلاحيات',
+      context: 'Payments and access control',
+      contextAr: 'مدفوعات وصلاحيات',
+      projectType: 'Client project',
+      projectTypeAr: 'مشروع عميل',
       problem: 'Coordinate donation flows across donors, charities and administrators.',
       problemAr: 'تنسيق التبرعات بين المتبرعين والجمعيات والمشرفين.',
-      contribution: 'Built Flask APIs for donation workflows, role-based access and PayPal payments, alongside a React interface.',
-      contributionAr: 'بنيت واجهات Flask لمسارات التبرع والصلاحيات حسب الدور ومدفوعات PayPal، إلى جانب واجهة React.',
-      engineering: 'Connected access control and payment handling to the donation flow; integrated image-based document validation.',
-      engineeringAr: 'ربطت صلاحيات الوصول ومعالجة المدفوعات بمسار التبرع، ودمجت فحص المستندات بالصور.',
+      contribution: 'Built Flask APIs and a React interface for donation workflows.',
+      contributionAr: 'بنيت واجهات Flask وواجهة React لمسارات التبرع.',
+      engineering: 'Implemented role-based access, PayPal integration and image-based document validation.',
+      engineeringAr: 'نفذت صلاحيات حسب الدور وتكامل PayPal وفحص المستندات بالصور.',
       technologies: ['Flask', 'PostgreSQL', 'PayPal', 'React'],
     },
   ];

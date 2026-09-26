@@ -11,6 +11,7 @@
         <div class="case-intro">
           <p class="case-context">{{ localized(project.context, project.contextAr) }}</p>
           <h3>{{ project.title }}</h3>
+          <p class="case-type">{{ localized(project.projectType, project.projectTypeAr) }}</p>
           <ul class="project-tech" [attr.aria-label]="t('projects.technologiesLabel')">
             @for (tech of project.technologies; track tech) { <li>{{ tech }}</li> }
           </ul>

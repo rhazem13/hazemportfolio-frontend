@@ -39,8 +39,8 @@ export class EducationComponent {
       detailsAr: 'تخرجت الأول على الدفعة بمعدل تراكمي 3.91/4.0',
     },
     {
-      degree: 'Web Development Using .Net',
-      degreeAr: 'تطوير الويب باستخدام .Net',
+      degree: 'Web Development Using .NET',
+      degreeAr: 'تطوير الويب باستخدام .NET',
       institution: 'ITI',
       institutionAr: 'معهد تكنولوجيا المعلومات',
       year: '2021',

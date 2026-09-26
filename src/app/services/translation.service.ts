@@ -45,7 +45,7 @@ export class TranslationService {
         role: 'Backend software engineer',
         title: 'Production APIs, real-time systems and distributed services.',
         description:
-          'At Intella, I build Node.js and TypeScript services with Redis, Docker and Kubernetes. Previously at DP World, I delivered enterprise .NET and C# applications. Open to international remote teams.',
+          'At Intella, I build production real-time backend services with Node.js/TypeScript, Redis, Docker and Kubernetes. Previously at DP World, I delivered enterprise .NET and C# applications. Open to international remote teams.',
         viewWork: 'Explore my work',
         downloadResume: 'Read my CV',
         email: 'Email',
@@ -154,7 +154,7 @@ export class TranslationService {
         subtitle: 'Computer science foundations and hands-on training.',
         degrees: {
           bsc: 'B.Sc. in Computer Science',
-          webDev: 'Web Development Using .Net',
+          webDev: 'Web Development Using .NET',
         },
         institutions: {
           suez: 'Suez University',
@@ -242,7 +242,7 @@ export class TranslationService {
         role: 'مهندس برمجيات خلفية',
         title: 'واجهات إنتاجية وأنظمة فورية وخدمات موزعة.',
         description:
-          'أبني في إنتيلا خدمات باستخدام Node.js وTypeScript وRedis وDocker وKubernetes. عملت سابقاً في دي بي ورلد على تطبيقات مؤسسية باستخدام .NET وC#. متاح للعمل مع فرق دولية عن بُعد.',
+          'أبني في إنتيلا خدمات خلفية إنتاجية وفورية باستخدام Node.js وTypeScript وRedis وDocker وKubernetes. عملت سابقاً في دي بي ورلد على تطبيقات مؤسسية باستخدام .NET وC#. متاح للعمل مع فرق دولية عن بُعد.',
         viewWork: 'استكشف أعمالي',
         downloadResume: 'اقرأ سيرتي الذاتية',
         email: 'البريد الإلكتروني',
