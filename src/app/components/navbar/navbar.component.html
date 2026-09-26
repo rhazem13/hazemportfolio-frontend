@@ -1,8 +1,7 @@
 <nav class="navbar" aria-label="Primary navigation">
   <div class="nav-content">
     <a class="logo" href="#home" aria-label="Hazem Ragab, home" (click)="closeMenu()">
-      <span class="logo-mark" aria-hidden="true">HR</span>
-      <span class="logo-name">Hazem Ragab</span>
+      <span class="logo-name">Hazem Ragab<span class="logo-period" aria-hidden="true">.</span></span>
     </a>
     <div class="nav-right">
       <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
@@ -26,7 +25,7 @@
         </li>
       </ul>
       <div class="nav-actions">
-        <button class="lang-toggle" (click)="toggleLanguage()" [attr.aria-label]="
+        <button class="lang-toggle" type="button" (click)="toggleLanguage()" [attr.aria-label]="
             currentLang() === 'en'
               ? 'Switch to Arabic'
               : 'التبديل إلى الإنجليزية'

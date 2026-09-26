@@ -1,58 +1,26 @@
 <section id="home" class="hero" aria-labelledby="hero-heading">
-  <div class="hero-shell container">
+  <div class="container hero-shell">
     <div class="hero-copy">
-      <p class="hero-eyebrow">
-        <span aria-hidden="true"></span>
-        {{ t("hero.eyebrow") }}
-      </p>
+      <p class="hero-eyebrow">{{ t("hero.eyebrow") }}</p>
       <h1 id="hero-heading">{{ t("hero.greeting") }}</h1>
+      <p class="hero-role">{{ t("hero.role") }}</p>
       <p class="hero-title">{{ t("hero.title") }}</p>
       <p class="hero-description">{{ t("hero.description") }}</p>
-
       <div class="hero-actions">
-        <a href="#experience" class="hero-action primary">{{ t("hero.viewWork") }}</a>
-        <a href="/assets/Hazem_Ragab_Resume.pdf" class="hero-action secondary" target="_blank" rel="noopener noreferrer">
-          {{ t("hero.downloadResume") }}
-          <span aria-hidden="true">↗</span>
-        </a>
+        <a href="#experience" class="hero-action primary">{{ t("hero.viewWork") }} <span aria-hidden="true">↘</span></a>
+        <a href="/assets/Hazem_Ragab_Resume.pdf" class="hero-action secondary" target="_blank" rel="noopener noreferrer">{{ t("hero.downloadResume") }} <span aria-hidden="true">↗</span></a>
       </div>
-
       <nav class="hero-social" [attr.aria-label]="t('hero.socialLabel')">
-        <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/rhazem13" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:rhazem13@yahoo.com">Email</a>
+        <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://linkedin.com/in/rhazem13" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="mailto:h.ragab.dev@gmail.com">{{ t("hero.email") }} <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
-
-    <aside class="hero-evidence" [attr.aria-label]="t('hero.evidence')">
-      <div class="evidence-topline"><span>{{ t("hero.evidence") }}</span><span>INTELLA / 2026</span></div>
-      <div class="evidence-row">
-        <strong>{{ t("hero.quotaValue") }}</strong>
-        <p>{{ t("hero.quotaLabel") }}</p>
-      </div>
-      <div class="evidence-row">
-        <strong class="latency-value">{{ t("hero.latencyValue") }}</strong>
-        <p>{{ t("hero.latencyLabel") }}</p>
-      </div>
-      <div class="evidence-foot">
-        <span>{{ t("hero.systemsLabel") }}</span>
-        <p>{{ t("hero.systemsValue") }}</p>
-      </div>
+    <aside class="hero-note" [attr.aria-label]="t('hero.evidence')">
+      <p class="note-label">{{ t("hero.evidence") }}</p>
+      <p class="note-lead">{{ t("hero.noteLead") }}</p>
+      <p class="note-body">{{ t("hero.noteBody") }}</p>
+      <div class="note-footer"><span>{{ t("hero.noteFooter") }}</span><span aria-hidden="true">↗</span></div>
     </aside>
-  </div>
-
-  <div class="hero-proof container" role="list" [attr.aria-label]="t('hero.proofLabel')">
-    <div role="listitem">
-      <span>{{ t("hero.stackLabel") }}</span>
-      <strong>{{ t("hero.stackValue") }}</strong>
-    </div>
-    <div role="listitem">
-      <span>{{ t("hero.foundationLabel") }}</span>
-      <strong>{{ t("hero.foundationValue") }}</strong>
-    </div>
-    <div role="listitem">
-      <span>{{ t("hero.locationLabel") }}</span>
-      <strong>{{ t("hero.locationValue") }}</strong>
-    </div>
   </div>
 </section>

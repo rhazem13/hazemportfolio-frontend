@@ -14,15 +14,15 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--border-color);
-  border-inline-start: 1px solid var(--border-color);
 }
 
 .skill-category {
   min-width: 0;
-  padding: clamp(1.25rem, 3vw, 2rem);
-  border-inline-end: 1px solid var(--border-color);
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
   border-bottom: 1px solid var(--border-color);
 }
+.skill-category:nth-child(odd) { padding-inline-end: 2rem; }
+.skill-category:nth-child(even) { padding-inline-start: 2rem; }
 
 .skill-category h3 {
   color: var(--text-color);
@@ -42,21 +42,16 @@
 }
 
 .skill-category li {
-  padding: 0.42rem 0.65rem;
-  border: 1px solid var(--border-color);
-  background: var(--surface-color);
+  padding: 0;
+  border: 0;
   color: var(--text-secondary);
-  font-family: var(--font-utility);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: .92rem;
 }
-
-.skill-category:first-child {
-  border-top: 3px solid var(--signal-color);
-}
+.skill-category li + li::before { margin-inline-end: .55rem; color: var(--signal-color); content: '·'; }
 
 @media (max-width: 640px) {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+  .skill-category:nth-child(n) { padding-inline: 0; }
 }

@@ -40,18 +40,23 @@ export class TranslationService {
 
       // Hero Section
       hero: {
-        eyebrow: 'Hazem Ragab · Suez, Egypt',
-        greeting: 'Backend Software Engineer',
-        title: 'Real-time backend systems that hold up in production.',
+        eyebrow: 'Suez, Egypt · Open to remote roles',
+        greeting: 'Hazem Ragab',
+        role: 'Backend software engineer',
+        title: 'I make complex systems dependable.',
         description:
-          'At Intella, I work on live audio integrations, concurrency, performance and reliability with Node.js, TypeScript and Redis. Previously, I built enterprise software at DP World.',
-        viewWork: 'See engineering work',
-        downloadResume: 'View CV',
+          'At Intella, I build real-time audio integrations and solve concurrency and reliability problems with Node.js, TypeScript and Redis. Before that, I shipped enterprise software at DP World.',
+        viewWork: 'Explore my work',
+        downloadResume: 'Read my CV',
+        email: 'Email',
         socialLabel: 'Professional profiles',
         imageAlt: 'Hazem Ragab seated on a mountain overlooking the landscape',
         currentLabel: 'Current role',
         currentValue: 'Backend Engineer · Intella',
-        evidence: 'Production engineering',
+        evidence: 'A recent production fix',
+        noteLead: 'From 18.3 seconds to 222 milliseconds.',
+        noteBody: 'I redesigned a recording-finalization path for a 60-second timeline gap and added regression coverage so the improvement stays put.',
+        noteFooter: 'Intella · 2026',
         quotaValue: '~5×',
         quotaLabel: 'potential over-consumption prevented through quota accounting fix',
         latencyValue: '18.3 s → 222 ms',
@@ -91,7 +96,7 @@ export class TranslationService {
         title: 'Experience',
         kicker: 'Experience',
         subtitle:
-          'Production systems, measurable improvements and commercial software delivery.',
+          'The systems I have built and the problems I have solved.',
         present: 'Present',
         justStarted: 'Just getting started',
         yr: 'yr',
@@ -112,7 +117,7 @@ export class TranslationService {
       // Skills Section
       skills: {
         kicker: 'Capabilities',
-        title: 'Skills & Technologies',
+        title: 'What I work with',
         subtitle:
           'Tools I have used to build, ship and debug backend systems.',
         categories: {
@@ -132,9 +137,9 @@ export class TranslationService {
       // Projects Section
       projects: {
         kicker: 'Selected work',
-        title: 'Selected engineering work',
+        title: 'Selected work',
         subtitle:
-          'Three examples of the problems I owned and the systems behind them.',
+          'A few examples of the decisions behind the software.',
         viewGithub: 'View on GitHub',
         livePreview: 'Live Preview',
         privateCode: 'Private repository',
@@ -163,7 +168,7 @@ export class TranslationService {
       education: {
         title: 'Education',
         kicker: 'Foundation',
-        subtitle: 'Academic grounding that supports practical engineering decisions.',
+        subtitle: 'Computer science foundations and hands-on training.',
         degrees: {
           bsc: 'B.Sc. in Computer Science',
           webDev: 'Web Development Using .Net',
@@ -192,10 +197,10 @@ export class TranslationService {
 
       // Contact Section
       contact: {
-        title: 'Get In Touch',
-        subtitle: "Let's Connect",
+        title: 'Let’s talk',
+        subtitle: 'Contact',
         description:
-          'Hiring for a backend or software engineering role? I am open to international remote opportunities.',
+          'I am open to backend engineering opportunities, including international remote roles. The quickest way to reach me is by email.',
         actionsLabel: 'Direct contact options',
         emailAction: 'Email me',
         openProfile: 'Open profile',
@@ -249,18 +254,23 @@ export class TranslationService {
 
       // Hero Section
       hero: {
-        eyebrow: 'حازم رجب · السويس، مصر',
-        greeting: 'مهندس برمجيات خلفية',
-        title: 'أنظمة خلفية فورية تعمل بثبات في بيئات الإنتاج.',
+        eyebrow: 'السويس، مصر · متاح للعمل عن بُعد',
+        greeting: 'حازم رجب',
+        role: 'مهندس برمجيات خلفية',
+        title: 'أجعل الأنظمة المعقدة أكثر اعتمادية.',
         description:
-          'أعمل في إنتيلا على تكاملات الصوت المباشر والتزامن والأداء والموثوقية باستخدام Node.js وTypeScript وRedis. عملت سابقاً على أنظمة مؤسسية في دي بي ورلد.',
-        viewWork: 'عرض العمل الهندسي',
-        downloadResume: 'عرض السيرة الذاتية',
+          'أبني في إنتيلا تكاملات للصوت المباشر وأحل مشكلات التزامن والموثوقية باستخدام Node.js وTypeScript وRedis. وقبل ذلك طورت أنظمة مؤسسية في دي بي ورلد.',
+        viewWork: 'استكشف أعمالي',
+        downloadResume: 'اقرأ سيرتي الذاتية',
+        email: 'البريد الإلكتروني',
         socialLabel: 'الحسابات المهنية',
         imageAlt: 'حازم رجب جالس على جبل، يتأمل المناظر الطبيعية',
         currentLabel: 'الدور الحالي',
         currentValue: 'مهندس برمجيات خلفية · إنتيلا',
-        evidence: 'أثر هندسي في الإنتاج',
+        evidence: 'إصلاح حديث في بيئة الإنتاج',
+        noteLead: 'من 18.3 ثانية إلى 222 مللي ثانية.',
+        noteBody: 'أعدت تصميم مسار إنهاء التسجيل عند وجود فجوة مدتها 60 ثانية، وأضفت اختبارات تمنع عودة المشكلة.',
+        noteFooter: 'إنتيلا · 2026',
         quotaValue: 'نحو 5×',
         quotaLabel: 'استهلاك زائد محتمل منعته معالجة حساب حصص الجلسات',
         latencyValue: '18.3s → 222ms',
@@ -299,7 +309,7 @@ export class TranslationService {
       experience: {
         title: 'الخبرات',
         kicker: 'الخبرات',
-        subtitle: 'أنظمة إنتاجية وتحسينات قابلة للقياس وتسليم برمجيات تجارية.',
+        subtitle: 'الأنظمة التي بنيتها والمشكلات التي عالجتها.',
         present: 'الحالي',
         justStarted: 'بداية جديدة',
         yr: 'سنة',
@@ -320,7 +330,7 @@ export class TranslationService {
       // Skills Section
       skills: {
         kicker: 'القدرات',
-        title: 'المهارات والتقنيات',
+        title: 'التقنيات التي أعمل بها',
         subtitle:
           'أدوات استخدمتها لبناء الأنظمة الخلفية ونشرها وتشخيص مشكلاتها.',
         categories: {
@@ -340,9 +350,8 @@ export class TranslationService {
       // Projects Section
       projects: {
         kicker: 'أعمال مختارة',
-        title: 'أعمال هندسية مختارة',
-        subtitle:
-          'ثلاثة أمثلة على المشكلات التي توليت حلها والأنظمة التي تقف وراءها.',
+        title: 'أعمال مختارة',
+        subtitle: 'أمثلة على القرارات الهندسية وراء البرمجيات.',
         viewGithub: 'عرض على GitHub',
         livePreview: 'معاينة مباشرة',
         privateCode: 'مستودع خاص',
@@ -369,7 +378,7 @@ export class TranslationService {
       education: {
         title: 'التعليم',
         kicker: 'الأساس الأكاديمي',
-        subtitle: 'أساس أكاديمي يدعم القرارات الهندسية العملية.',
+        subtitle: 'أساس في علوم الحاسب وتدريب عملي.',
         degrees: {
           bsc: 'بكالوريوس علوم الحاسب',
           webDev: 'تطوير الويب باستخدام .NET',
@@ -397,10 +406,10 @@ export class TranslationService {
 
       // Contact Section
       contact: {
-        title: 'تواصل معي',
-        subtitle: 'دعنا نتواصل',
+        title: 'لنتحدث',
+        subtitle: 'التواصل',
         description:
-          'إذا كنت توظف مهندس برمجيات خلفية أو مهندس برمجيات، فأنا متاح لفرص العمل الدولية عن بُعد.',
+          'أنا متاح لفرص هندسة البرمجيات الخلفية، بما فيها العمل الدولي عن بُعد. البريد الإلكتروني هو أسرع وسيلة للتواصل معي.',
         actionsLabel: 'خيارات التواصل المباشر',
         emailAction: 'راسلني',
         openProfile: 'فتح الملف الشخصي',

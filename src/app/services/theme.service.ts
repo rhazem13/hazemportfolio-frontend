@@ -27,31 +27,13 @@ export class ThemeService {
 
   private initializeTheme(): void {
     this.applyTheme(this.getInitialTheme());
-
-    // Listen for system theme changes
-    if (window.matchMedia) {
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', (e) => {
-          if (!this.getStoredTheme()) {
-            this.applyTheme(e.matches);
-          }
-        });
-    }
   }
 
   private getInitialTheme(): boolean {
     if (isPlatformBrowser(this.platformId)) {
       // First check localStorage
       const savedTheme = this.getStoredTheme();
-      if (savedTheme) {
-        return savedTheme === 'dark';
-      }
-
-      // Then check system preference
-      if (window.matchMedia) {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches;
-      }
+      if (savedTheme) return savedTheme === 'dark';
     }
     return false;
   }
@@ -85,6 +67,10 @@ export class ThemeService {
     this.isDarkTheme.next(isDark);
 
     requestAnimationFrame(() => {
+      document.querySelector('meta[name="theme-color"]')?.setAttribute(
+        'content',
+        isDark ? '#17232d' : '#f7f8f8',
+      );
       if (isDark) {
         document.documentElement.setAttribute('data-theme', 'dark');
       } else {

@@ -20,7 +20,7 @@ Run `npm test -- --watch=false` and `npm run build` before deployment. The build
 - Experience and engineering outcomes: `src/app/components/experience/experience.component.ts`
 - Project case studies: `src/app/components/projects/projects.component.ts`
 - English and Arabic page copy: `src/app/services/translation.service.ts`
-- CV PDF: run `python scripts/generate_resume.py` with ReportLab installed
+- CV PDF: replace `src/assets/Hazem_Ragab_Resume.pdf` with the current, approved CV
 - Search and social metadata: `src/index.html`
 
 Keep professional claims and measurements defensible. Client code and internal company architecture are intentionally omitted.

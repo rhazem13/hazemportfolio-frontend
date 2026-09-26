@@ -14,18 +14,13 @@
   border-top: 1px solid var(--border-color);
 }
 
-.education-item {
-  display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--background-color);
-}
+.education-item { display: grid; grid-template-columns: 4.5rem 1fr; border-bottom: 1px solid var(--border-color); }
 
 .icon-container {
   display: grid;
-  min-height: 10rem;
+  min-height: 8rem;
   place-items: center;
-  border-inline-end: 1px solid var(--border-color);
+  border-inline-end: 0;
   color: var(--signal-color);
   font-size: 1.35rem;
   font-family: var(--font-utility);
@@ -35,7 +30,7 @@
 .education-content {
   display: grid;
   gap: 0.75rem;
-  padding: clamp(1.5rem, 4vw, 2.4rem);
+  padding: clamp(1.5rem, 4vw, 2rem);
 }
 
 .degree {

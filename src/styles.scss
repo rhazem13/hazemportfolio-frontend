@@ -1,48 +1,48 @@
 :root {
   color-scheme: light;
-  --background-color: #f3f5f1;
-  --surface-color: #e8eeeb;
+  --background-color: #f7f8f8;
+  --surface-color: #edf2f4;
   --surface-elevated: #ffffff;
   --card-background: #ffffff;
-  --text-color: #101719;
-  --text-secondary: #526164;
-  --primary-color: #167b77;
-  --accent-color: #167b77;
-  --signal-color: #b8750c;
-  --border-color: #cbd7d3;
-  --hover-color: #dde7e3;
-  --shadow-color: rgba(16, 23, 25, 0.1);
-  --light-gray: #e8eeeb;
-  --dark-gray: #101719;
-  --nav-background: rgba(243, 245, 241, 0.9);
-  --shadow-sm: 0 0.5rem 1.5rem rgba(16, 23, 25, 0.08);
-  --shadow-lg: 0 1.5rem 4rem rgba(16, 23, 25, 0.14);
+  --text-color: #192936;
+  --text-secondary: #526572;
+  --primary-color: #315d77;
+  --accent-color: #315d77;
+  --signal-color: #a45f3f;
+  --border-color: #cedae0;
+  --hover-color: #e5edf0;
+  --shadow-color: rgba(25, 41, 54, 0.1);
+  --light-gray: #edf2f4;
+  --dark-gray: #192936;
+  --nav-background: rgba(247, 248, 248, 0.95);
+  --shadow-sm: 0 0.5rem 1.5rem rgba(25, 41, 54, 0.06);
+  --shadow-lg: 0 1.5rem 4rem rgba(25, 41, 54, 0.12);
   --font-display: "Archivo", "Arial Narrow", sans-serif;
   --font-primary: "IBM Plex Sans", "Segoe UI", sans-serif;
   --font-arabic: "Cairo", "Segoe UI", sans-serif;
   --font-utility: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
-  --content-width: 74rem;
+  --content-width: 70rem;
   --header-height: 4.5rem;
-  --section-space: clamp(4.5rem, 8vw, 7rem);
+  --section-space: clamp(4rem, 7vw, 6rem);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --background-color: #101719;
-  --surface-color: #172226;
-  --surface-elevated: #1c2a30;
-  --card-background: #1c2a30;
-  --text-color: #f3f5f1;
-  --text-secondary: #a7b1b3;
-  --primary-color: #6fc6bf;
-  --accent-color: #6fc6bf;
-  --signal-color: #e1aa43;
-  --border-color: #334448;
-  --hover-color: #243439;
+  --background-color: #17232d;
+  --surface-color: #1e2e3a;
+  --surface-elevated: #243642;
+  --card-background: #243642;
+  --text-color: #f3f7f8;
+  --text-secondary: #afc0c9;
+  --primary-color: #91bdd1;
+  --accent-color: #91bdd1;
+  --signal-color: #d7a185;
+  --border-color: #3d5564;
+  --hover-color: #2a404e;
   --shadow-color: rgba(0, 0, 0, 0.32);
-  --light-gray: #243439;
-  --dark-gray: #f3f5f1;
-  --nav-background: rgba(16, 23, 25, 0.9);
+  --light-gray: #2a404e;
+  --dark-gray: #f3f7f8;
+  --nav-background: rgba(23, 35, 45, 0.95);
   --shadow-sm: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
 }
@@ -114,10 +114,10 @@ section {
   margin: 0;
   color: var(--text-color);
   font-family: var(--font-display);
-  font-size: clamp(2.15rem, 5vw, 3.75rem);
-  font-weight: 750;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   text-align: start;
 }
 
@@ -132,7 +132,7 @@ section {
   font-family: var(--font-utility);
   font-size: 0.75rem;
   font-weight: 650;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -154,7 +154,7 @@ section {
 
 ::selection {
   background: var(--signal-color);
-  color: #101719;
+  color: #192936;
 }
 
 ::-webkit-scrollbar {

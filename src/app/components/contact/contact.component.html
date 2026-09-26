@@ -1,120 +1,21 @@
 <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-  <div class="container">
+  <div class="container contact-layout">
     <header class="contact-heading">
       <span class="section-kicker">{{ t("contact.subtitle") }}</span>
       <h2 id="contact-heading" class="section-title">{{ t("contact.title") }}</h2>
       <p class="section-subtitle">{{ t("contact.description") }}</p>
+      <a class="contact-email" [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }} <span aria-hidden="true">↗</span></a>
     </header>
-
-    <div class="contact-layout">
-      <aside class="contact-actions" [attr.aria-label]="t('contact.actionsLabel')">
-        <a class="contact-action primary" [href]="'mailto:' + contactInfo.email">
-          <i aria-hidden="true">✉</i>
-          <span>
-            <small>{{ t("contact.emailAction") }}</small>
-            <strong>{{ contactInfo.email }}</strong>
-          </span>
-        </a>
-
-        @for (social of contactInfo.social; track social.name) {
-        <a class="contact-action" [href]="social.url" target="_blank" rel="noopener noreferrer">
-          <i aria-hidden="true">↗</i>
-          <span>
-            <small>{{ t("contact.openProfile") }}</small>
-            <strong>{{ social.name }}</strong>
-          </span>
-        </a>
-        }
-
-        <a class="contact-action" href="assets/Hazem_Ragab_Resume.pdf" download>
-          <i aria-hidden="true">↓</i>
-          <span>
-            <small>{{ t("contact.resumeLabel") }}</small>
-            <strong>{{ t("contact.resumeAction") }}</strong>
-          </span>
-        </a>
-
-        <p class="contact-location">
-          <i aria-hidden="true">⌖</i>
-          <span>{{ getLocation() }}</span>
-        </p>
-      </aside>
-
-      <div class="contact-form">
-        <h3>{{ t("contact.form.heading") }}</h3>
-        <p class="form-note">{{ t("contact.form.note") }}</p>
-
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-          <div class="form-group">
-            <label for="name">{{ t("contact.form.name") }}</label>
-            <input type="text" id="name" formControlName="name" autocomplete="name"
-              [class.invalid]="submitted && f['name'].errors" [attr.aria-invalid]="submitted && f['name'].invalid"
-              [attr.aria-describedby]="submitted && f['name'].errors ? 'name-error' : null"
-              [placeholder]="t('contact.form.namePlaceholder')" />
-            @if (submitted && f["name"].errors) {
-            <div id="name-error" class="error-message" role="alert">
-              @if (f["name"].errors["required"]) {
-              <span>{{ t("contact.errors.nameRequired") }}</span>
-              } @else if (f["name"].errors["minlength"]) {
-              <span>{{ t("contact.errors.nameMinLength") }}</span>
-              }
-            </div>
-            }
-          </div>
-
-          <div class="form-group">
-            <label for="email">{{ t("contact.form.email") }}</label>
-            <input type="email" id="email" formControlName="email" autocomplete="email"
-              [class.invalid]="submitted && f['email'].errors" [attr.aria-invalid]="submitted && f['email'].invalid"
-              [attr.aria-describedby]="submitted && f['email'].errors ? 'email-error' : null"
-              [placeholder]="t('contact.form.emailPlaceholder')" />
-            @if (submitted && f["email"].errors) {
-            <div id="email-error" class="error-message" role="alert">
-              @if (f["email"].errors["required"]) {
-              <span>{{ t("contact.errors.emailRequired") }}</span>
-              } @else if (f["email"].errors["email"]) {
-              <span>{{ t("contact.errors.emailInvalid") }}</span>
-              }
-            </div>
-            }
-          </div>
-
-          <div class="form-group">
-            <label for="subject">{{ t("contact.form.subject") }}</label>
-            <input type="text" id="subject" formControlName="subject"
-              [class.invalid]="submitted && f['subject'].errors" [attr.aria-invalid]="submitted && f['subject'].invalid"
-              [attr.aria-describedby]="submitted && f['subject'].errors ? 'subject-error' : null"
-              [placeholder]="t('contact.form.subjectPlaceholder')" />
-            @if (submitted && f["subject"].errors?.["required"]) {
-            <div id="subject-error" class="error-message" role="alert">
-              <span>{{ t("contact.errors.subjectRequired") }}</span>
-            </div>
-            }
-          </div>
-
-          <div class="form-group full-width">
-            <label for="message">{{ t("contact.form.message") }}</label>
-            <textarea id="message" formControlName="message" [class.invalid]="submitted && f['message'].errors"
-              [attr.aria-invalid]="submitted && f['message'].invalid"
-              [attr.aria-describedby]="submitted && f['message'].errors ? 'message-error' : null"
-              [placeholder]="t('contact.form.messagePlaceholder')" rows="5"></textarea>
-            @if (submitted && f["message"].errors) {
-            <div id="message-error" class="error-message" role="alert">
-              @if (f["message"].errors["required"]) {
-              <span>{{ t("contact.errors.messageRequired") }}</span>
-              } @else if (f["message"].errors["minlength"]) {
-              <span>{{ t("contact.errors.messageMinLength") }}</span>
-              }
-            </div>
-            }
-          </div>
-
-          <button type="submit" class="submit-button">
-            {{ t("contact.form.send") }}
-            <i aria-hidden="true">↗</i>
-          </button>
-        </form>
-      </div>
-    </div>
+    <nav class="contact-links" [attr.aria-label]="t('contact.actionsLabel')">
+      @for (social of contactInfo.social; track social.name) {
+      <a [href]="social.url" target="_blank" rel="noopener noreferrer">
+        <span>{{ social.name }}</span><span aria-hidden="true">↗</span>
+      </a>
+      }
+      <a href="/assets/Hazem_Ragab_Resume.pdf" download>
+        <span>{{ t("contact.resumeAction") }}</span><span aria-hidden="true">↓</span>
+      </a>
+      <p class="contact-location">{{ getLocation() }}</p>
+    </nav>
   </div>
 </section>

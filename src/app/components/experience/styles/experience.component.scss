@@ -4,13 +4,7 @@
   background: var(--background-color);
 }
 
-.section-heading {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.7fr) minmax(20rem, 1.3fr);
-  gap: 0.7rem 3rem;
-  align-items: end;
-  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
-}
+.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 3rem; align-items: end; margin-bottom: 2.5rem; }
 
 .section-kicker {
   grid-column: 1;
@@ -24,22 +18,13 @@
   grid-column: 2;
   grid-row: 1 / span 2;
   align-self: end;
-  padding-inline-start: 1.5rem;
-  border-inline-start: 1px solid var(--signal-color);
+  max-width: 26rem;
 }
 
-.experience-card {
-  display: flex;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  background: var(--surface-color);
-}
+.experience-card { display: flex; border-top: 1px solid var(--border-color); }
+.experience-card:last-child { border-bottom: 1px solid var(--border-color); }
 
-.timeline-marker {
-  width: 0.45rem;
-  flex: 0 0 0.45rem;
-  background: var(--signal-color);
-}
+.timeline-marker { display: none; }
 
 .timeline-marker span {
   display: none;
@@ -49,7 +34,7 @@
   display: grid;
   gap: 1.5rem;
   width: 100%;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.8rem, 4vw, 2.8rem) 0;
 }
 
 .experience-header {
@@ -61,7 +46,7 @@
 .role {
   color: var(--text-color);
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
   letter-spacing: -0.035em;
   line-height: 1;
 }
@@ -71,7 +56,7 @@
   color: var(--accent-color);
   font-family: var(--font-utility);
   font-size: 0.82rem;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -96,8 +81,8 @@
 }
 
 .summary {
-  max-width: 62rem;
-  font-size: 1.05rem;
+  max-width: 48rem;
+  font-size: 1rem;
 }
 
 .achievements {
@@ -115,7 +100,7 @@
 
 .achievements i {
   margin-top: 0.35rem;
-  color: var(--signal-color);
+  color: var(--accent-color);
   font-style: normal;
 }
 
@@ -126,13 +111,14 @@
 }
 
 .tech-pill {
-  padding: 0.45rem 0.7rem;
-  border: 1px solid var(--border-color);
+  padding: 0;
+  border: 0;
   color: var(--text-secondary);
   font-family: var(--font-utility);
   font-size: 0.74rem;
-  font-weight: 650;
+  font-weight: 600;
 }
+.tech-pill + .tech-pill::before { margin-inline-end: .55rem; color: var(--signal-color); content: '·'; }
 
 @media (max-width: 720px) {
   .section-heading {

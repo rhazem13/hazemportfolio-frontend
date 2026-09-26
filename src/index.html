@@ -7,10 +7,10 @@
   <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Hazem Ragab is a backend software engineer in Egypt building production real-time systems with Node.js, TypeScript, Redis and .NET." />
+    content="Hazem Ragab is a backend software engineer in Egypt working on real-time audio, concurrency and reliable production systems." />
   <meta name="author" content="Hazem Ragab" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#101719" />
+  <meta name="theme-color" content="#f7f8f8" />
   <link rel="canonical" href="https://hazemportfolio-frontend.pages.dev/" />
 
   <!-- Open Graph / Facebook -->
@@ -18,7 +18,7 @@
   <meta property="og:url" content="https://hazemportfolio-frontend.pages.dev/" />
   <meta property="og:title" content="Hazem Ragab | Backend Software Engineer" />
   <meta property="og:description"
-    content="Production real-time backend systems, Node.js, TypeScript, Redis and measurable performance work." />
+    content="Real-time audio, concurrency and reliable production systems. Explore Hazem Ragab's engineering work and CV." />
   <meta property="og:image" content="https://hazemportfolio-frontend.pages.dev/assets/social-preview.png" />
 
   <!-- Twitter -->
@@ -26,7 +26,7 @@
   <meta property="twitter:url" content="https://hazemportfolio-frontend.pages.dev/" />
   <meta property="twitter:title" content="Hazem Ragab | Backend Software Engineer" />
   <meta property="twitter:description"
-    content="Production real-time backend systems, Node.js, TypeScript, Redis and measurable performance work." />
+    content="Real-time audio, concurrency and reliable production systems. Explore Hazem Ragab's engineering work and CV." />
   <meta property="twitter:image" content="https://hazemportfolio-frontend.pages.dev/assets/social-preview.png" />
 
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -50,6 +50,7 @@
       "name": "Hazem Ragab",
       "url": "https://hazemportfolio-frontend.pages.dev/",
       "jobTitle": "Backend Software Engineer",
+      "email": "h.ragab.dev@gmail.com",
       "sameAs": [
         "https://github.com/rhazem13",
         "https://linkedin.com/in/rhazem13",
@@ -66,11 +67,10 @@
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "dark") {
           document.documentElement.setAttribute("data-theme", "dark");
-        } else if (
-          !savedTheme &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches
-        ) {
-          document.documentElement.setAttribute("data-theme", "dark");
+          document.querySelector('meta[name="theme-color"]').setAttribute(
+            "content",
+            "#17232d"
+          );
         }
         // Language/RTL handling
         const savedLang = localStorage.getItem("language");
