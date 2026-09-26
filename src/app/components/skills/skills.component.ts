@@ -52,20 +52,38 @@ export class SkillsComponent {
         { name: 'PostgreSQL' },
         { name: 'PostGIS' },
         { name: 'SQL Server' },
-        { name: 'Concurrency', nameAr: 'إدارة التزامن' },
-        { name: 'Multi-instance systems', nameAr: 'أنظمة متعددة النسخ' },
       ],
     },
     {
-      titleEn: 'Delivery & observability',
-      titleAr: 'النشر والمراقبة',
+      titleEn: 'Infrastructure & delivery',
+      titleAr: 'البنية التحتية والنشر',
       skills: [
         { name: 'Docker' },
         { name: 'Kubernetes' },
+        { name: 'Azure' },
         { name: 'CI/CD' },
+        { name: 'GitHub Actions' },
+      ],
+    },
+    {
+      titleEn: 'Observability',
+      titleAr: 'المراقبة',
+      skills: [
         { name: 'Prometheus' },
         { name: 'Grafana' },
-        { name: 'GitHub Actions' },
+        { name: 'Production reliability', nameAr: 'موثوقية الإنتاج' },
+      ],
+    },
+    {
+      titleEn: 'Engineering',
+      titleAr: 'الممارسة الهندسية',
+      skills: [
+        { name: 'Distributed systems', nameAr: 'الأنظمة الموزعة' },
+        { name: 'Concurrency', nameAr: 'إدارة التزامن' },
+        { name: 'Multi-instance systems', nameAr: 'أنظمة متعددة النسخ' },
+        { name: 'Authentication & authorization', nameAr: 'المصادقة والصلاحيات' },
+        { name: 'Performance debugging', nameAr: 'تشخيص الأداء' },
+        { name: 'Unit testing', nameAr: 'اختبارات الوحدات' },
       ],
     },
     {
@@ -76,8 +94,6 @@ export class SkillsComponent {
         { name: 'React' },
         { name: 'Flutter' },
         { name: 'Laravel' },
-        { name: 'Authentication & security', nameAr: 'المصادقة والأمان' },
-        { name: 'Performance debugging', nameAr: 'تشخيص الأداء' },
       ],
     },
   ];

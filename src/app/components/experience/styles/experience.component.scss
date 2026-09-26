@@ -55,7 +55,7 @@
   margin-top: 0.6rem;
   color: var(--accent-color);
   font-family: var(--font-utility);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -71,7 +71,7 @@
 .period {
   color: var(--text-color);
   font-family: var(--font-utility);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 650;
 }
 
@@ -115,7 +115,7 @@
   border: 0;
   color: var(--text-secondary);
   font-family: var(--font-utility);
-  font-size: 0.74rem;
+  font-size: 0.88rem;
   font-weight: 600;
 }
 .tech-pill + .tech-pill::before { margin-inline-end: .55rem; color: var(--signal-color); content: '·'; }

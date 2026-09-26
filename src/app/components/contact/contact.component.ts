@@ -20,7 +20,7 @@ export class ContactComponent {
       },
       {
         name: 'LinkedIn',
-        url: 'https://linkedin.com/in/rhazem13',
+        url: 'https://www.linkedin.com/in/hazem-ragab-mohammed/',
       },
       {
         name: 'LeetCode',
