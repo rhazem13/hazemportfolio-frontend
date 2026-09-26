@@ -12,7 +12,7 @@
         <h3>{{ getCategoryTitle(category) }}</h3>
         <ul>
           @for (skill of category.skills; track skill.name) {
-          <li>{{ getSkillName(skill) }}</li>
+          <li dir="ltr">{{ skill.name }}</li>
           }
         </ul>
       </article>

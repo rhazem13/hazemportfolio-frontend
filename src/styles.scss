@@ -81,6 +81,21 @@ html[dir="rtl"] body {
   font-family: var(--font-arabic);
 }
 
+html[dir="rtl"] body :is(
+  .hero-eyebrow,
+  .section-kicker,
+  .case-context,
+  .case-detail dt,
+  .company,
+  .period,
+  .institution-year,
+  .footer-content
+) {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 img,
 picture,
 svg,

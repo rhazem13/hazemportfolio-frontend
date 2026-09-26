@@ -36,6 +36,15 @@ export class TranslationService {
         projects: 'Projects',
         certificates: 'Certificates',
         contact: 'Contact',
+        skip: 'Skip to main content',
+        primaryLabel: 'Primary navigation',
+        homeLabel: 'Hazem Ragab, home',
+        openMenu: 'Open menu',
+        closeMenu: 'Close menu',
+        switchToArabic: 'Switch to Arabic',
+        switchToEnglish: 'Switch to English',
+        useLightTheme: 'Use light theme',
+        useDarkTheme: 'Use dark theme',
       },
 
       // Hero Section
@@ -233,51 +242,60 @@ export class TranslationService {
         projects: 'المشاريع',
         certificates: 'الشهادات',
         contact: 'تواصل معي',
+        skip: 'الانتقال إلى المحتوى',
+        primaryLabel: 'التنقل الرئيسي',
+        homeLabel: 'حازم رجب، الصفحة الرئيسية',
+        openMenu: 'فتح القائمة',
+        closeMenu: 'إغلاق القائمة',
+        switchToArabic: 'التبديل إلى العربية',
+        switchToEnglish: 'التبديل إلى الإنجليزية',
+        useLightTheme: 'تفعيل الوضع الفاتح',
+        useDarkTheme: 'تفعيل الوضع الداكن',
       },
 
       // Hero Section
       hero: {
         eyebrow: 'القاهرة، مصر · متاح للعمل عن بُعد',
         greeting: 'حازم رجب',
-        role: 'مهندس برمجيات خلفية',
-        title: 'واجهات إنتاجية وأنظمة فورية وخدمات موزعة.',
+        role: 'مهندس Backend',
+        title: 'أبني APIs وأنظمة Real-time وخدمات موزّعة تعمل في الإنتاج.',
         description:
-          'أبني في إنتيلا خدمات خلفية إنتاجية وفورية باستخدام Node.js وTypeScript وRedis وDocker وKubernetes. عملت سابقاً في دي بي ورلد على تطبيقات مؤسسية باستخدام .NET وC#. متاح للعمل مع فرق دولية عن بُعد.',
-        viewWork: 'استكشف أعمالي',
-        downloadResume: 'اقرأ سيرتي الذاتية',
+          'أعمل في Intella على خدمات Backend للتواصل الفوري في الإنتاج، باستخدام Node.js/TypeScript مع Redis وDocker وKubernetes. وقبلها طوّرت تطبيقات مؤسسية بـ .NET وC# في DP World. متاح للعمل عن بُعد مع فرق دولية.',
+        viewWork: 'اطّلع على خبرتي',
+        downloadResume: 'عرض السيرة الذاتية',
         email: 'البريد الإلكتروني',
-        socialLabel: 'الحسابات المهنية',
-        imageAlt: 'حازم رجب جالس على جبل، يتأمل المناظر الطبيعية',
-        currentLabel: 'الدور الحالي',
-        currentValue: 'مهندس برمجيات خلفية · إنتيلا',
+        socialLabel: 'روابطي المهنية',
+        imageAlt: 'حازم رجب في مشهد جبلي',
+        currentLabel: 'العمل الحالي',
+        currentValue: 'Backend Engineer · Intella',
       },
 
       // About Section
       about: {
-        kicker: 'الملف المهني',
-        title: 'مجالات عملي',
-        lead: 'أبني خدمات خلفية تتطلب زمناً منخفضاً للاستجابة وإدارة التزامن والموثوقية.',
+        kicker: 'نبذة مهنية',
+        title: 'ما أعمل عليه',
+        lead: 'أعمل على خدمات Backend يكون فيها وقت الاستجابة والتزامن والاعتمادية عوامل أساسية.',
         description:
-          'يشمل عملي الحالي الصوت الفوري والتكاملات الخارجية وتنسيق الحالة عبر عدة نسخ من الخدمة. ولدي خبرة في أنظمة .NET المؤسسية ومشاريع تجارية في المدفوعات واللوجستيات والخرائط.',
+          'يركز عملي الحالي على الصوت الفوري والتكامل مع منصات خارجية وتنسيق الحالة بين نسخ الخدمة. وعملت أيضاً على تطبيقات .NET المؤسسية ومشاريع لعملاء في المدفوعات واللوجستيات والخدمات المعتمدة على الموقع.',
         resume: 'عرض السيرة الذاتية',
-        evidenceLabel: 'دلائل الكفاءة الهندسية',
-        currentTitle: 'الدور الحالي',
-        currentValue: 'مهندس برمجيات خلفية في إنتيلا',
-        domainsTitle: 'مجالات التشغيل',
-        domainsValue: 'الصوت الفوري · التكاملات · أنظمة المؤسسات',
+        evidenceLabel: 'ملخص الخبرة',
+        currentTitle: 'العمل الحالي',
+        currentValue: 'Backend Engineer في Intella',
+        domainsTitle: 'مجالات العمل',
+        domainsValue: 'الصوت الفوري · التكاملات · تطبيقات الشركات',
         stackTitle: 'التقنيات الأساسية',
         stackValue: 'Node.js · TypeScript · Redis · PostgreSQL',
-        foundationTitle: 'الأساس الأكاديمي',
+        foundationTitle: 'الدراسة',
         foundationValue: 'الأول على الدفعة · معدل 3.91 من 4.0',
       },
 
       // Experience Section
       experience: {
         title: 'الخبرات',
-        kicker: 'الخبرات',
-        subtitle: 'خبرة في هندسة البرمجيات الخلفية والمنتجات ومشاريع العملاء.',
-        present: 'الحالي',
-        justStarted: 'بداية جديدة',
+        kicker: 'المسار المهني',
+        subtitle: 'من خدمات Backend في الإنتاج إلى تطبيقات الشركات ومشاريع العملاء.',
+        present: 'حتى الآن',
+        justStarted: 'أقل من شهر',
         yr: 'سنة',
         yrs: 'سنوات',
         mo: 'شهر',
@@ -285,66 +303,66 @@ export class TranslationService {
           softwareEngineer: 'مهندس برمجيات',
         },
         companies: {
-          dpWorld: 'دي بي ورلد',
+          dpWorld: 'DP World',
         },
         summaries: {
           dpWorld:
-            'تطوير تطبيقات ويب متقدمة وعالية الأداء تدعم قطاعات اللوجستيات والمالية والسلامة وغيرها من المجالات الحيوية.',
+            'عملت على تطبيقات .NET تدعم أعمال اللوجستيات والمالية والسلامة.',
         },
       },
 
       // Skills Section
       skills: {
-        kicker: 'القدرات',
-        title: 'التقنيات التي أعمل بها',
+        kicker: 'المهارات',
+        title: 'التقنيات التي أستخدمها',
         subtitle:
-          'أدوات استخدمتها لبناء الأنظمة الخلفية ونشرها وتشخيص مشكلاتها.',
+          'أدوات أستخدمها لبناء خدمات Backend وتشغيلها وحل مشكلاتها.',
         categories: {
           programming: 'لغات البرمجة',
-          backend: 'تطوير الواجهة الخلفية',
-          frontend: 'تطوير الواجهة الأمامية',
+          backend: 'Backend',
+          frontend: 'Frontend',
           databases: 'قواعد البيانات',
-          devops: 'عمليات التطوير والأدوات',
+          devops: 'البنية التحتية والأدوات',
           other: 'مهارات أخرى',
         },
         items: {
           problemSolving: 'حل المشكلات',
-          cleanCode: 'الكود النظيف',
+          cleanCode: 'كتابة كود واضح',
         },
       },
 
       // Projects Section
       projects: {
-        kicker: 'أعمال مختارة',
+        kicker: 'المشاريع',
         title: 'أعمال مختارة',
-        subtitle: 'أمثلة على القرارات الهندسية وراء البرمجيات.',
+        subtitle: 'أمثلة على عملي في بناء APIs والتعامل مع البيانات والمدفوعات.',
         viewGithub: 'عرض على GitHub',
         livePreview: 'معاينة مباشرة',
         privateCode: 'مستودع خاص',
         technologiesLabel: 'التقنيات المستخدمة',
-        viewArchive: 'عرض أرشيف المشاريع',
-        showFeatured: 'عرض الأعمال المختارة فقط',
-        readMore: 'اقرأ المزيد',
-        showLess: 'عرض أقل',
+        viewArchive: 'كل المشاريع',
+        showFeatured: 'الأعمال المختارة فقط',
+        readMore: 'المزيد',
+        showLess: 'أقل',
         descriptions: {
           befriends:
-            'منصة تواصل اجتماعي تساعد على ربط الأشخاص ذوي الاهتمامات والهوايات المتشابهة.',
-          escanor: 'منصة للتجارة الإلكترونية في مجال الأزياء، بتصميم عصري وتجربة تسوق سلسة.',
+            'منصة تواصل تجمع الأشخاص الذين يشتركون في الاهتمامات والهوايات.',
+          escanor: 'متجر إلكتروني للملابس يتيح تصفح المنتجات وإتمام الشراء.',
           charity:
-            'منصة تربط المتبرعين بالمنظمات الخيرية وتتبع التبرعات، مع خاصية التعرف على الصور بالذكاء الاصطناعي باستخدام YOLOv5.',
-          promptshare: 'منصة مجتمعية لمشاركة واكتشاف أوامر الذكاء الاصطناعي.',
+            'منصة لإدارة التبرعات بين المتبرعين والجمعيات، مع التحقق من المستندات باستخدام YOLOv5.',
+          promptshare: 'منصة لمشاركة أوامر الذكاء الاصطناعي والبحث عنها.',
           coligo:
-            'تطبيق اختبارات للطلاب مبني باستخدام React للواجهة الأمامية وExpress.js مع MongoDB للواجهة الخلفية.',
+            'تطبيق اختبارات للطلاب بواجهة React وخدمات Express.js وقاعدة MongoDB.',
           employeeManager:
-            'تطبيق لإدارة الموظفين مبني باستخدام Angular للواجهة الأمامية و.NET Core مع SQL Server للواجهة الخلفية.',
+            'تطبيق لإدارة الموظفين بواجهة Angular وخدمات .NET Core وقاعدة SQL Server.',
         },
       },
 
       // Education Section
       education: {
         title: 'التعليم',
-        kicker: 'الأساس الأكاديمي',
-        subtitle: 'أساس في علوم الحاسب وتدريب عملي.',
+        kicker: 'المؤهلات',
+        subtitle: 'دراسة علوم الحاسب وتدريب عملي على .NET.',
         degrees: {
           bsc: 'بكالوريوس علوم الحاسب',
           webDev: 'تطوير الويب باستخدام .NET',
@@ -355,38 +373,38 @@ export class TranslationService {
         },
         details: {
           suez: 'الأول على الدفعة بمعدل 3.91 من 4.0',
-          iti: 'برنامج احترافي لتطوير الويب',
+          iti: 'برنامج تدريبي متخصص في تطوير الويب',
         },
       },
 
       // Certificates Section
       certificates: {
-        title: 'الشهادات المهنية',
-        subtitle: 'شهادات مختارة تعزز خبرتي في الهندسة وعلوم الحاسب.',
-        kicker: 'أوراق الاعتماد',
+        title: 'الشهادات',
+        subtitle: 'شهادات في البرمجة وتصميم البرمجيات وعلوم الحاسب.',
+        kicker: 'التعلّم المستمر',
         download: 'تحميل الشهادة',
-        focusAreasLabel: 'المجالات التي تغطيها الشهادة',
-        viewAll: 'عرض جميع الشهادات الإحدى عشرة',
-        showFeatured: 'عرض الشهادات المختارة فقط',
+        focusAreasLabel: 'الموضوعات',
+        viewAll: 'عرض الشهادات كلها',
+        showFeatured: 'الشهادات المختارة فقط',
       },
 
       // Contact Section
       contact: {
-        title: 'لنتحدث',
+        title: 'تواصل معي',
         subtitle: 'التواصل',
         description:
-          'أنا متاح لفرص هندسة البرمجيات الخلفية، بما فيها العمل الدولي عن بُعد. البريد الإلكتروني هو أسرع وسيلة للتواصل معي.',
-        actionsLabel: 'خيارات التواصل المباشر',
+          'متاح لفرص Backend Engineer وSoftware Engineer مع فرق دولية تعمل عن بُعد. للتواصل، راسلني على البريد الإلكتروني.',
+        actionsLabel: 'روابط التواصل',
         emailAction: 'راسلني',
-        openProfile: 'فتح الملف الشخصي',
+        openProfile: 'عرض الحساب',
         resumeLabel: 'السيرة الذاتية',
         resumeAction: 'تحميل السيرة الذاتية',
         email: 'البريد الإلكتروني',
         location: 'الموقع',
         social: 'التواصل الاجتماعي',
         form: {
-        heading: 'إنشاء رسالة بريد إلكتروني',
-          note: 'عند الإرسال، سيفتح تطبيق البريد لديك مع تعبئة الرسالة. لن يتم إرسال أي شيء تلقائياً.',
+          heading: 'راسلني بالبريد',
+          note: 'سيفتح تطبيق البريد مع رسالة جاهزة للمراجعة. لن تُرسل تلقائياً.',
           name: 'الاسم',
           namePlaceholder: 'اسمك',
           email: 'البريد الإلكتروني',
@@ -395,22 +413,22 @@ export class TranslationService {
           subjectPlaceholder: 'الموضوع',
           message: 'الرسالة',
           messagePlaceholder: 'رسالتك',
-          send: 'إنشاء مسودة بريد',
+          send: 'فتح مسودة الرسالة',
         },
         errors: {
           nameRequired: 'الاسم مطلوب',
-          nameMinLength: 'يجب أن يكون الاسم حرفين على الأقل',
+          nameMinLength: 'اكتب حرفين على الأقل في الاسم',
           emailRequired: 'البريد الإلكتروني مطلوب',
-          emailInvalid: 'يرجى إدخال بريد إلكتروني صحيح',
+          emailInvalid: 'تأكد من صحة عنوان البريد الإلكتروني',
           subjectRequired: 'الموضوع مطلوب',
           messageRequired: 'الرسالة مطلوبة',
-          messageMinLength: 'يجب أن تكون الرسالة 10 أحرف على الأقل',
+          messageMinLength: 'اكتب 10 أحرف على الأقل في الرسالة',
         },
       },
 
       // Footer
       footer: {
-        copyright: '© 2026 حازم. جميع الحقوق محفوظة.',
+        copyright: '© 2026 حازم رجب. جميع الحقوق محفوظة.',
       },
     },
   };
@@ -474,7 +492,19 @@ export class TranslationService {
       }
     }
 
-    return typeof result === 'string' ? result : key;
+    return typeof result === 'string' ? this.format(result) : key;
+  }
+
+  format(text: string): string {
+    if (this.currentLang() !== 'ar') return text;
+
+    // Keep English technical names in their reading order inside RTL sentences.
+    return text.replace(
+      /\.NET(?: Core)?|[A-Za-z][A-Za-z0-9.+#/-]*(?: [A-Za-z][A-Za-z0-9.+#/-]*)*/g,
+      (term) => term.endsWith('.')
+        ? `\u2066${term.slice(0, -1)}\u2069.`
+        : `\u2066${term}\u2069`,
+    );
   }
 
   /**

@@ -31,39 +31,39 @@ export class EducationComponent {
   educationItems: EducationItem[] = [
     {
       degree: 'B.Sc. in Computer Science',
-      degreeAr: 'بكالوريوس في علوم الحاسب',
+      degreeAr: 'بكالوريوس علوم الحاسب',
       institution: 'Suez University',
       institutionAr: 'جامعة السويس',
       year: '2023',
       details: 'Graduated first in class with a 3.91/4.0 GPA',
-      detailsAr: 'تخرجت الأول على الدفعة بمعدل تراكمي 3.91/4.0',
+      detailsAr: 'تخرّجت الأول على دفعتي بمعدل 3.91 من 4.0.',
     },
     {
       degree: 'Web Development Using .NET',
       degreeAr: 'تطوير الويب باستخدام .NET',
       institution: 'ITI',
-      institutionAr: 'معهد تكنولوجيا المعلومات',
+      institutionAr: 'معهد تكنولوجيا المعلومات (ITI)',
       year: '2021',
       details: 'Professional development program',
-      detailsAr: 'برنامج تطوير مهني',
+      detailsAr: 'برنامج تدريبي في تطوير تطبيقات الويب باستخدام .NET.',
     },
   ];
 
   getDegree(item: EducationItem): string {
     return this.translationService.currentLang() === 'ar'
-      ? item.degreeAr
+      ? this.translationService.format(item.degreeAr)
       : item.degree;
   }
 
   getInstitution(item: EducationItem): string {
     return this.translationService.currentLang() === 'ar'
-      ? item.institutionAr
+      ? this.translationService.format(item.institutionAr)
       : item.institution;
   }
 
   getDetails(item: EducationItem): string {
     return this.translationService.currentLang() === 'ar'
-      ? item.detailsAr
+      ? this.translationService.format(item.detailsAr)
       : item.details;
   }
 }

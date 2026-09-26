@@ -5,7 +5,6 @@ import { TranslationService } from '../../services/translation.service';
 
 interface Skill {
   name: string;
-  nameAr?: string;
 }
 
 interface SkillCategory {
@@ -32,7 +31,7 @@ export class SkillsComponent {
   skillCategories: SkillCategory[] = [
     {
       titleEn: 'Backend',
-      titleAr: 'الخدمات الخلفية',
+      titleAr: 'Backend',
       skills: [
         { name: 'Node.js' },
         { name: 'TypeScript' },
@@ -67,28 +66,28 @@ export class SkillsComponent {
     },
     {
       titleEn: 'Observability',
-      titleAr: 'المراقبة',
+      titleAr: 'Observability',
       skills: [
         { name: 'Prometheus' },
         { name: 'Grafana' },
-        { name: 'Production reliability', nameAr: 'موثوقية الإنتاج' },
+        { name: 'Production reliability' },
       ],
     },
     {
       titleEn: 'Engineering',
-      titleAr: 'الممارسة الهندسية',
+      titleAr: 'هندسة البرمجيات',
       skills: [
-        { name: 'Distributed systems', nameAr: 'الأنظمة الموزعة' },
-        { name: 'Concurrency', nameAr: 'إدارة التزامن' },
-        { name: 'Multi-instance systems', nameAr: 'أنظمة متعددة النسخ' },
-        { name: 'Authentication & authorization', nameAr: 'المصادقة والصلاحيات' },
-        { name: 'Performance debugging', nameAr: 'تشخيص الأداء' },
-        { name: 'Unit testing', nameAr: 'اختبارات الوحدات' },
+        { name: 'Distributed systems' },
+        { name: 'Concurrency' },
+        { name: 'Multi-instance systems' },
+        { name: 'Authentication & authorization' },
+        { name: 'Performance debugging' },
+        { name: 'Unit testing' },
       ],
     },
     {
       titleEn: 'Additional product experience',
-      titleAr: 'خبرة إضافية في المنتجات',
+      titleAr: 'خبرة أخرى في تطوير المنتجات',
       skills: [
         { name: 'Angular' },
         { name: 'React' },
@@ -100,13 +99,7 @@ export class SkillsComponent {
 
   getCategoryTitle(category: SkillCategory): string {
     return this.translationService.currentLang() === 'ar'
-      ? category.titleAr
+      ? this.translationService.format(category.titleAr)
       : category.titleEn;
-  }
-
-  getSkillName(skill: Skill): string {
-    return this.translationService.currentLang() === 'ar' && skill.nameAr
-      ? skill.nameAr
-      : skill.name;
   }
 }

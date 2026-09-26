@@ -13,19 +13,19 @@
           <h3>{{ project.title }}</h3>
           <p class="case-type">{{ localized(project.projectType, project.projectTypeAr) }}</p>
           <ul class="project-tech" [attr.aria-label]="t('projects.technologiesLabel')">
-            @for (tech of project.technologies; track tech) { <li>{{ tech }}</li> }
+            @for (tech of project.technologies; track tech) { <li dir="ltr">{{ tech }}</li> }
           </ul>
         </div>
         <dl class="case-detail">
           <div><dt>{{ localized('Problem', 'المشكلة') }}</dt><dd>{{ localized(project.problem, project.problemAr) }}</dd></div>
           <div><dt>{{ localized('My work', 'دوري') }}</dt><dd>{{ localized(project.contribution, project.contributionAr) }}</dd></div>
-          <div><dt>{{ localized('Engineering', 'الجانب الهندسي') }}</dt><dd>{{ localized(project.engineering, project.engineeringAr) }}</dd></div>
+          <div><dt>{{ localized('Engineering', 'التنفيذ التقني') }}</dt><dd>{{ localized(project.engineering, project.engineeringAr) }}</dd></div>
         </dl>
       </article>
       }
     </div>
-    <p class="public-work">{{ localized('For more code samples, see my', 'للمزيد من أمثلة الشيفرة، تصفح') }}
-      <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">{{ localized('public repositories on GitHub ↗', 'مستودعاتي العامة على GitHub ↗') }}</a>.
+    <p class="public-work">{{ localized('For more code samples, see my', 'نماذج أخرى من الكود متاحة على') }}
+      <a href="https://github.com/rhazem13" target="_blank" rel="noopener noreferrer">{{ localized('public repositories on GitHub ↗', 'حسابي في GitHub ↗') }}</a>.
     </p>
   </div>
 </section>

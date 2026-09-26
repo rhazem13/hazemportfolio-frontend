@@ -7,6 +7,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -25,4 +26,6 @@ import { SkillsComponent } from './components/skills/skills.component';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(public translationService: TranslationService) {}
+}

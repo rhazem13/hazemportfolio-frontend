@@ -1,12 +1,12 @@
-<nav class="navbar" aria-label="Primary navigation">
+<nav class="navbar" [attr.aria-label]="t('nav.primaryLabel')">
   <div class="nav-content">
-    <a class="logo" href="#home" aria-label="Hazem Ragab, home" (click)="closeMenu()">
-      <span class="logo-name">Hazem Ragab<span class="logo-period" aria-hidden="true">.</span></span>
+    <a class="logo" href="#home" [attr.aria-label]="t('nav.homeLabel')" (click)="closeMenu()">
+      <span class="logo-name">{{ currentLang() === 'ar' ? 'حازم رجب' : 'Hazem Ragab' }}<span class="logo-period" aria-hidden="true">.</span></span>
     </a>
     <div class="nav-right">
       <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
         aria-controls="primary-navigation"
-        [attr.aria-label]="isMenuOpen ? (currentLang() === 'en' ? 'Close menu' : 'إغلاق القائمة') : (currentLang() === 'en' ? 'Open menu' : 'فتح القائمة')">
+        [attr.aria-label]="isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')">
         <span></span>
         <span></span>
       </button>
@@ -25,17 +25,14 @@
         </li>
       </ul>
       <div class="nav-actions">
-        <button class="lang-toggle" type="button" (click)="toggleLanguage()" [attr.aria-label]="
-            currentLang() === 'en'
-              ? 'Switch to Arabic'
-              : 'التبديل إلى الإنجليزية'
-          ">
+        <button class="lang-toggle" type="button" (click)="toggleLanguage()"
+          [attr.aria-label]="currentLang() === 'en' ? t('nav.switchToArabic') : t('nav.switchToEnglish')">
           <span class="lang-text">{{
             currentLang() === "en" ? "عربي" : "EN"
             }}</span>
         </button>
         <button class="theme-toggle" type="button" (click)="toggleTheme()"
-          [attr.aria-label]="isDark ? 'Use light theme' : 'Use dark theme'" [attr.aria-pressed]="isDark">
+          [attr.aria-label]="isDark ? t('nav.useLightTheme') : t('nav.useDarkTheme')" [attr.aria-pressed]="isDark">
           <span aria-hidden="true">{{ isDark ? "☀" : "☾" }}</span>
         </button>
       </div>

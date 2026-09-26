@@ -19,16 +19,12 @@
           <header class="experience-header">
             <div class="title-block">
               <h3 class="role">{{ getRole(experience) }}</h3>
-              <p class="company">{{ experience.company }}</p>
+              <p class="company">{{ getCompany(experience) }}</p>
             </div>
             <div class="meta-block">
               <span class="period">
-                {{ experience.startDate | date: "MMM yyyy" }} —
-                {{
-                experience.endDate
-                ? (experience.endDate | date: "MMM yyyy")
-                : t("experience.present")
-                }}
+                {{ formatDate(experience.startDate) }} —
+                {{ experience.endDate ? formatDate(experience.endDate) : t("experience.present") }}
               </span>
               <span class="duration">{{
                 getExperienceDuration(experience)
@@ -54,7 +50,7 @@
 
           <div class="tech-stack" [attr.aria-label]="translationService.currentLang() === 'ar' ? 'التقنيات المستخدمة' : 'Technologies used'">
             @for (tech of experience.technologies; track tech) {
-            <span class="tech-pill">{{ tech }}</span>
+            <span class="tech-pill" dir="ltr">{{ tech }}</span>
             }
           </div>
         </div>

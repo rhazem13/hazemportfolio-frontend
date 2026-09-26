@@ -28,36 +28,38 @@ export class ProjectsComponent {
 
   t(key: string): string { return this.translationService.t(key); }
   localized(english: string, arabic: string): string {
-    return this.translationService.currentLang() === 'ar' ? arabic : english;
+    return this.translationService.currentLang() === 'ar'
+      ? this.translationService.format(arabic)
+      : english;
   }
 
   readonly projects: CaseStudy[] = [
     {
       title: 'Memory Mate',
       context: 'Backend APIs and geospatial data',
-      contextAr: 'واجهات خلفية وبيانات جغرافية',
+      contextAr: 'Backend APIs وبيانات مكانية',
       projectType: 'Academic project',
       projectTypeAr: 'مشروع أكاديمي',
       problem: 'The backend needed to find nearby users and serve frequently requested data efficiently.',
-      problemAr: 'احتاجت الخدمة الخلفية إلى العثور على المستخدمين القريبين وتقديم البيانات كثيرة الطلب بكفاءة.',
+      problemAr: 'احتاج التطبيق إلى البحث عن المستخدمين القريبين والتعامل بكفاءة مع الطلبات المتكررة على البيانات.',
       contribution: 'Built Flask APIs for geotagging and nearby-friend features.',
-      contributionAr: 'بنيت واجهات Flask لتحديد المواقع وميزات العثور على الأصدقاء القريبين.',
+      contributionAr: 'طوّرت APIs بـ Flask لربط المحتوى بالموقع وإظهار الأصدقاء القريبين.',
       engineering: 'Used PostGIS for nearby queries and Redis to cache frequently requested data.',
-      engineeringAr: 'استخدمت PostGIS للاستعلامات عن المواقع القريبة وRedis لتخزين البيانات كثيرة الطلب مؤقتاً.',
+      engineeringAr: 'استخدمت PostGIS لاستعلامات القرب، وRedis لتخزين البيانات كثيرة الطلب مؤقتاً.',
       technologies: ['Flask', 'PostgreSQL', 'PostGIS', 'Redis', 'REST APIs'],
     },
     {
       title: 'Charity Donations',
       context: 'Payments and access control',
-      contextAr: 'مدفوعات وصلاحيات',
+      contextAr: 'المدفوعات وإدارة الصلاحيات',
       projectType: 'Client project',
-      projectTypeAr: 'مشروع عميل',
+      projectTypeAr: 'مشروع لعميل',
       problem: 'Coordinate donation flows across donors, charities and administrators.',
-      problemAr: 'تنسيق التبرعات بين المتبرعين والجمعيات والمشرفين.',
+      problemAr: 'احتاج التطبيق إلى تنظيم التبرعات بين المتبرعين والجمعيات والمسؤولين.',
       contribution: 'Built Flask APIs and a React interface for donation workflows.',
-      contributionAr: 'بنيت واجهات Flask وواجهة React لمسارات التبرع.',
+      contributionAr: 'طوّرت APIs بـ Flask وواجهة React لإدارة التبرعات.',
       engineering: 'Implemented role-based access, PayPal integration and image-based document validation.',
-      engineeringAr: 'نفذت صلاحيات حسب الدور وتكامل PayPal وفحص المستندات بالصور.',
+      engineeringAr: 'طبّقت صلاحيات حسب الدور، وربطت PayPal، وأضفت التحقق من المستندات بالصور.',
       technologies: ['Flask', 'PostgreSQL', 'PayPal', 'React'],
     },
   ];
