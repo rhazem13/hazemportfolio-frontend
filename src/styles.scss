@@ -81,7 +81,7 @@ html[dir="rtl"] body {
   font-family: var(--font-arabic);
 }
 
-html[dir="rtl"] body :is(
+html[dir="rtl"] body.rtl :is(
   .hero-eyebrow,
   .section-kicker,
   .case-context,
@@ -89,7 +89,7 @@ html[dir="rtl"] body :is(
   .company,
   .period,
   .institution-year,
-  .footer-content
+  .footer-content p
 ) {
   font-family: var(--font-arabic);
   letter-spacing: 0;
