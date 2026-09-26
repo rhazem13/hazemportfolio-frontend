@@ -134,7 +134,7 @@ export class TranslationService {
         kicker: 'Selected work',
         title: 'Selected engineering work',
         subtitle:
-          'A closer look at backend problems I have worked on. Commercial code is private where required.',
+          'Three examples of the problems I owned and the systems behind them.',
         viewGithub: 'View on GitHub',
         livePreview: 'Live Preview',
         privateCode: 'Private repository',
@@ -342,7 +342,7 @@ export class TranslationService {
         kicker: 'أعمال مختارة',
         title: 'أعمال هندسية مختارة',
         subtitle:
-          'نظرة أقرب على مشكلات خلفية عملت عليها. تبقى شيفرة المشاريع التجارية خاصة عند الحاجة.',
+          'ثلاثة أمثلة على المشكلات التي توليت حلها والأنظمة التي تقف وراءها.',
         viewGithub: 'عرض على GitHub',
         livePreview: 'معاينة مباشرة',
         privateCode: 'مستودع خاص',
