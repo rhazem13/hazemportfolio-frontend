@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hazemportfolio-frontend.pages.dev/sitemap.xml
+Sitemap: https://hazem-ragab.pages.dev/sitemap.xml
