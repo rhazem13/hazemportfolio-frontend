@@ -1,12 +1,12 @@
 .contact-section { padding: var(--section-space) 0; background: #192936; color: #f7f8f8; }
 .contact-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(15rem, .6fr); gap: clamp(3rem, 8vw, 8rem); }
-.contact-heading .section-kicker { color: var(--signal-color); }
+.contact-heading .section-kicker { color: #d7a185; }
 .contact-heading .section-title { margin-top: .8rem; color: inherit; font-size: clamp(3rem, 6vw, 5rem); }
 .contact-heading .section-subtitle { max-width: 38rem; margin-top: 1.25rem; color: #c4d0d6; }
 .contact-email { display: inline-flex; align-items: center; gap: 1rem; max-width: 100%; margin-top: 2.5rem; padding-bottom: .25rem; border-bottom: 1px solid currentColor; color: inherit; font-family: var(--font-display); font-size: clamp(1.2rem, 2.8vw, 2rem); font-weight: 600; letter-spacing: -.03em; text-decoration: none; overflow-wrap: anywhere; }
-.contact-email:hover { color: var(--signal-color); }
+.contact-email:hover { color: #d7a185; }
 .contact-links { display: grid; align-content: end; border-top: 1px solid #536776; }
 .contact-links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.6rem; border-bottom: 1px solid #536776; color: inherit; font-weight: 600; text-decoration: none; transition: color 180ms ease, padding 180ms ease; }
-.contact-links a:hover { padding-inline: .4rem; color: var(--signal-color); }
+.contact-links a:hover { padding-inline: .4rem; color: #d7a185; }
 .contact-location { margin-top: 1.5rem; color: #b1c0c8; font-size: .85rem; }
 @media (max-width: 740px) { .contact-layout { grid-template-columns: 1fr; gap: 3rem; } .contact-links { align-content: start; } }
