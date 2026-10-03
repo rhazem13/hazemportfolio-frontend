@@ -40,3 +40,14 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Local build and performance review output
+/build*.log
+/build-error.txt
+/build-output.txt
+/report*.json
+/score*.txt
+/screenshots/
+/playwright-report/
+/test-results/
+.serena/
